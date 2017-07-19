@@ -1,0 +1,14 @@
+.vscode/
+mocha-insights/
+credentials/
+media/
+node_modules/
+src/
+.editorconfig
+.eslintignore
+.eslintrc.yml
+.gitignore
+.npmignore
+.travis.yml
+tsconfig.json
+tslint.json
