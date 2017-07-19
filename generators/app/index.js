@@ -7,7 +7,7 @@ module.exports = class extends Generator {
     prompting() {
         // Have Yeoman greet the user.
         this.log(yosay(
-            'Welcome to the pioneering ' + chalk.red('generator-ts-np') + ' generator!'
+            'Scaffold your next node package with ' + chalk.red('ts-np') + ' generator!'
         ));
 
         const prompts = [{
@@ -54,7 +54,7 @@ module.exports = class extends Generator {
 
     writing() {
         this.fs.copyTpl(
-            this.templatePath('**/*'),
+            this.templatePath('render/**/*'),
             this.destinationPath(), {
                 packageName: this.props.packageName,
                 packageDescription: this.props.packageDescription,
@@ -67,7 +67,12 @@ module.exports = class extends Generator {
         );
 
         this.fs.copy(
-            this.templatePath('.*'),
+            this.templatePath('render/.*'),
+            this.destinationPath()
+        );
+
+        this.fs.copy(
+            this.templatePath('static/**/*'),
             this.destinationPath()
         );
 
