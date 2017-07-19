@@ -39,6 +39,11 @@ module.exports = class extends Generator {
             name: 'twitterUsername',
             message: 'Twitter Username with @',
             store: true
+        }, {
+            type: 'input',
+            name: 'fullName',
+            message: 'Your full name to appear in README',
+            store: true
         }];
 
         return this.prompt(prompts).then(props => {
@@ -57,6 +62,7 @@ module.exports = class extends Generator {
                 githubRepository: this.props.githubRepository,
                 email: this.props.email,
                 twitterUsername: this.props.twitterUsername,
+                fullName: this.props.fullName
             }
         );
 
