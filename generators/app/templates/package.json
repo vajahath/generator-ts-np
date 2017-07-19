@@ -1,23 +1,22 @@
 {
     "name": "<%= packageName %>",
     "version": "0.0.1",
-    "description": "",
+    "description": "<%= packageDescription %>",
     "main": "dist/index.js",
     "scripts": {
         "build": "./node_modules/.bin/tsc",
         "lint": "./node_modules/.bin/tslint -c ./tslint.json -p ./tsconfig.json -t stylish ./src/**/*.ts --fix"
     },
-    "bin": {},
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/:author/:repo.git"
+        "url": "git+https://github.com/<%= githubUsername %>/<%= githubRepository %>.git"
     },
-    "author": "Name <email> (link)",
+    "author": "Name <<%= email %>> (<%= twitterUsername %>)",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/:author/:repo/issues"
+        "url": "https://github.com/<%= githubUsername %>/<%= githubRepository %>/issues"
     },
-    "homepage": "https://github.com/:author/:repo#readme",
+    "homepage": "https://github.com/<%= githubUsername %>/<%= githubRepository %>#readme",
     "dependencies": {
         "lme": "^1.5.3"
     },
