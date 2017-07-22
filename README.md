@@ -12,7 +12,7 @@ npm install -g generator-ts-np
 
 ## Usage
 ```
-yo tsnp
+yo ts-np
 ```
 
 

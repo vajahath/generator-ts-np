@@ -1,54 +1,54 @@
 {
-  "name": "generator-ts-np",
-  "version": "0.0.1",
-  "description": "Yeoman Generator For Node Package Built With Typescript",
-  "homepage": "https://github.com/vajahath/generator-ts-np#readme",
-  "author": "Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
-  "files": [
-    "generators"
-  ],
-  "main": "index.js",
-  "keywords": [
-    "yeoman-generator",
-    "typescript",
-    "yeoman-generator"
-  ],
-  "devDependencies": {
-    "yeoman-test": "^1.6.0",
-    "yeoman-assert": "^3.0.0",
-    "coveralls": "^2.13.1",
-    "nsp": "^2.6.3",
-    "eslint": "^4.1.0",
-    "eslint-config-xo-space": "^0.16.0",
-    "jest": "^19.0.2",
-    "jest-cli": "^20.0.0"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1 && jest",
-    "prepublish": "nsp check",
-    "pretest": "eslint . --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vajahath/generator-ts-np.git"
-  },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vajahath/generator-ts-np/issues"
-  },
-  "dependencies": {
-    "yeoman-generator": "^1.0.0",
-    "chalk": "^1.1.3",
-    "yosay": "^2.0.0"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "jest": true,
-      "node": true
+    "name": "generator-ts-np",
+    "version": "0.0.1",
+    "description": "Yeoman Generator For Building Node Packages With Typescript",
+    "homepage": "https://github.com/vajahath/generator-ts-np#readme",
+    "author": "Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
+    "files": [
+        "generators"
+    ],
+    "main": "index.js",
+    "keywords": [
+        "yeoman-generator",
+        "typescript",
+        "yeoman-generator"
+    ],
+    "devDependencies": {
+        "yeoman-test": "^1.6.0",
+        "yeoman-assert": "^3.0.0",
+        "coveralls": "^2.13.1",
+        "nsp": "^2.6.3",
+        "eslint": "^4.1.0",
+        "eslint-config-xo-space": "^0.16.0",
+        "jest": "^19.0.2",
+        "jest-cli": "^20.0.0"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1 && jest",
+        "prepublish": "nsp check",
+        "pretest": "eslint . --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vajahath/generator-ts-np.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/vajahath/generator-ts-np/issues"
+    },
+    "dependencies": {
+        "yeoman-generator": "^1.0.0",
+        "chalk": "^1.1.3",
+        "yosay": "^2.0.0"
+    },
+    "jest": {
+        "testEnvironment": "node"
+    },
+    "eslintConfig": {
+        "extends": "xo-space",
+        "env": {
+            "jest": true,
+            "node": true
+        }
     }
-  }
 }
