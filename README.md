@@ -6,6 +6,7 @@ Yeoman Generator For Building Node Packages With Typescript.
 ![TS-NP generator](./media/logo.png)
 
 ## Install
+(This is beta :warning:)
 ```
 npm install -g generator-ts-np
 ```
