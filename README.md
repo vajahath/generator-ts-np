@@ -1,7 +1,7 @@
 # generator-ts-np
 Yeoman Generator For Building Node Packages With Typescript.
 
-> This package is in Alpha :warning: You are warned. 
+> :warning: This package is in Alpha. You are warned. 
 
 ![TS-NP generator](./media/logo.png)
 
@@ -14,7 +14,6 @@ npm install -g generator-ts-np
 ```
 yo ts-np
 ```
-
 
 
 ## Licence
