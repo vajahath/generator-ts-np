@@ -3,7 +3,7 @@ Yeoman Generator For Building Node Packages With Typescript.
 
 > :warning: This package is in Beta. You are warned. 
 
-![TS-NP generator](./media/logo.png)
+![TS-NP generator](https://raw.githubusercontent.com/vajahath/generator-ts-np/master/media/logo.png)
 
 ## Install
 ```
