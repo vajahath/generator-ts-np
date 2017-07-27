@@ -7,7 +7,7 @@ Yeoman Generator For Building Node Packages With Typescript.
 ## What?
 This package helps you to scaffold a directory skeleton required to start writing an npm package in Typescript, which is fully configured and ready to contain your module logic. And finally, ready to publish.
 
-Here you writes your logic in Typescript and publish the compiled version of it - easily.
+Here you write your logic in Typescript and publish the compiled version of it - easily.
 
 ## Why?
 - Inspired from [Typescript's own guide for node](https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter).
@@ -60,7 +60,7 @@ Here is what you get:
 |-- .vscode
 `-- .yo-rc.json
 ```
-- Additionally when you `npm build`, a `dist/` folder will also be created with all your compiled code.
+- Additionally when you `npm run build`, a `dist/` folder will also be created with all your compiled code.
 - `media/`: All your gallery.
 - `src/`: All your source code.
 - `typings/`: All your type definitions
