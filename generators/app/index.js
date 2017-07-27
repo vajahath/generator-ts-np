@@ -67,7 +67,7 @@ module.exports = class extends Generator {
     );
 
     this.fs.copy(
-      this.templatePath('statics/**'),
+      this.templatePath('static/**'),
       this.destinationPath(), {globOptions: {dot: true}}
     );
 
