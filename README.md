@@ -20,6 +20,7 @@ Here you writes your logic in Typescript and publish the compiled version of it 
 - Familiar directory structure.
 
 ## Prerequisites
+- [Yeoman](http://yeoman.io/) should be installed globally.
 - You need [Yarn](https://yarnpkg.com/en/) to use this generator, trust me it's awesome.
 - **[Recommended]** Use this generator after initializing git.
 
