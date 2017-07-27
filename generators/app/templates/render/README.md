@@ -26,7 +26,7 @@ brief change log
 
 *Optionally in the end, mark version of the generator used:*
 
-[![used version of ts-np generator](https://img.shields.io/badge/ts--np-v1.0.0-a5a5a5.svg?style=flat-square)](https://github.com/vajahath/generator-ts-np)
+[![used version of ts-np generator](https://img.shields.io/badge/ts--np-v<%= generatorVersion %>-a5a5a5.svg?style=flat-square)](https://github.com/vajahath/generator-ts-np)
 
 ## Licence
 MIT &copy; [<%= fullName %>](https://twitter.com/<%= twitterUsername %>)

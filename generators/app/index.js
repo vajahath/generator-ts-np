@@ -3,6 +3,8 @@ const Generator = require('yeoman-generator');
 const chalk = require('chalk');
 const yosay = require('yosay');
 
+const GEN_VER = require('../../package.json').version;
+
 module.exports = class extends Generator {
   prompting() {
     // Have Yeoman greet the user.
@@ -62,7 +64,8 @@ module.exports = class extends Generator {
         githubRepository: this.props.githubRepository,
         email: this.props.email,
         twitterUsername: this.props.twitterUsername,
-        fullName: this.props.fullName
+        fullName: this.props.fullName,
+        generatorVersion: GEN_VER
       }
     );
 
