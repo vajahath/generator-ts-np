@@ -15,6 +15,7 @@ Here you write your logic in Typescript and publish the compiled version of it -
 - Compiles down your code to `es5`. (which means the code runs in many versions of node)
 - No global dependencies.
 - Pre-commit hooks for linters.
+- Pre-publish hook to lint and build - so that you never miss that stuff.
 - Vscode integration.
 - Integrated, fully configured mocha testing environment.
 - Write tests in typescript itself.
