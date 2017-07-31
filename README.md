@@ -13,9 +13,11 @@ Here you write your logic in Typescript and publish the compiled version of it -
 - Inspired from [Typescript's own guide for node](https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter).
 - Lint rules adopted from [Google APIs Node.js Client Repo](https://github.com/google/google-auth-library-nodejs) which means higher code quality.
 - Compiles down your code to `es5`. (which means the code runs in many versions of node)
+- No global dependencies.
 - Pre-commit hooks for linters.
 - Vscode integration.
 - Integrated, fully configured mocha testing environment.
+- Write tests in typescript itself.
 - Scaffolds readme with all essential badges and stuffs.
 - Familiar directory structure.
 
@@ -69,6 +71,7 @@ Here is what you get:
 **Special Notes**
 - If you've any credentials/secrets, make a directory `credentials/` at the root of your package, which will be ignored by both git and npm.
 - When you `npm publish`, mainly the content of `dist/` will be published. To know what folders/files will be ignored, take a look at `.npmignore`.
+- The `media/` folder is `.npmignored` by default. So if you need to use some images inside your package, handle `.npmignore` file accordingly. The idea here is that you should not publish any unnecessary stuffs to npm registry.
 
 > :warning: **Important**: Before publishing your package, hand check each and every file and verify everything is perfect. `ts-np` only helps you to get started quickly and step back it self leaving the rest to you.
 
