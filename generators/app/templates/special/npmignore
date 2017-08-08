@@ -1,4 +1,5 @@
 .vscode/
+*.map
 mocha-insights/
 credentials/
 media/
