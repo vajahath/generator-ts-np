@@ -78,16 +78,17 @@ Here is what you get:
 
 ## Handy commands
 To know really what happens under the hood, refer `scripts` section in `package.json` at your package root.
-- `npm run build`: compiles content of `src/` into `dist/` folder
-- `npm run build-watch`: invokes `npm run build` under `watch` mode => means, it looks for file changes and if any, re-builds.
+- `npm run build`: compiles content of `src/` into `dist/` folder with some additional tasks like copying non-ts files cleaning dir etc.
 - `npm run lint`: lints and styles your code with [prettier](https://www.npmjs.com/package/prettier) and [tslint](https://github.com/palantir/tslint) and fixes fixable issues.
 - `npm run lint-noFix`: invokes `npm lint` without fix option => means if any issues found, it just notifies with out fixing it.
 - `npm test` or `npm run test`: runs your tests in `tests/` directory in TypeScript execution environment after temporarily setting env-var `NODE_ENV` to `test`.
 - `npm run test-watch`: invokes `npm test` but in `watch` mode => means, if any file changes, it automatically re-run tests.
+- `npm run clean-build`: clear contents of `dist/` folder.
 
 ### Additional stuffs
 - Your scaffolded package has a pre-commit hook on `npm run lint-noFix`. i.e., while you `git commit` your changes, it runs `npm run lint-noFix` to confirm that there are no issues with linting. If any issues found, it notifies and abort the commit.
 - But don't worry, you can still force a commit by telling git to skip the pre-commit hooks by simply committing using `--no-verify`.
+- Your package has a pre-publish hook on `npm run lint` and `npm run build` means you wont miss to `build` before publishing to npm.
 
 
 ## Issues?
