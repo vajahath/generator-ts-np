@@ -5,14 +5,15 @@
 	"main": "dist/index.js",
 	"scripts": {
 		"prepublishOnly": "echo 'Executing pre-publish stuffs..' && npm run lint && npm run build",
-		"build": "npm run lint && ./node_modules/.bin/tsc && npm run copy-json",
+		"build": "npm run clean-build && npm run lint && ./node_modules/.bin/tsc && npm run copy-json",
 		"buildts-watch": "./node_modules/.bin/tsc -w",
 		"lint": "./node_modules/.bin/prettier --use-tabs --tab-width 4 --write src/**/* && ./node_modules/.bin/tslint -c ./tslint.json -p ./tsconfig.json -t stylish --fix ./src/**/*",
 		"lint-noFix": "./node_modules/.bin/prettier --use-tabs --tab-width 4 src/**/* && ./node_modules/.bin/tslint -c ./tslint.json -p ./tsconfig.json -t stylish ./src/**/*",
 		"test": "./node_modules/.bin/cross-env NODE_ENV=test ./node_modules/.bin/mocha tests/ --compilers ts:ts-node/register,tsx:ts-node/register --recursive --reporter spec",
 		"test-watch": "./node_modules/.bin/cross-env NODE_ENV=test ./node_modules/.bin/mocha tests/ --compilers ts:ts-node/register,tsx:ts-node/register --recursive --reporter spec --watch",
 		"preCommit-msg": "echo 'Precommit checks ...' && exit 0",
-		"copy-json": "./node_modules/.bin/gulp copy-json"
+		"copy-json": "./node_modules/.bin/gulp copy-json",
+		"clean-build": "./node_modules/.bin/gulp clean-build"
 	},
 	"repository": {
 		"type": "git",
@@ -39,7 +40,8 @@
 		"tslint": "^5.5.0",
 		"typescript": "^2.4.2",
 		"gulp": "^3.9.1",
-		"gulp-cli": "^1.4.0"
+		"gulp-cli": "^1.4.0",
+		"del": "^3.0.0"
 	},
 	"pre-commit": ["preCommit-msg", "lint-noFix"]
 }
