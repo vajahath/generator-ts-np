@@ -31,92 +31,61 @@ export function w(...args: any[]): void;
 export function wline(char?: any, length?: any): void;
 
 export namespace d {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace dline {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace e {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace eline {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace h {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace hline {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace i {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace iline {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace line {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace s {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace sline {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace t {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace tline {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace w {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
 
 export namespace wline {
-    const prototype: {
-    };
-
+	const prototype: {};
 }
-

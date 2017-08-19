@@ -1,5 +1,6 @@
 mocha-insights/
 credentials/
+dist/
 
 # Logs
 logs
