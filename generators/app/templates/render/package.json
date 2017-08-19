@@ -5,13 +5,13 @@
     "main": "dist/index.js",
     "typings": "index.d.ts",
     "scripts": {
-        "prepublishOnly": "echo 'Executing pre-publish stuffs..' && npm run lint && npm run build",
-        "build": "npm run clean-build && npm run lint && tsc && npm run copy-json",
-        "lint": "prettier --use-tabs --single-quote --tab-width 4 --write src/**/* typings/**/* tests/**/* && tslint -c tslint.json -p tsconfig.json -t stylish --fix src/**/*",
-        "lint-noFix": "prettier --use-tabs --single-quote --tab-width 4 src/**/* typings/**/* tests/**/* && tslint -c tslint.json -p tsconfig.json -t stylish src/**/*",
-        "test": "cross-env NODE_ENV=test mocha tests/ --compilers ts:ts-node/register,tsx:ts-node/register --recursive --reporter spec",
-        "test-watch": "cross-env NODE_ENV=test mocha tests/ --compilers ts:ts-node/register,tsx:ts-node/register --recursive --reporter spec --watch",
-        "preCommit-msg": "echo 'Precommit checks ...' && exit 0",
+        "prepublishOnly": "node accessories/prepublish-log.js && npm run lint && npm run build",
+        "build": "node accessories/building-log.js && npm run clean-build && npm run lint && tsc && npm run copy-json",
+        "lint": "node accessories/formatting-log.js && prettier --use-tabs --single-quote --tab-width 4 --write src/**/* typings/**/* tests/**/* && node accessories/linting-log.js && tslint -c tslint.json -p tsconfig.json -t stylish --fix src/**/*",
+        "lint-noFix": "node accessories/lint-noFix-log.js && prettier --use-tabs --single-quote --tab-width 4 src/**/* typings/**/* tests/**/* && tslint -c tslint.json -p tsconfig.json -t stylish src/**/*",
+        "test": "node accessories/test-log.js && cross-env NODE_ENV=test mocha tests/ --compilers ts:ts-node/register,tsx:ts-node/register --recursive --reporter spec",
+        "test-watch": "node accessories/test-watch-log.js && cross-env NODE_ENV=test mocha tests/ --compilers ts:ts-node/register,tsx:ts-node/register --recursive --reporter spec --watch",
+        "preCommit-msg": "node accessories/pre-commit-log.js",
         "copy-json": "gulp copy-json",
         "clean-build": "gulp clean-build"
     },
@@ -41,7 +41,8 @@
         "typescript": "^2.4.2",
         "gulp": "^3.9.1",
         "gulp-cli": "^1.4.0",
-        "del": "^3.0.0"
+        "del": "^3.0.0",
+        "lme": "^1.5.3"
     },
     "pre-commit": ["preCommit-msg", "lint-noFix"]
 }
