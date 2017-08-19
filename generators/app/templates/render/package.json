@@ -19,7 +19,7 @@
         "type": "git",
         "url": "git+https://github.com/<%= githubUsername %>/<%= githubRepository %>.git"
     },
-    "author": "Name <<%= email %>> (https://twitter.com/<%= twitterUsername %>)",
+    "author": "<%= fullName %> <<%= email %>> (https://twitter.com/<%= twitterUsername %>)",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/<%= githubUsername %>/<%= githubRepository %>/issues"
