@@ -1,8 +1,9 @@
 # generator-ts-np
 Yeoman Generator For Building Node Packages With Typescript.
 
-[![npm](https://img.shields.io/npm/v/generator-ts-np.svg)]()
+[![npm](https://img.shields.io/npm/v/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 [![Build Status](https://travis-ci.org/vajahath/generator-ts-np.svg?branch=master)](https://travis-ci.org/vajahath/generator-ts-np)
+[![npm](https://img.shields.io/npm/dt/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 
 > :warning: This package is in Beta. You are warned!
 
