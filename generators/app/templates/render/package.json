@@ -5,7 +5,7 @@
     "main": "dist/index.js",
     "typings": "index.d.ts",
     "scripts": {
-        "prepublishOnly": "node accessories/prepublish-log.js && npm run lint && npm run build",
+        "prepublishOnly": "node accessories/prepublish-log.js && npm run build",
         "build": "node accessories/building-log.js && npm run clean-build && npm run lint && tsc && npm run copy-json",
         "lint": "node accessories/formatting-log.js && prettier --use-tabs --single-quote --tab-width 4 --write src/**/* typings/**/* tests/**/* && node accessories/linting-log.js && tslint -c tslint.json -p tsconfig.json -t stylish --fix src/**/*",
         "lint-noFix": "node accessories/lint-noFix-log.js && prettier --use-tabs --single-quote --tab-width 4 src/**/* typings/**/* tests/**/* && tslint -c tslint.json -p tsconfig.json -t stylish src/**/*",
