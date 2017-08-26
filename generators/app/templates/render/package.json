@@ -6,7 +6,7 @@
     "typings": "index.d.ts",
     "scripts": {
         "prepublishOnly": "ts-node accessories/prepublish-log.ts && npm run build",
-        "build": "ts-node accessories/building-log.ts && npm run clean-build && npm run lint && tsc && npm run copy-json",
+        "build": "ts-node accessories/building-log.ts && npm run clean-build && npm run lint && ts-node accessories/real-build-log.ts && tsc && npm run copy-json",
         "lint": "ts-node accessories/formatting-log.ts && prettier --use-tabs --single-quote --tab-width 4 --write src/**/* typings/**/* tests/**/* && ts-node accessories/linting-log.ts && tslint -c tslint.json -p tsconfig.json -t stylish --fix src/**/*",
         "lint-noFix": "ts-node accessories/lint-noFix-log.ts && prettier --use-tabs --single-quote --tab-width 4 src/**/* typings/**/* tests/**/* && tslint -c tslint.json -p tsconfig.json -t stylish src/**/*",
         "test": "ts-node accessories/test-log.ts && cross-env NODE_ENV=test mocha tests/ --compilers ts:ts-node/register,tsx:ts-node/register --recursive --reporter spec",
