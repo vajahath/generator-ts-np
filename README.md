@@ -1,3 +1,6 @@
+> :balloon: **Release Candidate** ts-np `rc-1.0.0` <br>
+> Expected stable release on 29th August 2017.
+
 # generator-ts-np
 Yeoman Generator For Building Node Packages With Typescript.
 
@@ -5,9 +8,8 @@ Yeoman Generator For Building Node Packages With Typescript.
 [![Build Status](https://travis-ci.org/vajahath/generator-ts-np.svg?branch=master)](https://travis-ci.org/vajahath/generator-ts-np)
 [![npm](https://img.shields.io/npm/dt/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 
-> :warning: This package is in Beta. You are warned!
-
 ![TS-NP generator](https://raw.githubusercontent.com/vajahath/generator-ts-np/master/media/logo.png)
+
 ## What?
 This package helps you to scaffold a directory skeleton required to start writing an npm package in Typescript, which is fully configured and ready to contain your module logic. And finally, ready to publish.
 
