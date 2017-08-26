@@ -28,6 +28,8 @@
     "dependencies": {},
     "devDependencies": {
         "@types/chai": "^4.0.1",
+        "@types/del": "^3.0.0",
+        "@types/gulp": "^4.0.4",
         "@types/mocha": "^2.2.41",
         "@types/node": "^8.0.5",
         "chai": "^4.1.0",
