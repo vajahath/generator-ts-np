@@ -1,3 +1,3 @@
-const lme = require('lme');
+import * as lme from 'lme';
 
-lme.w('\nExecuting Pre-publish stuffs ...\n')
+lme.w('\nExecuting Pre-publish stuffs ...\n');
