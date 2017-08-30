@@ -1,6 +1,3 @@
-> :balloon: **Release Candidate** ts-np `rc-1.0.0` <br>
-> Expected stable release on 29th August 2017.
-
 # generator-ts-np
 Yeoman Generator For Building Node Packages With Typescript.
 
@@ -49,25 +46,37 @@ yo ts-np
 #### TL;DR
 Here is what you get:
 ```
-.
+|-- accessories
+|   `-- <a few files for better logging>
+|
+|-- gulpfile.ts
+|-- index.d.ts
+|
 |-- media
 |   `-- cong.jpg
+|
 |-- package.json
 |-- README.md
+|
 |-- src
 |   `-- index.ts
+|
 |-- tests
 |   `-- index.spec.ts
+|
 |-- tsconfig.json
 |-- tslint.json
+|
 |-- typings
 |   |-- lme.d.ts
 |   `-- typings.d.ts
+|
 |-- .gitignore
 |-- .npmignore
 |-- .travis.yml
 |-- .vscode
 `-- .yo-rc.json
+
 ```
 - Additionally when you `npm run build`, a `dist/` folder will also be created with all your compiled code.
 - `media/`: All your gallery.
