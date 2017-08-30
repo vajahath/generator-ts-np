@@ -1,6 +1,6 @@
 {
 	"name": "generator-ts-np",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description":
 		"Yeoman Generator For Building Node Packages With Typescript",
 	"homepage": "https://github.com/vajahath/generator-ts-np#readme",
