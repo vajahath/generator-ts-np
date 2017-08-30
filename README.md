@@ -85,6 +85,7 @@ Here is what you get:
 - `tests/`: All your tests. Mocha looks at this directory.
 
 **Special Notes**
+- In the root, there is a file named `index.d.ts` which serves as the definition file for your package. Alter that file for high quality type definitions.
 - If you've any credentials/secrets, make a directory `credentials/` at the root of your package, which will be ignored by both git and npm.
 - When you `npm publish`, mainly the content of `dist/` will be published. To know what folders/files will be ignored, take a look at `.npmignore`.
 - The `media/` folder is `.npmignored` by default. So if you need to use some images inside your package, handle `.npmignore` file accordingly. The idea here is that you should not publish any unnecessary stuffs to npm registry.
