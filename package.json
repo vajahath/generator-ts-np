@@ -1,18 +1,14 @@
 {
 	"name": "generator-ts-np",
-	"version": "1.0.0",
-	"description": "Yeoman Generator For Building Node Packages With Typescript",
+	"version": "1.0.1",
+	"description":
+		"Yeoman Generator For Building Node Packages With Typescript",
 	"homepage": "https://github.com/vajahath/generator-ts-np#readme",
-	"author": "Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
-	"files": [
-		"generators"
-	],
+	"author":
+		"Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
+	"files": ["generators"],
 	"main": "index.js",
-	"keywords": [
-		"yeoman-generator",
-		"typescript",
-		"yeoman-generator"
-	],
+	"keywords": ["yeoman-generator", "typescript", "yeoman-generator"],
 	"devDependencies": {
 		"yeoman-test": "^1.6.0",
 		"yeoman-assert": "^3.0.0",
