@@ -3,7 +3,7 @@
     "version": "0.0.1",
     "description": "<%= packageDescription %>",
     "main": "dist/index.js",
-    "typings": "index.d.ts",
+    "typings": "dist/index.d.ts",
     "scripts": {
         "prepublishOnly": "ts-node accessories/prepublish-log.ts && npm run build",
         "build": "ts-node accessories/building-log.ts && npm run clean-build && npm run lint && ts-node accessories/real-build-log.ts && tsc && npm run copy-json",
@@ -27,24 +27,6 @@
     "homepage": "https://github.com/<%= githubUsername %>/<%= githubRepository %>#readme",
     "dependencies": {},
     "devDependencies": {
-        "@types/chai": "^4.0.1",
-        "@types/del": "^3.0.0",
-        "@types/gulp": "^4.0.4",
-        "@types/mocha": "^2.2.41",
-        "@types/node": "^8.0.5",
-        "chai": "^4.1.0",
-        "concurrently": "^3.5.0",
-        "cross-env": "^5.0.1",
-        "mocha": "^3.4.2",
-        "pre-commit": "^1.2.2",
-        "prettier": "^1.5.3",
-        "ts-node": "^3.3.0",
-        "tslint": "^5.5.0",
-        "typescript": "^2.4.2",
-        "gulp": "^3.9.1",
-        "gulp-cli": "^1.4.0",
-        "del": "^3.0.0",
-        "lme": "^1.5.3"
     },
     "pre-commit": ["preCommit-msg", "lint-noFix"]
 }
