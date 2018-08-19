@@ -1,68 +1,36 @@
 {
-  "name": "generator-ts-np",
-  "version": "1.0.3",
-  "description": "Yeoman Generator For Building Node Packages With Typescript",
-  "homepage": "https://github.com/vajahath/generator-ts-np#readme",
-  "author": "Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
-  "files": [
-    "generators"
-  ],
-  "main": "index.js",
-  "keywords": [
-    "yeoman-generator",
-    "typescript",
-    "yeoman-generator"
-  ],
-  "devDependencies": {
-    "@types/chai": "^4.1.3",
-    "@types/del": "^3.0.1",
-    "@types/gulp": "^4.0.5",
-    "@types/mocha": "^5.2.0",
-    "@types/node": "^10.1.2",
-    "chai": "^4.1.2",
-    "concurrently": "^3.5.1",
-    "cross-env": "^5.1.6",
-    "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-cli": "^2.0.1",
-    "jest": "^23.5.0",
-    "lme": "^1.5.3",
-    "mocha": "^5.2.0",
-    "nsp": "^3.2.1",
-    "pre-commit": "^1.2.2",
-    "prettier": "^1.12.1",
-    "ts-node": "^6.0.5",
-    "tslint": "^5.10.0",
-    "typescript": "^2.8.3",
-    "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^1.9.1"
-  },
+  "name": "miwago-api",
+  "private": true,
+  "version": "0.0.1",
+  "description": "backend",
   "scripts": {
-    "test": "jest",
-    "prepublish": "nsp check",
-    "lint": "eslint . --fix"
+    "build": "gulp build",
+    "lint-noFix": "gulp lint-noFix",
+    "lint": "npm run prettier && npm run tslint",
+    "test": "npm run build && npm run test-core",
+    "test-core": "jest --config=./ci-jest.config.json --forceExit --detectOpenHandles",
+    "compile": "tsc",
+    "prettier": "prettier \"{src/**/*.*,typings/**/*.*,tests/**/*.*}\" --write",
+    "tslint": "tslint -c tslint.json -p tsconfig.json -t stylish --fix \"{src,tests}/**/*.ts\"",
+    "prepublishOnly": "npm test"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vajahath/generator-ts-np.git"
+    "type": "git"
   },
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vajahath/generator-ts-np/issues"
-  },
-  "dependencies": {
-    "chalk": "^2.4.1",
-    "yeoman-generator": "^2.0.5",
-    "yosay": "^2.0.2"
-  },
-  "jest": {
-    "testEnvironment": "node"
-  },
-  "eslintConfig": {
-    "extends": "xo-space",
-    "env": {
-      "jest": true,
-      "node": true
-    }
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.3.1",
+    "del": "^3.0.0",
+    "fancy-log": "^1.3.2",
+    "gulp": "^3.9.1",
+    "gulp-cli": "^2.0.1",
+    "gulp-prettier-plugin": "^1.3.0",
+    "gulp-tslint": "^8.1.3",
+    "gulp-typescript": "^5.0.0-alpha.2",
+    "jest": "^23.2.0",
+    "prettier": "^1.13.7",
+    "run-sequence": "^2.2.1",
+    "tslint": "^5.10.0",
+    "typescript": "^3.0.0"
   }
 }

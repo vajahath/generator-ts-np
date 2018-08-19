@@ -1,0 +1,12 @@
+package.json
+dist
+node_modules
+*.yaml
+*.yml
+*.sh
+*.html
+*.lock
+*.ejs
+*.*-
+*.sql
+.gitkeep

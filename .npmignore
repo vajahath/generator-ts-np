@@ -1,7 +1,6 @@
 .vscode/
-accessories/
 *.map
-mocha-insights/
+*.ts
 credentials/
 media/
 node_modules/
@@ -9,7 +8,14 @@ src/
 tests/
 typings/
 .editorconfig
+.gitignore
+.npmignore
 .eslintignore
+.prettierignore
+.prettierrc
+ci-jest.config.json
+gulpfile.ts
+nodemon.json
 .eslintrc.yml
 .gitignore
 .npmignore

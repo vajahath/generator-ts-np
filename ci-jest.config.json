@@ -1,0 +1,3 @@
+{
+  "testMatch": ["**/dist/tests/**/*.spec.{js,ts}"]
+}

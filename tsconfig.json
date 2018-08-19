@@ -2,16 +2,15 @@
   "compilerOptions": {
     "module": "commonjs",
     "target": "es5",
+    "declaration": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "dist",
     "baseUrl": ".",
-    "declaration": true,
-    "declarationDir": "./dist",
     "paths": {
       "*": ["node_modules/*", "typings/*"]
     }
   },
-  "include": ["src/**/*", "typings/*"]
+  "include": ["src/**/*", "tests/**/*", "typings/*"]
 }
