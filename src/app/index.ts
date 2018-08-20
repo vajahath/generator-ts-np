@@ -34,14 +34,14 @@ class K extends Generator {
         type: 'input',
         name: 'packageDescription',
         message: 'Package Description',
-        default: this.appname + ' Description',
+        default: this.appname + ' cool description',
       },
       {
         type: 'input',
         name: 'githubUsername',
         message:
           'Github Username (this will help scaffolding the package.json)',
-        default: '',
+        default: 'non-existent-voldemort',
         store: true,
       },
       {
@@ -55,21 +55,21 @@ class K extends Generator {
         type: 'input',
         name: 'email',
         message: 'Your Email',
-        default: '',
+        default: 'voldemort@hogwarts.dementors',
         store: true,
       },
       {
         type: 'input',
         name: 'twitterUsername',
         message: 'Twitter Username without @',
-        default: '',
+        default: '__call_me_Vol',
         store: true,
       },
       {
         type: 'input',
         name: 'fullName',
         message: 'Your full name to appear in README',
-        default: '',
+        default: 'Tom Marvolo Riddle',
         store: true,
       },
       {
