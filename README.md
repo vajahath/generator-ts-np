@@ -1,50 +1,65 @@
 # generator-ts-np
-Yeoman Generator For Building Node Packages With Typescript.
+
+Yeoman Generator For Building Node Packages :package: With Typescript.
 
 [![npm](https://img.shields.io/npm/v/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 [![Build Status](https://travis-ci.org/vajahath/generator-ts-np.svg?branch=master)](https://travis-ci.org/vajahath/generator-ts-np)
 [![npm](https://img.shields.io/npm/dt/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 
-![TS-NP generator](https://raw.githubusercontent.com/vajahath/generator-ts-np/master/media/logo.png)
+![TS-NP generator](media/logo.png)
 
 ## What?
+
 This package helps you to scaffold a directory skeleton required to start writing an npm package in Typescript, which is fully configured and ready to contain your module logic. And finally, ready to publish.
 
 Here you write your logic in Typescript and publish the compiled version of it - easily.
 
 ## Why?
+
 - Inspired from [Typescript's own guide for node](https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter).
-- Lint rules adopted from [Google APIs Node.js Client Repo](https://github.com/google/google-auth-library-nodejs) which means higher code quality.
-- Compiles down your code to `es5`. (which means the code runs in many versions of node)
+- Lint rules inspired from [Google APIs Node.js Client Repo](https://github.com/google/google-auth-library-nodejs) which means higher code quality.
+- Compiles down your code to `es6`.
 - No global dependencies.
 - Pre-commit hooks for linters.
 - Pre-publish hook to lint and build - so that you never miss that stuff.
 - Vscode integration.
-- Integrated, fully configured mocha testing environment.
+- Integrated, fully configured [Jest](https://jestjs.io/) testing environment.
 - Write tests in typescript itself.
 - Scaffolds readme with all essential badges and stuffs.
 - Familiar directory structure.
+- Yarn/npm. Your choice.
+
+[![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)]()
+
+_You don't have to write any type definitions here. It will be packaged within your package._
 
 ## Prerequisites
+
 - [Yeoman](http://yeoman.io/) should be installed globally.
-- You need [Yarn](https://yarnpkg.com/en/) to use this generator, trust me it's awesome.
-- **[Recommended]** Use this generator after initializing git.
+- **[Recommended]** Node version 8 or later.
 
 ## Install
-```
+
+```bash
 npm install -g generator-ts-np
 ```
 
 ## Usage
+
 ```
 yo ts-np
 ```
-### Have a peek
-![](media/ts-np-eg1.png)
+
+### Have a peek (Linux/Windows/Mac)
+
+![](media/peek.png)
 
 ## Directory structure
+
 #### TL;DR
+
 Here is what you get:
+
 ```
 |-- accessories
 |   `-- <a few files for better logging>
@@ -76,8 +91,8 @@ Here is what you get:
 |-- .travis.yml
 |-- .vscode
 `-- .yo-rc.json
-
 ```
+
 - Additionally when you `npm run build`, a `dist/` folder will also be created with all your compiled code.
 - `media/`: All your gallery.
 - `src/`: All your source code.
@@ -85,6 +100,7 @@ Here is what you get:
 - `tests/`: All your tests. Mocha looks at this directory.
 
 **Special Notes**
+
 - In the root, there is a file named `index.d.ts` which serves as the definition file for your package. Alter that file for high quality type definitions.
 - If you've any credentials/secrets, make a directory `credentials/` at the root of your package, which will be ignored by both git and npm.
 - When you `npm publish`, mainly the content of `dist/` will be published. To know what folders/files will be ignored, take a look at `.npmignore`.
@@ -93,7 +109,9 @@ Here is what you get:
 > :warning: **Important**: Before publishing your package, hand check each and every file and verify everything is perfect. `ts-np` only helps you to get started quickly and step back it self leaving the rest to you.
 
 ## Handy commands
+
 To know really what happens under the hood, refer `scripts` section in `package.json` at your package root.
+
 - `npm run build`: compiles content of `src/` into `dist/` folder with some additional tasks like copying non-ts files cleaning dir etc.
 - `npm run lint`: lints and styles your code with [prettier](https://www.npmjs.com/package/prettier) and [tslint](https://github.com/palantir/tslint) and fixes fixable issues.
 - `npm run lint-noFix`: invokes `npm lint` without fix option => means if any issues found, it just notifies with out fixing it.
@@ -102,13 +120,15 @@ To know really what happens under the hood, refer `scripts` section in `package.
 - `npm run clean-build`: clear contents of `dist/` folder.
 
 ### Additional stuffs
+
 - Your scaffolded package has a pre-commit hook on `npm run lint-noFix`. i.e., while you `git commit` your changes, it runs `npm run lint-noFix` to confirm that there are no issues with linting. If any issues found, it notifies and abort the commit.
 - But don't worry, you can still force a commit by telling git to skip the pre-commit hooks by simply committing using `--no-verify`.
 - Your package has a pre-publish hook on `npm run lint` and `npm run build` means you wont miss to `build` before publishing to npm.
 
-
 ## Issues?
+
 If you found any issues, kindly report at [github issues](https://github.com/vajahath/generator-ts-np/issues).
 
 ## Licence
+
 MIT &copy; [Vajahath Ahmed](https://twitter.com/vajahath7)
