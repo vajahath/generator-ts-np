@@ -4,7 +4,7 @@ import yosay = require('yosay');
 const chalk = require('chalk'); // tslint:disable-line:no-var-requires
 const GEN_VER = require('../../package.json').version; // tslint:disable-line:no-var-requires
 
-export = class extends Generator {
+class K extends Generator {
   public props: any;
 
   constructor(args: any, opts: any) {
@@ -82,21 +82,29 @@ export = class extends Generator {
   }
 
   public writing() {
-    this.fs.copyTpl(this.templatePath('render/**'), this.destinationPath(), {
-      packageName: this.props.packageName,
-      packageDescription: this.props.packageDescription,
-      githubUsername: this.props.githubUsername,
-      githubRepository: this.props.githubRepository,
-      email: this.props.email,
-      twitterUsername: this.props.twitterUsername,
-      fullName: this.props.fullName,
-      generatorVersion: GEN_VER,
-    });
+    this.fs.copyTpl(
+      this.templatePath('../../template/render/**'),
+      this.destinationPath(),
+      {
+        packageName: this.props.packageName,
+        packageDescription: this.props.packageDescription,
+        githubUsername: this.props.githubUsername,
+        githubRepository: this.props.githubRepository,
+        email: this.props.email,
+        twitterUsername: this.props.twitterUsername,
+        fullName: this.props.fullName,
+        generatorVersion: GEN_VER,
+      },
+    );
 
     // move static files
-    this.fs.copy(this.templatePath('static/**'), this.destinationPath(), {
-      globOptions: { dot: true },
-    });
+    this.fs.copy(
+      this.templatePath('../../template/static/**'),
+      this.destinationPath(),
+      {
+        globOptions: { dot: true },
+      },
+    );
 
     // Treate special files
     // this.fs.copy(
@@ -116,4 +124,6 @@ export = class extends Generator {
       yarn: true,
     });
   }
-};
+}
+
+export = K;
