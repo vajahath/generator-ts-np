@@ -19,10 +19,7 @@ const PRETTIER_SRC = ['src/**/*.*', 'typings/**/*.*', 'test/**/*.*'];
 const PRETTIER_IGNORE = [
   '!**/package.json',
   '!**/dist/**/*.*',
-  '!**/src/views/**/*.*',
-  '!**/src/public/**/*.*',
   '!**/node_modules/**/*.*',
-  '!**/temp/**/*.*',
   '!**/*.yaml',
   '!**/*.yml',
   '!**/*.sh',

@@ -1,7 +1,8 @@
 .vscode/
 *.map
 *.ts
-credentials/
+credentials
+private
 media/
 node_modules/
 src/

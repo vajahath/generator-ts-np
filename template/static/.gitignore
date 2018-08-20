@@ -1,16 +1,8 @@
-mocha-insights/
-# credentials/
+mocha-insights
+private
+credentials
 dist
 schema-dist
-src/config/private
-schema-doc.md
-schema-doc.html
-src/jobs/company-uploads/temp/**
-!src/jobs/company-uploads/temp/**/
-!.gitkeep
-
-src/jobs/user-uploads/temp/**
-!src/jobs/user-uploads/temp/**/
 !.gitkeep
 
 # Logs
