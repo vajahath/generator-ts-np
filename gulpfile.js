@@ -15,10 +15,10 @@ function pipeErrHandler(err) {
   process.exit(1);
 }
 
-const PRETTIER_SRC = ['src/**/*.*', 'typings/**/*.*', 'test/**/*.*'];
+const PRETTIER_SRC = ['src/**/*.ts', 'typings/**/*.ts', 'test/**/*.ts'];
 const PRETTIER_IGNORE = [
   '!**/package.json',
-  '!**/dist/**/*.*',
+  '!**/generators/**/*.*',
   '!**/src/views/**/*.*',
   '!**/src/public/**/*.*',
   '!**/node_modules/**/*.*',
@@ -43,22 +43,8 @@ const PRETTIER_CONFIG = {
   printWidth: 80,
 };
 
-// copy assets files from src to dist
-gulp.task('copy-assets', () => {
-  return gulp
-    .src([
-      'package.json',
-      'package-lock.json',
-      'yarn.lock',
-      'src/**/*',
-      '!src/**/*.ts',
-      '!**/node_modules/**/*',
-    ])
-    .pipe(gulp.dest('dist/src/'));
-});
-
 gulp.task('clean-build', () => {
-  return del.sync(['dist/**/*', 'dist/**/.*']);
+  return del.sync(['generators/**/*', 'generators/**/.*']);
 });
 
 // build process
@@ -103,7 +89,6 @@ gulp.task('build', cb => {
     'clean-build',
     ['prettier-noFix', 'tslint-noFix'],
     'compile-code',
-    'copy-assets',
     cb,
   );
 });

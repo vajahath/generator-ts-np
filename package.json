@@ -1,11 +1,13 @@
 {
   "name": "generator-ts-np",
   "private": true,
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Yeoman Generator For Building Node Packages With Typescript",
   "homepage": "https://github.com/vajahath/generator-ts-np#readme",
   "author": "Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
-  "main": "dist/src/index.js",
+  "files": [
+    "generators"
+  ],
   "keywords": [
     "yeoman-generator",
     "typescript",
@@ -21,7 +23,7 @@
     "prettier": "prettier \"{src/**/*.*,typings/**/*.*,tests/**/*.*}\" --write",
     "tslint": "tslint -c tslint.json -p tsconfig.json -t stylish --fix \"{src,tests}/**/*.ts\"",
     "prepublishOnly": "npm test",
-    "link-me": "npm run build && cd dist/src && npm link"
+    "link-me": "npm run build && npm link"
   },
   "repository": {
     "type": "git",

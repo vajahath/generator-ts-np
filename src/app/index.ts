@@ -1,8 +1,11 @@
+import { join as pathJoin } from 'path';
 import * as Generator from 'yeoman-generator';
 import yosay = require('yosay');
 
 const chalk = require('chalk'); // tslint:disable-line:no-var-requires
 const GEN_VER = require('../../package.json').version; // tslint:disable-line:no-var-requires
+
+const templatePath = pathJoin(__dirname, '../', '../', 'template');
 
 class K extends Generator {
   public props: any;
@@ -15,7 +18,8 @@ class K extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        `Scaffold your next node package with ${chalk.red('ts-np')} generator!`,
+        `Scaffold your next node package with ${chalk.red('ts-np')} generator!
+        template path: ${templatePath}`,
       ),
     );
 
@@ -83,7 +87,7 @@ class K extends Generator {
 
   public writing() {
     this.fs.copyTpl(
-      this.templatePath('../../template/render/**'),
+      this.templatePath(`${templatePath}/render/**`),
       this.destinationPath(),
       {
         packageName: this.props.packageName,
@@ -99,7 +103,7 @@ class K extends Generator {
 
     // move static files
     this.fs.copy(
-      this.templatePath('../../template/static/**'),
+      this.templatePath(`${templatePath}/static/**`),
       this.destinationPath(),
       {
         globOptions: { dot: true },

@@ -1,6 +1,7 @@
 mocha-insights/
 # credentials/
 dist
+generators
 schema-dist
 src/config/private
 schema-doc.md
