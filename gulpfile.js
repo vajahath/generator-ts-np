@@ -44,7 +44,7 @@ const PRETTIER_CONFIG = {
 };
 
 gulp.task('clean-build', () => {
-  return del.sync(['generators/**/*', 'generators/**/.*']);
+  return del.sync(['generators/**/*', 'generators/**/.*', 'test-dist/**/*']);
 });
 
 // build process
@@ -80,6 +80,15 @@ gulp.task('compile-code', () => {
     .pipe(gulp.dest(appCodeTsProject.options.outDir));
 });
 
+gulp.task('compile-test', () => {
+  const testCodeTsProject = gulpTs.createProject('ts-spec-config.json');
+  return testCodeTsProject
+    .src()
+    .pipe(testCodeTsProject())
+    .on('error', pipeErrHandler)
+    .pipe(gulp.dest(testCodeTsProject.options.outDir));
+});
+
 gulp.task('lint-noFix', cb => {
   gulpRunSequence(['prettier-noFix', 'tslint-noFix'], cb);
 });
@@ -88,7 +97,7 @@ gulp.task('build', cb => {
   gulpRunSequence(
     'clean-build',
     ['prettier-noFix', 'tslint-noFix'],
-    'compile-code',
+    ['compile-code', 'compile-test'],
     cb,
   );
 });
