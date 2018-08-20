@@ -19,7 +19,7 @@ Here you write your logic in Typescript and publish the compiled version of it -
 - Because we're lazy.
 - Inspired from [Typescript's own guide for node](https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter).
 - Lint rules inspired from [Google APIs Node.js Client Repo](https://github.com/google/google-auth-library-nodejs) which means higher code quality.
-- Compiles down your code to `es6`.
+- Compiles down your code to `es6`. (You can change this)
 - No global dependencies.
 - No own dependencies other than dev-dependencies.
 - Pre-publish hook to lint and build - so that you never miss that stuff.
@@ -121,6 +121,10 @@ Here is what you get:
 - The `media/` folder is `.npmignored` by default. So if you need to use some images inside your package, handle `.npmignore` file accordingly. The idea here is that **you should not publish any unnecessary stuffs to npm registry**.
 
 > :warning: **Important**: Before publishing your package, hand check each file and verify everything is perfect. `ts-np` only helps you to get started quickly and step back it self leaving the rest to you.
+
+## Sponsor
+
+![](media/sponsor.jpg)
 
 ## Issues?
 
