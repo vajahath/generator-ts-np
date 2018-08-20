@@ -34,12 +34,14 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
+    "update-notifier": "^2.5.0",
     "yeoman-generator": "^3.1.1",
     "yosay": "^2.0.2"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "@types/jest": "^23.3.1",
+    "@types/update-notifier": "^2.2.0",
     "@types/yeoman-generator": "^2.0.3",
     "@types/yosay": "^0.0.29",
     "del": "^3.0.0",

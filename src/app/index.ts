@@ -1,9 +1,14 @@
 import { join as pathJoin } from 'path';
 import * as Generator from 'yeoman-generator';
 import yosay = require('yosay');
+import * as updateNotifier from 'update-notifier';
 
 const chalk = require('chalk'); // tslint:disable-line:no-var-requires
-const GEN_VER = require('../../package.json').version; // tslint:disable-line:no-var-requires
+const pkg: any = require('../../package.json'); // tslint:disable-line:no-var-requires
+const GEN_VER = pkg.version;
+
+// update-notifier
+updateNotifier({ pkg }).notify();
 
 const templatePath = pathJoin(__dirname, '../', '../', 'template');
 
