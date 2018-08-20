@@ -1,16 +1,12 @@
 {
-  "name": "generator-ts-np",
+  "name": "<%= packageName %>",
   "private": true,
-  "version": "1.1.0.beta-1",
-  "description": "Yeoman Generator For Building Node Packages With Typescript",
-  "homepage": "https://github.com/vajahath/generator-ts-np#readme",
-  "author": "Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
+  "version": "1.0.0",
+  "description": "<%= packageDescription %>",
+  "homepage": "https://github.com/<%= githubUsername %>/<%= githubRepository %>#readme",
+  "author": "<%= fullName %> <<%= email%>> (https://twitter.com/<%= twitterUsername %>)",
   "main": "dist/src/index.js",
-  "keywords": [
-    "yeoman-generator",
-    "typescript",
-    "yeoman-generator"
-  ],
+  "keywords": [],
   "scripts": {
     "build": "gulp build",
     "lint-noFix": "gulp lint-noFix",
@@ -24,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vajahath/generator-ts-np.git"
+    "url": "git+https://github.com/<%= githubUsername %>/<%= githubRepository %>.git"
   },
   "bugs": {
-    "url": "https://github.com/vajahath/generator-ts-np/issues"
+    "url": "https://github.com/<%= githubUsername %>/<%= githubRepository %>/issues"
   },
   "dependencies": {
     "chalk": "^2.4.1",

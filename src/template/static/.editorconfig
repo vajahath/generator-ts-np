@@ -1,0 +1,13 @@
+# top-most EditorConfig file
+root = true
+
+insert_final_newline = true
+tab_width = 2
+
+[*.js]
+indent_style = space
+indent_size = 2
+
+[*.ts]
+indent_style = space
+indent_size = 2
