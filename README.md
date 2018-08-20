@@ -6,7 +6,7 @@ Yeoman Generator For Building Node Packages :package: With Typescript.
 [![Build Status](https://travis-ci.org/vajahath/generator-ts-np.svg?branch=master)](https://travis-ci.org/vajahath/generator-ts-np)
 [![npm](https://img.shields.io/npm/dt/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 
-![TS-NP generator](https://raw.githubusercontent.com/vajahath/generator-ts-np/master/media/logo.png)
+![TS-NP generator](media/logo.png)
 
 ## What?
 
@@ -40,16 +40,8 @@ _You don't have to write any type definitions here. It will be packaged within y
 
 ## Install
 
-Npm
-
 ```bash
 npm install -g generator-ts-np
-```
-
-Yarn
-
-```bash
-yarn global add generator-ts-np
 ```
 
 ## Usage
@@ -58,9 +50,9 @@ yarn global add generator-ts-np
 yo ts-np
 ```
 
-### Have a peek
+### Have a peek (Linux/Windows/Mac)
 
-![](media/ts-np-eg1.png)
+![](media/peek.png)
 
 ## Directory structure
 
