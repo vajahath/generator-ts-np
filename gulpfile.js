@@ -56,13 +56,28 @@ gulp.task('prettier-noFix', () =>
     .on('error', pipeErrHandler),
 );
 
-gulp.task('tslint-noFix', () => {
+gulp.task('tslint-noFix-code', () => {
   const lintProgram = tslint.Linter.createProgram('./tsconfig.json');
   /**
    * this pipe is exit code ready
    */
   return gulp
-    .src(['src/**/*.ts', 'tests/**/*.ts', ...PRETTIER_IGNORE])
+    .src(['src/**/*.ts', ...PRETTIER_IGNORE])
+    .pipe(
+      gulpTslint({
+        program: lintProgram,
+      }),
+    )
+    .pipe(gulpTslint.report());
+});
+
+gulp.task('tslint-noFix-test', () => {
+  const lintProgram = tslint.Linter.createProgram('./ts-spec-config.json');
+  /**
+   * this pipe is exit code ready
+   */
+  return gulp
+    .src(['tests/**/*.ts', ...PRETTIER_IGNORE])
     .pipe(
       gulpTslint({
         program: lintProgram,
@@ -90,13 +105,16 @@ gulp.task('compile-test', () => {
 });
 
 gulp.task('lint-noFix', cb => {
-  gulpRunSequence(['prettier-noFix', 'tslint-noFix'], cb);
+  gulpRunSequence(
+    ['prettier-noFix', 'tslint-noFix-code', 'tslint-noFix-test'],
+    cb,
+  );
 });
 
 gulp.task('build', cb => {
   gulpRunSequence(
     'clean-build',
-    ['prettier-noFix', 'tslint-noFix'],
+    ['prettier-noFix', 'tslint-noFix-code', 'tslint-noFix-test'],
     ['compile-code', 'compile-test'],
     cb,
   );
