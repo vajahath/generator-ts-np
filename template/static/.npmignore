@@ -1,4 +1,5 @@
 .vscode/
+dist/tests
 *.map
 *.ts
 credentials
