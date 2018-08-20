@@ -26,7 +26,7 @@ describe('generator-ts-np:app', () => {
       'gulpfile.js',
       'tslint.json',
       'tsconfig.json',
-      // 'media/cong.jpg',
+      'media/start.jpg',
     ]);
   });
 

@@ -8,19 +8,20 @@ Yeoman Generator For Building Node Packages :package: With Typescript.
 
 ![TS-NP generator](media/logo.png)
 
-## What?
+## What
 
 This package helps you to scaffold a directory skeleton required to start writing an npm package in Typescript, which is fully configured and ready to contain your module logic. And finally, ready to publish.
 
 Here you write your logic in Typescript and publish the compiled version of it - easily.
 
-## Why?
+## Why
 
+- Because we're lazy.
 - Inspired from [Typescript's own guide for node](https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter).
 - Lint rules inspired from [Google APIs Node.js Client Repo](https://github.com/google/google-auth-library-nodejs) which means higher code quality.
 - Compiles down your code to `es6`.
 - No global dependencies.
-- Pre-commit hooks for linters.
+- No own dependencies other than dev-dependencies.
 - Pre-publish hook to lint and build - so that you never miss that stuff.
 - Vscode integration.
 - Integrated, fully configured [Jest](https://jestjs.io/) testing environment.
@@ -29,7 +30,7 @@ Here you write your logic in Typescript and publish the compiled version of it -
 - Familiar directory structure.
 - Yarn/npm. Your choice.
 
-[![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)]()
+[![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
 _You don't have to write any type definitions here. It will be packaged within your package._
 
@@ -54,76 +55,72 @@ yo ts-np
 
 ![](media/peek.png)
 
+## Handy commands
+
+To know really what happens under the hood, refer `scripts` section in `package.json` at your package root.
+
+| Script                       | What is it                                                                                                                                                    |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `npm test` or `npm run test` | Featured Command :star:. This is a right combination of all other commands. (`build`s and runs your tests in `tests/` directory)                              |
+| `npm run build`              | compiles content of `src/` into `dist/` folder with some additional tasks like copying non-ts files cleaning dir, linting, prettifying etc.                   |
+| `npm run lint`               | lints and styles your code with [prettier](https://www.npmjs.com/package/prettier) and [tslint](https://github.com/palantir/tslint) and fixes fixable issues. |
+| `npm run lint-noFix`         | invokes `npm lint` without fix option => means if any issues found, it just notifies with out fixing it.                                                      |
+
 ## Directory structure
 
 #### TL;DR
 
 Here is what you get:
 
-```
-|-- accessories
-|   `-- <a few files for better logging>
+```mono
+.
+|   .editorconfig
+|   .gitignore
+|   .npmignore
+|   .prettierignore
+|   .prettierrc
+|   .travis.yml
+|   .yo-rc.json
+|   ci-jest.config.json
+|   gulpfile.js
+|   package.json
+|   README.md
+|   tree.txt
+|   tsconfig.json
+|   tslint.json
 |
-|-- gulpfile.ts
-|-- index.d.ts
++---.roughs
+|       README.md
 |
-|-- media
-|   `-- cong.jpg
++---.vscode
+|       launch.json
 |
-|-- package.json
-|-- README.md
++---media
+|       start.jpg
 |
-|-- src
-|   `-- index.ts
++---src
+|       index.ts
 |
-|-- tests
-|   `-- index.spec.ts
++---tests
+|       add.spec.ts
 |
-|-- tsconfig.json
-|-- tslint.json
-|
-|-- typings
-|   |-- lme.d.ts
-|   `-- typings.d.ts
-|
-|-- .gitignore
-|-- .npmignore
-|-- .travis.yml
-|-- .vscode
-`-- .yo-rc.json
+\---typings
+        typings.d.ts
 ```
 
-- Additionally when you `npm run build`, a `dist/` folder will also be created with all your compiled code.
+- Additionally when you `npm run build` or `npm test`, a `dist` folder will also be created with all your compiled code. **`dist/src` is the directory which is going to be published to Npm.**
 - `media/`: All your gallery.
 - `src/`: All your source code.
-- `typings/`: All your type definitions
-- `tests/`: All your tests. Mocha looks at this directory.
+- `typings/`: All your custom type definitions
+- `tests/`: All your tests. Jest Test Runner looks at this directory.
 
-**Special Notes**
+#### Special Notes
 
-- In the root, there is a file named `index.d.ts` which serves as the definition file for your package. Alter that file for high quality type definitions.
-- If you've any credentials/secrets, make a directory `credentials/` at the root of your package, which will be ignored by both git and npm.
+- If you've any credentials/secrets, make a directory `credentials/` or `private/` at the root of your package, which will be ignored by both git and npm.
 - When you `npm publish`, mainly the content of `dist/` will be published. To know what folders/files will be ignored, take a look at `.npmignore`.
-- The `media/` folder is `.npmignored` by default. So if you need to use some images inside your package, handle `.npmignore` file accordingly. The idea here is that you should not publish any unnecessary stuffs to npm registry.
+- The `media/` folder is `.npmignored` by default. So if you need to use some images inside your package, handle `.npmignore` file accordingly. The idea here is that **you should not publish any unnecessary stuffs to npm registry**.
 
-> :warning: **Important**: Before publishing your package, hand check each and every file and verify everything is perfect. `ts-np` only helps you to get started quickly and step back it self leaving the rest to you.
-
-## Handy commands
-
-To know really what happens under the hood, refer `scripts` section in `package.json` at your package root.
-
-- `npm run build`: compiles content of `src/` into `dist/` folder with some additional tasks like copying non-ts files cleaning dir etc.
-- `npm run lint`: lints and styles your code with [prettier](https://www.npmjs.com/package/prettier) and [tslint](https://github.com/palantir/tslint) and fixes fixable issues.
-- `npm run lint-noFix`: invokes `npm lint` without fix option => means if any issues found, it just notifies with out fixing it.
-- `npm test` or `npm run test`: runs your tests in `tests/` directory in TypeScript execution environment after temporarily setting env-var `NODE_ENV` to `test`.
-- `npm run test-watch`: invokes `npm test` but in `watch` mode => means, if any file changes, it automatically re-run tests.
-- `npm run clean-build`: clear contents of `dist/` folder.
-
-### Additional stuffs
-
-- Your scaffolded package has a pre-commit hook on `npm run lint-noFix`. i.e., while you `git commit` your changes, it runs `npm run lint-noFix` to confirm that there are no issues with linting. If any issues found, it notifies and abort the commit.
-- But don't worry, you can still force a commit by telling git to skip the pre-commit hooks by simply committing using `--no-verify`.
-- Your package has a pre-publish hook on `npm run lint` and `npm run build` means you wont miss to `build` before publishing to npm.
+> :warning: **Important**: Before publishing your package, hand check each file and verify everything is perfect. `ts-np` only helps you to get started quickly and step back it self leaving the rest to you.
 
 ## Issues?
 
