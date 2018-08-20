@@ -18,8 +18,9 @@ class K extends Generator {
     // Have Yeoman greet the user.
     this.log(
       yosay(
-        `Scaffold your next node package with ${chalk.red('ts-np')} generator!
-        template path: ${templatePath}`,
+        `Scaffold your next node package with ${chalk.yellow(
+          'ts-np',
+        )} generator!`,
       ),
     );
 
@@ -122,10 +123,11 @@ class K extends Generator {
   }
 
   public install() {
+    this.log(`Installing dependencies with ${this.props.packageManager}`);
     this.installDependencies({
-      npm: false,
+      npm: this.props.packageManager === 'npm',
       bower: false,
-      yarn: true,
+      yarn: this.props.packageManager === 'yarn',
     });
   }
 }
