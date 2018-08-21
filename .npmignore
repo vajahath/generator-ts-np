@@ -2,6 +2,7 @@
 *.map
 *.ts
 credentials/
+test-dist/
 media/
 node_modules/
 src/
