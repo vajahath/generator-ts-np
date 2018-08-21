@@ -9,7 +9,6 @@ script:
 - npm run test
 
 before_deploy:
-# - yarn install
 - npm run test
 
 deploy:
