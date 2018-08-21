@@ -26,7 +26,7 @@ describe('generator-ts-np:app', () => {
       'gulpfile.js',
       'tslint.json',
       'tsconfig.json',
-      'media/start.jpg',
+      'media/.gitkeep',
     ]);
   });
 
