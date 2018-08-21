@@ -96,7 +96,7 @@ Here is what you get:
 |       launch.json
 |
 +---media
-|       start.jpg
+|       .gitkeep
 |
 +---src
 |       index.ts
