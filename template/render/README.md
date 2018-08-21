@@ -9,7 +9,7 @@
 [![Built with generator-ts-np](https://img.shields.io/badge/scaffolding-ts_np-2699ad.svg)](https://github.com/vajahath/generator-ts-np)
 [![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
-![](media/start.jpg)
+![](https://cataas.com/cat)
 
 ## Install
 
