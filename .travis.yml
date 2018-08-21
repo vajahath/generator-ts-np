@@ -9,13 +9,13 @@ script:
 - npm run test
 
 before_deploy:
-- yarn install
+# - yarn install
 - npm run test
 
 deploy:
   provider: npm
   email: vajuoff.1@gmail.com
-  skip_cleanup: false
+  skip_cleanup: true
   api_key:
     secure: NK7QpaPJ0ktnQmsrXh9a9k7We4INRmqEZMj+UxJnrA5HkuMI3d8FLRi6XV6vOrPR7eUPMGtTNlnXJmSxxlw8lsE6aJomg1aDIbQutaVEHk1HIKhyhCI9qibW9uA5c5er+GcnYxnoWJNjHMHSsu3TXCaf9qXtUhbqlaJCftVd9y1Lr+JlFolWMkZpgx9QCDvg3WBgEjpzCkyTxme9AHDkz89AOC+WXasXuemkTZxilxL3EQHoqx8qp7OMsU6m+szgjDtChzUZ0DheQKASx6HsUNoNmtF379w+dWoDroU+TKB1OEyien7GeuWZ+uAdoO+NI+zgV+kCYMKzKXS4GZOUBEw56/EooaQnHxLiA9pT+S3AX0IEwbwqzW682V1pRO2p05orrTUwTbSLFeu1TAa19RBnXBTjbhwqrZF23/uS1lCdDZGcMdy2xXjGHoUERMy8AXCZANuQx1DqynF+tN7IsPjQTloXhFhRs0kmXtDn7OUK9UJvb1Ek4R79nWnnXG47spg1DKOtl5idkq2pVQGIMHyh7mBXgpH0hh77QRapYzDRMC0AFlfAOJBOKNZgebab9AyhEpe+fk3w77iEr3jGZGLIP301jMN7XMZRoOUTRy9hOihKZXDmQ9X7h81e01a6zRQ+/A/X80n+NnPleVV7jofDPROig8mDqfM1HP9uMII=
   on:
