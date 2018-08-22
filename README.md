@@ -1,6 +1,6 @@
 # generator-ts-np
 
-Yeoman Generator For Building Node Packages :package: With Typescript.
+[Yeoman](http://yeoman.io/) Generator For Building Node Packages :package: With [Typescript](https://www.typescriptlang.org).
 
 [![npm](https://img.shields.io/npm/v/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 [![Build Status](https://travis-ci.org/vajahath/generator-ts-np.svg?branch=master)](https://travis-ci.org/vajahath/generator-ts-np)
