@@ -16,9 +16,9 @@ Here you write your logic in Typescript and publish the compiled version of it -
 
 ## Why
 
-- Because we're lazy.
 - Inspired from [Typescript's own guide for node](https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter).
 - Lint rules inspired from [Google APIs Node.js Client Repo](https://github.com/google/google-auth-library-nodejs) which means higher code quality.
+- (Optional) Travis CI integration and Continuous Deployment to NPM when you push a tag. [Experimental :syringe:]
 - Compiles down your code to `es6`. (You can change this)
 - No global dependencies.
 - No own dependencies other than dev-dependencies.
@@ -65,6 +65,36 @@ To know really what happens under the hood, refer `scripts` section in `package.
 | `npm run build`              | compiles content of `src/` into `dist/` folder with some additional tasks like copying non-ts files cleaning dir, linting, prettifying etc.                   |
 | `npm run lint`               | lints and styles your code with [prettier](https://www.npmjs.com/package/prettier) and [tslint](https://github.com/palantir/tslint) and fixes fixable issues. |
 | `npm run lint-noFix`         | invokes `npm lint` without fix option => means if any issues found, it just notifies with out fixing it.                                                      |
+
+## Travis CI/CD
+
+This is disabled by default. Following are the things you would normally do while publishing your module(with out CI/CD).
+
+- run tests
+- test your package against few stable versions
+- build
+- create a git tag for that version
+- push tags
+- npm publish
+
+With CI/CD enabled, all you have to do is:
+
+- create git tag (`git tag v<version>`)
+- push tags (`git push --tags`)
+
+Travis will do all other things for you, including publishing your package to npm.
+
+### How To Enable Travis CI/CD
+
+Open `.travis.ym` file in your scaffolded directory structure and follow instructions over there.
+
+### How To Publish Your Package
+
+After hand checking everything is correct,
+
+- `$ git tag vX.X.X` (example: `git tag v1.5.3`)
+- `$ git push --tags`
+- Head to travis page and see it is being deployed
 
 ## Directory structure
 

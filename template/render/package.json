@@ -1,6 +1,5 @@
 {
   "name": "<%= packageName %>",
-  "private": true,
   "version": "1.0.0",
   "description": "<%= packageDescription %>",
   "homepage": "https://github.com/<%= githubUsername %>/<%= githubRepository %>#readme",

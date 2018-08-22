@@ -1,9 +1,36 @@
 sudo: false
 language: node_js
 node_js:
-  - "node"
-  - "lts/*"
-  - "8"
-  - "10"
+- node
+- lts/*
+
 script:
-  - npm run test
+- npm run test
+
+# ------------------------------------------------------------------------
+# To enable Continuous Deployment (CD), uncommnet following code
+# ------------------------------------------------------------------------
+
+# before_deploy:
+# - npm run test
+# deploy:
+#   provider: npm
+#   skip_cleanup: true
+#   email: #<YOUR NPM EMAIL>
+#   # -----------------------------------------------------------------------
+#   # To obtain YOUR ENCRYPTED AUTH KEY,
+#   # Install travis cli: https://github.com/travis-ci/travis.rb#installation
+#   # Login to npmjs.com and go to Tokens page under your profile
+#   # (https://www.npmjs.com/settings/<npm_username>/tokens)
+#   # create new auth token with publish previllage
+#   # copy the AUTH_TOKEN
+#   # open terminal and cd to here and use the following command.
+#   # $ travis encrypt YOUR_AUTH_TOKEN --add deploy.api_key
+#   # -----------------------------------------------------------------------
+#   api_key:
+#     secure: #<YOUR ENCRYPTED AUTH KEY>
+#   on:
+#     node_js: lts/*
+#     tags: true
+#     branch: master
+# after_deploy: echo 'deploying to npm!'

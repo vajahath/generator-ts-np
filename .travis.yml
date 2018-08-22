@@ -3,8 +3,7 @@ language: node_js
 node_js:
 - node
 - lts/*
-- '8'
-- '10'
+
 script:
 - npm run test
 
@@ -20,5 +19,6 @@ deploy:
   on:
     node_js: lts/*
     tags: true
+    branch: master
 
 after_deploy: echo 'deploying to npm!'
