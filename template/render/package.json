@@ -4,8 +4,8 @@
   "description": "<%= packageDescription %>",
   "homepage": "https://github.com/<%= githubUsername %>/<%= githubRepository %>#readme",
   "author": "<%= fullName %> <<%= email%>> (https://twitter.com/<%= twitterUsername %>)",
-  "main": "index.js",
-  "typings": "index.d.ts",
+  "main": "dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
   "keywords": [],
   "scripts": {
     "build": "gulp build",

@@ -70,6 +70,7 @@ To know really what happens under the hood, refer `scripts` section in `package.
 
 This is disabled by default. Following are the things you would normally do while publishing your module(with out CI/CD).
 
+- increment package version in your `package.json`
 - run tests
 - test your package against few stable versions
 - build
@@ -79,6 +80,7 @@ This is disabled by default. Following are the things you would normally do whil
 
 With CI/CD enabled, all you have to do is:
 
+- increment package version in your `package.json`
 - create git tag (`git tag v<version>`)
 - push tags (`git push --tags`)
 
@@ -92,6 +94,7 @@ Open `.travis.ym` file in your scaffolded directory structure and follow instruc
 
 After hand checking everything is correct,
 
+- increment package version in your `package.json`
 - `$ git tag vX.X.X` (example: `git tag v1.5.3`)
 - `$ git push --tags`
 - Head to travis page and see it is being deployed

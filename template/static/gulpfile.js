@@ -44,9 +44,9 @@ const PRETTIER_CONFIG = {
 gulp.task('copy-assets', () => {
   return gulp
     .src([
-      'package.json',
-      'package-lock.json',
-      'yarn.lock',
+      // 'package.json',
+      // 'package-lock.json',
+      // 'yarn.lock',
       'src/**/*',
       '!src/**/*.ts',
       '!**/node_modules/**/*',
