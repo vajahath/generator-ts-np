@@ -17,7 +17,7 @@
     "lint-noFix": "gulp lint-noFix",
     "lint": "npm run prettier && npm run tslint",
     "test": "npm run build && npm run test-core",
-    "test-core": "jest --config=./ci-jest.config.json --forceExit --detectOpenHandles",
+    "test-core": "jest --config=./ci-jest.config.json --forceExit",
     "compile": "tsc",
     "prettier": "prettier \"{src/**/*.*,typings/**/*.*,tests/**/*.*}\" --write",
     "tslint": "tslint -c tslint.json -p tsconfig.json -t stylish --fix \"{src,tests}/**/*.ts\"",
