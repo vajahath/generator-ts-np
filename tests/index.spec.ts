@@ -18,7 +18,6 @@ describe('generator-ts-np:app', () => {
       'typings/typings.d.ts',
       '.editorconfig',
       '.gitignore',
-      '.npmignore',
       '.travis.yml',
       '.prettierignore',
       '.prettierrc',

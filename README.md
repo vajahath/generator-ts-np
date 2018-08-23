@@ -109,7 +109,6 @@ Here is what you get:
 .
 |   .editorconfig
 |   .gitignore
-|   .npmignore
 |   .prettierignore
 |   .prettierrc
 |   .travis.yml
@@ -150,8 +149,8 @@ Here is what you get:
 #### Special Notes
 
 - If you've any credentials/secrets, make a directory `credentials/` or `private/` at the root of your package, which will be ignored by both git and npm.
-- When you `npm publish`, mainly the content of `dist/` will be published. To know what folders/files will be ignored, take a look at `.npmignore`.
-- The `media/` folder is `.npmignored` by default. So if you need to use some images inside your package, handle `.npmignore` file accordingly. The idea here is that **you should not publish any unnecessary stuffs to npm registry**.
+- When you `npm publish`, mainly the content of `dist/src/` will be published. To know what folders/files will be ignored, take a look at `files` section in package.json.
+- The `media/` folder is `.npmignored` by default. So if you need to use some images inside your package, handle `files` section in package.json file accordingly. The idea here is that **you should not publish any unnecessary stuffs to npm registry**.
 
 > :warning: **Important**: Before publishing your package, hand check each file and verify everything is perfect. `ts-np` only helps you to get started quickly and step back it self leaving the rest to you.
 
