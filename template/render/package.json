@@ -10,9 +10,7 @@
     "dist/src/*",
     "package.json",
     "README.md",
-    "LICENSE",
-    "yarn.lock",
-    "package-lock.json"
+    "LICENSE"
   ],
   "keywords": [],
   "license": "MIT",
