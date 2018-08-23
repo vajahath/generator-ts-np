@@ -6,7 +6,16 @@
   "author": "<%= fullName %> <<%= email%>> (https://twitter.com/<%= twitterUsername %>)",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
+  "files": [
+    "dist/src/*",
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "yarn.lock",
+    "package-lock.json"
+  ],
   "keywords": [],
+  "license": "MIT",
   "scripts": {
     "build": "gulp build",
     "lint-noFix": "gulp lint-noFix",

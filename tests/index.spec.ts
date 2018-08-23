@@ -27,6 +27,7 @@ describe('generator-ts-np:app', () => {
       'tslint.json',
       'tsconfig.json',
       'media/.gitkeep',
+      'LICENSE',
     ]);
   });
 
