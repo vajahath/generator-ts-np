@@ -6,7 +6,7 @@
 [![Build Status](https://travis-ci.org/vajahath/generator-ts-np.svg?branch=master)](https://travis-ci.org/vajahath/generator-ts-np)
 [![npm](https://img.shields.io/npm/dt/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
 
-![TS-NP generator](media/logo.png)
+![TS-NP generator](media/logo.jpg)
 
 ## What
 
@@ -100,6 +100,8 @@ After hand checking everything is correct,
 - Head to travis page and see it is being deployed
 
 ## Directory structure
+
+![](media/logo-old.png)
 
 #### TL;DR
 
