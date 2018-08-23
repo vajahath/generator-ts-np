@@ -88,6 +88,8 @@ With CI/CD enabled, all you have to do is:
 - create git tag (`git tag v<version>`)
 - push tags (`git push --tags`)
 
+> :warning: However, for the first time you have to manually publish it using `npm publish`. Rest of the updates can be handled via travis.
+
 Travis will do all other things for you, including publishing your package to npm.
 
 ### How To Enable Travis CI/CD
