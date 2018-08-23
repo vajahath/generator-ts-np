@@ -1,4 +1,5 @@
 .roughs
+gulpfile.js
 .vscode/
 *.map
 *.ts

@@ -1,4 +1,5 @@
 .roughs
+gulpfile.js
 .vscode/
 dist/tests
 *.map
