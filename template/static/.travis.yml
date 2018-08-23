@@ -11,8 +11,6 @@ script:
 # To enable Continuous Deployment (CD), uncommnet following code
 # ------------------------------------------------------------------------
 
-# before_deploy:
-# - npm run test
 # deploy:
 #   provider: npm
 #   skip_cleanup: true

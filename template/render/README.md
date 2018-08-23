@@ -5,9 +5,10 @@
 [![npm](https://img.shields.io/npm/v/<%= packageName %>.svg)](https://www.npmjs.com/package/<%= packageName %>)
 [![Travis](https://img.shields.io/travis/<%= githubUsername %>/<%= githubRepository %>.svg)](https://travis-ci.org/<%= githubUsername %>/<%= githubRepository %>)
 [![styled with prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![npm](https://img.shields.io/npm/dt/<%= packageName %>.svg)]()
 [![Built with generator-ts-np](https://img.shields.io/badge/scaffolding-ts_np-2699ad.svg)](https://github.com/vajahath/generator-ts-np)
 [![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
+
+<!-- [![npm](https://img.shields.io/npm/dt/<%= packageName %>.svg)]() -->
 
 ![](https://cataas.com/cat)
 
