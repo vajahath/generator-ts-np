@@ -29,18 +29,20 @@ class K extends Generator {
       ),
     );
 
+    const ESCAPED_APP_NAME = this.appname.replace(/ /g, '-');
+
     const prompts = [
       {
         type: 'input',
         name: 'packageName',
         message: 'Package Name',
-        default: this.appname,
+        default: ESCAPED_APP_NAME,
       },
       {
         type: 'input',
         name: 'packageDescription',
         message: 'Package Description',
-        default: this.appname + ' cool description',
+        default: ESCAPED_APP_NAME + ' cool description',
       },
       {
         type: 'input',
@@ -55,7 +57,7 @@ class K extends Generator {
         name: 'githubRepository',
         message:
           'Github Repository Name (this will help scaffolding the package.json)',
-        default: this.appname,
+        default: ESCAPED_APP_NAME,
       },
       {
         type: 'input',

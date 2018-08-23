@@ -32,7 +32,7 @@ Here you write your logic in Typescript and publish the compiled version of it -
 
 [![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
-_You don't have to write any type definitions here. It will be packaged within your package._
+_You don't have to write any type definitions here. It will be packaged within your package automatically._
 
 ## Prerequisites
 
