@@ -68,6 +68,10 @@ To know really what happens under the hood, refer `scripts` section in `package.
 
 ## Travis CI/CD
 
+![ci/cd](media/auto.png)
+
+CI/CD (Continuous Integration/ Continuous Deployment) helps you to automate the `npm publish` task.
+
 This is disabled by default. Following are the things you would normally do while publishing your module(with out CI/CD).
 
 - increment package version in your `package.json`
