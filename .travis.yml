@@ -7,9 +7,6 @@ node_js:
 script:
 - npm run test
 
-before_deploy:
-- npm run test
-
 deploy:
   provider: npm
   email: vajuoff.1@gmail.com
