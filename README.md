@@ -18,7 +18,7 @@ Here you write your logic in Typescript and publish the compiled version of it -
 
 - Inspired from [Typescript's own guide for node](https://github.com/Microsoft/TypeScript-Node-Starter#typescript-node-starter).
 - Lint rules inspired from [Google APIs Node.js Client Repo](https://github.com/google/google-auth-library-nodejs) which means higher code quality.
-- (Optional) Travis CI integration and Continuous Deployment to NPM when you push a tag. [Experimental :syringe:]
+- (Optional) Travis CI integration and Continuous Deployment to NPM when you push a tag.
 - Compiles down your code to `es6`. (You can change this)
 - No global dependencies.
 - No own dependencies other than dev-dependencies.
