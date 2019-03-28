@@ -1,5 +1,9 @@
 # generator-ts-np
 
+
+Please note this package currently supports node.js version 8. Works for supporting higher versions are in progress. Sorry for the inconvenience.
+
+
 [Yeoman](http://yeoman.io/) Generator For Building Node Packages :package: With [Typescript](https://www.typescriptlang.org).
 
 [![npm](https://img.shields.io/npm/v/generator-ts-np.svg)](https://www.npmjs.com/package/generator-ts-np)
@@ -37,7 +41,7 @@ _You don't have to write any type definitions here. It will be packaged within y
 ## Prerequisites
 
 - [Yeoman](http://yeoman.io/) should be installed globally.
-- **[Recommended]** Node version 8 or later.
+- **[Must]** Node version 8 must. (currently under development to support higher versions)
 
 ## Install
 
