@@ -1,4 +1,4 @@
-# generator-ts-np
+# generator-ts-np (under-maintenance)
 
 
 Please note this package currently supports node.js version 8. Works for supporting higher versions are in progress. Sorry for the inconvenience.
