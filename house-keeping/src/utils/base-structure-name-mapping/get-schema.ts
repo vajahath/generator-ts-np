@@ -1,14 +1,24 @@
 import { spawn } from 'child_process';
 import { join as pathJoin, resolve as pathResolve } from 'path';
 import { Writable } from 'stream';
+import isWindows = require('is-windows');
 
 const typeDefPathForSchema = pathJoin(
   __dirname,
   'base-structure-mapping.interface.ts'
 );
 
+// with cwd as root to HK dir
+const generatorExe = pathJoin(
+  'node_modules',
+  '.bin',
+  `ts-json-schema-generator${isWindows() ? '.cmd' : ''}`
+);
+
+const feedingCwd = pathResolve(__dirname, '..', '..', '..');
+
 export function getBaseStructureNamingJsonSchema(): Promise<object> {
-  return new Promise(resolve => {
+  return new Promise((resolve, reject) => {
     const keepStore: Buffer[] = [];
     const keepWritable = new Writable({
       write(chunk, enc, callback) {
@@ -18,20 +28,23 @@ export function getBaseStructureNamingJsonSchema(): Promise<object> {
     });
 
     const schemaGeneratorProcess = spawn(
-      'node',
-      [
-        './node_modules/.bin/ts-json-schema-generator',
-        '--path',
-        typeDefPathForSchema
-      ],
+      generatorExe,
+      ['--path', typeDefPathForSchema],
       {
-        cwd: pathResolve(__dirname, '..', '..', '..')
+        cwd: feedingCwd
       }
     );
-    schemaGeneratorProcess.stdout.pipe(keepWritable).on('finish', () => {
-      const schemaAsString = Buffer.concat(keepStore).toString();
-      const json: object = JSON.parse(schemaAsString);
-      return resolve(json);
-    });
+    // schemaGeneratorProcess.stdout.pipe(process.stdout);
+    // schemaGeneratorProcess.stderr.pipe(process.stdout);
+    schemaGeneratorProcess.stdout
+      .pipe(keepWritable)
+      .on('finish', () => {
+        const schemaAsString = Buffer.concat(keepStore).toString();
+        const json: object = JSON.parse(schemaAsString);
+        return resolve(json);
+      })
+      .on('error', err => reject(err));
   });
 }
+
+// getBaseStructureNamingJsonSchema().then(obj => console.log(obj));

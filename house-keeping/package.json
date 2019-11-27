@@ -13,7 +13,7 @@
     "lint": "eslint src/**/* tests/**/* && prettier src/**/* tests/**/* -l",
     "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
     "clean-builds": "gulp clean-builds",
-    "compile-type-to-schema": "ts-json-schema-generator --path \"src/utils/base-structure-mapping.interface.ts\" -o \"src/utils/base-structure-mapping-schema.json\"",
+    "compile-type-to-schema": "ts-json-schema-generator --path src\\utils\\base-structure-name-mapping\\base-structure-mapping.interface.ts",
     "compile-type-to-help": "ts-json-schema-generator --help"
   },
   "engines": {
@@ -27,6 +27,7 @@
   "homepage": "https://github.com/vajahath/npm-scope-prefixer#readme",
   "devDependencies": {
     "@types/gulp": "^4.0.6",
+    "@types/is-windows": "^1.0.0",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
@@ -42,6 +43,7 @@
   },
   "dependencies": {
     "gulp": "^4.0.2",
+    "is-windows": "^1.0.2",
     "ts-json-schema-generator": "^0.56.0"
   }
 }
