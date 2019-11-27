@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vajahath/generator-ts-np/issues"
+  },
+  "homepage": "https://github.com/vajahath/generator-ts-np#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.23"
+  },
+  "dependencies": {}
+}

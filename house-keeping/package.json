@@ -1,0 +1,47 @@
+{
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "directories": {
+    "test": "tests",
+    "lib": "dist"
+  },
+  "scripts": {
+    "test": "npm run build && jest --coverage --config jest.config.json",
+    "build": "npm run clean-builds && npm run src-build && npm run tests-build && npm run copy-assets",
+    "src-build": "tsc -p tsconfig.json",
+    "tests-build": "tsc -p tsconfig.spec.json",
+    "lint": "eslint src/**/* tests/**/* && prettier src/**/* tests/**/* -l",
+    "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
+    "clean-builds": "gulp clean-builds",
+    "compile-type-to-schema": "ts-json-schema-generator --path \"src/utils/base-structure-mapping.interface.ts\" -o \"src/utils/base-structure-mapping-schema.json\"",
+    "compile-type-to-help": "ts-json-schema-generator --help"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "author": "Vajahath Ahmed <vajuoff.1@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vajahath/npm-scope-prefixer/issues"
+  },
+  "homepage": "https://github.com/vajahath/npm-scope-prefixer#readme",
+  "devDependencies": {
+    "@types/gulp": "^4.0.6",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.12",
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "del": "^5.1.0",
+    "eslint": "^6.7.0",
+    "eslint-config-prettier": "^6.7.0",
+    "gulp-cli": "^2.2.0",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "ts-json-schema-generator": "^0.56.0"
+  }
+}

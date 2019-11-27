@@ -1,0 +1,15 @@
+.github/
+.vscode/
+coverage/
+src/
+tests/
+.eslintrc.json
+.eslintignore
+.gitignore
+.npmignore
+.prettierrc
+gulpfile.js
+tsconfig.json
+tests-dist/
+tsconfig.spec.json
+jest.config.json

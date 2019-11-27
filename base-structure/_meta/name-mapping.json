@@ -1,0 +1,20 @@
+{
+  "npmScope": {
+    "name": "NPM scope",
+    "key": "__tsnp__npm_scope",
+    "description": "npm scope with @",
+    "default": null
+  },
+  "githubScope": {
+    "name": "GitHub scope",
+    "key": "__tsnp__github_scope",
+    "description": "Mostly this is your username. Github scope without @",
+    "default": null
+  },
+  "packageName": {
+    "name": "Package name",
+    "key": "__tsnp__package_name",
+    "description": "Mostly this is your username. Github scope without @",
+    "default": null
+  }
+}
