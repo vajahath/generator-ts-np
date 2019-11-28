@@ -10,7 +10,7 @@
     "build": "npm run clean-builds && npm run src-build && npm run tests-build && npm run copy-assets",
     "src-build": "tsc -p tsconfig.json",
     "tests-build": "tsc -p tsconfig.spec.json",
-    "lint": "eslint src/**/* tests/**/* && prettier src/**/* tests/**/* -l",
+    "lint": "eslint \"src/**\" \"tests/**\" && prettier \"src/**\" \"tests/**\" -l",
     "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
     "clean-builds": "gulp clean-builds",
     "compile-type-to-schema": "ts-json-schema-generator --path src\\utils\\base-structure-name-mapping\\base-structure-mapping.interface.ts",
