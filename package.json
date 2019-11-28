@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run base-test && npm run hk-test",
+    "base-test": "cd base-structure && npm test",
+    "hk-test": "cd house-keeping && npm test"
   },
   "author": "",
   "license": "ISC",
