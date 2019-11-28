@@ -17,11 +17,11 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: node --version
-      - run: ls && npm ci
+      - run: npm ci
         working-directory: ./base-structure
-      - run: ls && npm run lint
+      - run: npm run lint
         working-directory: ./base-structure
-      - run: ls && npm test
+      - run: npm test
         working-directory: ./base-structure
 
   Build-HK:
@@ -38,10 +38,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: node --version
-      - run: ls && npm ci
+      - run: npm ci
         working-directory: ./house-keeping
-      - run: ls && npm run lint
+      - run: npm run lint
         working-directory: ./house-keeping
-      - run: ls && npm test
+      - run: npm test
         working-directory: ./house-keeping
 
