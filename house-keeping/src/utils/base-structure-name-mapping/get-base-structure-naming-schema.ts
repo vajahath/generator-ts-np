@@ -5,7 +5,7 @@ import isWindows = require('is-windows');
 
 const typeDefPathForSchema = pathJoin(
   __dirname,
-  'base-structure-mapping.interface.ts'
+  'base-structure-mapping.interface.d.ts' // compiled output
 );
 
 // with cwd as root to HK dir
@@ -17,7 +17,11 @@ const generatorExe = pathJoin(
 
 const feedingCwd = pathResolve(__dirname, '..', '..', '..');
 
-export function getBaseStructureNamingJsonSchema(): Promise<object> {
+// console.log({ typeDefPathForSchema, generatorExe, feedingCwd });
+
+export function getBaseStructureNamingJsonSchema(): Promise<{
+  [key: string]: any;
+}> {
   return new Promise((resolve, reject) => {
     const keepStore: Buffer[] = [];
     const keepWritable = new Writable({
