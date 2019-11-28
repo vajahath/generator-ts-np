@@ -9,18 +9,20 @@ jobs:
         os: [macos-latest, windows-latest, ubuntu-latest]
         node: ['8', '10', '12', '13']
     runs-on: ${{ matrix.os }}
-    name: build and test (${{ matrix.os }}|node-${{ matrix.node }})
+    name: Base (${{ matrix.os }}|node-${{ matrix.node }})
 
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1.2.0
         with:
           node-version: ${{ matrix.node }}
-      - run: cd base-structure
       - run: node --version
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
+      - run: ls && npm ci
+        working-directory: ./base-structure
+      - run: ls && npm run lint
+        working-directory: ./base-structure
+      - run: ls && npm test
+        working-directory: ./base-structure
 
   Build-HK:
     strategy:
@@ -28,15 +30,18 @@ jobs:
         os: [macos-latest, windows-latest, ubuntu-latest]
         node: ['13']
     runs-on: ${{ matrix.os }}
-    name: build and test (${{ matrix.os }}|node-${{ matrix.node }})
+    name: HK (${{ matrix.os }}|node-${{ matrix.node }})
 
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-node@v1.2.0
         with:
           node-version: ${{ matrix.node }}
-      - run: cd house-keeping
       - run: node --version
-      - run: npm ci
-      - run: npm run lint
-      - run: npm test
+      - run: ls && npm ci
+        working-directory: ./house-keeping
+      - run: ls && npm run lint
+        working-directory: ./house-keeping
+      - run: ls && npm test
+        working-directory: ./house-keeping
+
