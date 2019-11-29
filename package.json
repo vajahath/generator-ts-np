@@ -1,11 +1,15 @@
 {
   "scripts": {
+    "ci-test": "npm run lint && npm test",
+    "ci-i": "npm i && npm run base-i && npm run hk-i",
     "test": "npm run base-test && npm run hk-test",
     "lint": "npm run base-lint && npm run hk-lint",
     "base-test": "cd base-structure && npm test",
     "hk-test": "cd house-keeping && npm test",
     "base-lint": "cd base-structure && npm run lint",
-    "hk-lint": "cd house-keeping && npm run lint"
+    "hk-lint": "cd house-keeping && npm run lint",
+    "base-i": "cd base-structure && npm i",
+    "hk-i": "cd house-keeping && npm i"
   },
   "author": "",
   "license": "ISC",
