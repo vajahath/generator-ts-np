@@ -14,7 +14,8 @@
     "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
     "clean-builds": "gulp clean-builds",
     "compile-type-to-schema": "ts-json-schema-generator --path src\\utils\\base-structure-name-mapping\\base-structure-mapping.interface.ts",
-    "compile-type-to-help": "ts-json-schema-generator --help"
+    "compile-type-to-help": "ts-json-schema-generator --help",
+    "start": "npm run build && gulp --gulpfile \"dist/gulpfile.js\""
   },
   "engines": {
     "node": ">=8"
@@ -27,15 +28,14 @@
   "homepage": "https://github.com/vajahath/npm-scope-prefixer#readme",
   "devDependencies": {
     "@types/gulp": "^4.0.6",
+    "@types/gulp-replace": "0.0.31",
     "@types/is-windows": "^1.0.0",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
-    "del": "^5.1.0",
     "eslint": "^6.7.0",
     "eslint-config-prettier": "^6.7.0",
-    "gulp-cli": "^2.2.0",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
@@ -43,7 +43,10 @@
   },
   "dependencies": {
     "ajv": "^6.10.2",
+    "del": "^5.1.0",
     "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-replace": "^1.0.0",
     "is-windows": "^1.0.2",
     "ts-json-schema-generator": "^0.56.0"
   }

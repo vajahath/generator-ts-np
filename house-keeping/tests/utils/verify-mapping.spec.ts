@@ -1,4 +1,7 @@
-import { verifyMappingFromBaseStructure } from '../../dist/utils/verify-mapping';
+import {
+  verifyMappingFromBaseStructure,
+  verifyMapping
+} from '../../dist/utils/verify-mapping';
 
 const schema = {
   $ref: '#/definitions/IBaseStructureMapping',
@@ -71,4 +74,10 @@ describe('testing meta-json validator', () => {
 
     expect(() => verifyMappingFromBaseStructure(schema, data)).toThrow();
   });
+});
+
+describe('testing integrated verifyMapping', () => {
+  test('Base structure should have good meta file', async () => {
+    await verifyMapping();
+  }, 15000);
 });

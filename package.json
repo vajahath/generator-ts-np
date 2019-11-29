@@ -2,10 +2,8 @@
   "scripts": {
     "test": "npm run base-test && npm run hk-test",
     "lint": "npm run base-lint && npm run hk-lint",
-
     "base-test": "cd base-structure && npm test",
     "hk-test": "cd house-keeping && npm test",
-
     "base-lint": "cd base-structure && npm run lint",
     "hk-lint": "cd house-keeping && npm run lint"
   },
