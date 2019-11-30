@@ -13,4 +13,10 @@ export const BASE_STRUCTURE_META_JSON = pathJoin(
   'name-mapping.json'
 );
 
-export const HK_OUTPUT_DEST = pathJoin(__dirname, '..', '..', 'dest-static');
+export const HK_OUTPUT_DEST = pathJoin(
+  __dirname,
+  '..',
+  '..',
+  'generator',
+  'template'
+);
