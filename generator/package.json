@@ -2,14 +2,11 @@
   "name": "generator-ts-np",
   "version": "1.0.0",
   "description": "Yeoman Generator For Building Node Packages With Typescript",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "main": "dist/app/index.js",
+  "typings": "dist/app/index.d.ts",
   "directories": {
     "test": "tests",
-    "lib": [
-      "dist",
-      "template"
-    ]
+    "lib": "dist"
   },
   "scripts": {
     "test": "npm run build && jest --coverage --config jest.config.json",
@@ -37,6 +34,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
+    "@types/yeoman-generator": "^3.1.4",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "del": "^5.1.0",
@@ -49,9 +47,12 @@
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2"
   },
-  "dependencies": {},
+  "dependencies": {
+    "camel-case": "^3.0.0",
+    "yeoman-generator": "^4.2.0"
+  },
   "files": [
-    "generators",
+    "dist/app",
     "template"
   ],
   "keywords": [

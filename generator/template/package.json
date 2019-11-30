@@ -1,7 +1,7 @@
 {
-  "name": "<%= npmScope %>/<%= packageName %>",
+  "name": "<%= scopedPackageName %>",
   "version": "1.0.0",
-  "description": "<%= packageDescription %>",
+  "description": "@tsnp_package_description",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "directories": {
@@ -20,20 +20,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<%= githubScope %>/<%= githubRepoNmae %>.git"
+    "url": "git+https://github.com/@tsnp_github_scope/@tsnp_github_repo.git"
   },
   "engines": {
-    "node": "<%= packageEngines %>"
+    "node": "@tsnp_package_engines"
   },
-  "author": "<%= authorFullName %> <<%= authorEmail %>>",
+  "author": "@tsnp_author_full_name <@tsnp_author_email>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/<%= githubScope %>/<%= githubRepoNmae %>/issues"
+    "url": "https://github.com/@tsnp_github_scope/@tsnp_github_repo/issues"
   },
-  "homepage": "https://github.com/<%= githubScope %>/<%= githubRepoNmae %>#readme",
+  "homepage": "https://github.com/@tsnp_github_scope/@tsnp_github_repo#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
+    "@types/yeoman-generator": "^3.1.4",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "del": "^5.1.0",
@@ -44,7 +45,8 @@
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "yeoman-generator": "^4.2.0"
   },
   "dependencies": {}
 }
