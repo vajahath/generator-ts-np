@@ -7,10 +7,13 @@ export const BASE_STRUCTURE_ROOT = pathJoin(
   'base-structure'
 );
 
-export const BASE_STRUCTURE_META_JSON = pathJoin(
-  BASE_STRUCTURE_ROOT,
-  '_meta',
-  'name-mapping.json'
+export const GENERATOR_META_CODE_LOC = pathJoin(
+  __dirname,
+  '..',
+  '..',
+  'generator',
+  'src',
+  'app'
 );
 
 export const HK_OUTPUT_DEST = pathJoin(

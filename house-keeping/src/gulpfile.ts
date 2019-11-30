@@ -4,13 +4,12 @@ import del = require('del');
 
 import {
   BASE_STRUCTURE_ROOT,
-  BASE_STRUCTURE_META_JSON,
-  HK_OUTPUT_DEST
+  HK_OUTPUT_DEST,
+  GENERATOR_META_CODE_LOC
 } from './config';
-import { IBaseStructureMapping } from './utils/base-structure-name-mapping';
-import { verifyMapping } from './utils/verify-mapping';
+import { getEjsMapping } from './mappings';
 
-const metaJson: IBaseStructureMapping = require(BASE_STRUCTURE_META_JSON);
+const { scopedPackageNameKey, queries } = getEjsMapping();
 
 function excludePaths() {
   const exp: string[] = [
@@ -32,21 +31,34 @@ export function gBuild() {
     ...excludePaths()
   ]);
 
-  for (const key in metaJson) {
-    gulpChain = gulpChain.pipe(replace(metaJson[key].key, `<%= ${key} %>`));
+  for (const item of queries) {
+    if (!item._key) {
+      continue;
+    }
+
+    gulpChain = gulpChain.pipe(replace(item._key, `<%= ${item.name} %>`));
   }
 
-  return gulpChain.pipe(gulp.dest(HK_OUTPUT_DEST));
-}
+  // scoped package name
+  gulpChain = gulpChain.pipe(
+    replace(scopedPackageNameKey, `<%= scopedPackageName %>`)
+  );
 
-export function gVerifyMeta() {
-  return verifyMapping();
+  return gulpChain.pipe(gulp.dest(HK_OUTPUT_DEST));
 }
 
 export function gClearDest() {
   return del(HK_OUTPUT_DEST + '/**', { force: true });
 }
 
+export function copyMeta() {
+  return gulp
+    .src([
+      BASE_STRUCTURE_ROOT + '/_meta/**/*',
+      '../src/mappings/get-full-prompts.ts'
+    ])
+    .pipe(gulp.dest(GENERATOR_META_CODE_LOC));
+}
 export default (function() {
-  return gulp.series(gClearDest, gVerifyMeta, gBuild);
+  return gulp.series(gClearDest, gBuild, copyMeta);
 })();
