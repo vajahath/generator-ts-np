@@ -1,7 +1,7 @@
 {
   "name": "@tsnp_npm_scope/tsnp_package_name",
   "version": "1.0.0",
-  "description": "CLI tool to prefix scope on npm packages, helpful for deploying to multiple registries with different scopes.",
+  "description": "@tsnp_package_description",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "directories": {
@@ -20,17 +20,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vajahath/npm-scope-prefixer.git"
+    "url": "git+https://github.com/@tsnp_github_scope/@tsnp_github_repo.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": "@tsnp_package_engines"
   },
-  "author": "Vajahath Ahmed <vajuoff.1@gmail.com>",
+  "author": "@tsnp_author_full_name <@tsnp_author_email>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vajahath/npm-scope-prefixer/issues"
+    "url": "https://github.com/@tsnp_github_scope/@tsnp_github_repo/issues"
   },
-  "homepage": "https://github.com/vajahath/npm-scope-prefixer#readme",
+  "homepage": "https://github.com/@tsnp_github_scope/@tsnp_github_repo#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",

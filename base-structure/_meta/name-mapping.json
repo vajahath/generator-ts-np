@@ -1,20 +1,62 @@
 {
   "npmScope": {
     "name": "NPM scope",
-    "key": "__tsnp__npm_scope",
-    "description": "npm scope with @",
+    "key": "@tsnp_npm_scope",
+    "description": "npm scope with @. Learn more about scopes here: https://docs.npmjs.com/misc/scope",
     "default": null
   },
   "githubScope": {
     "name": "GitHub scope",
-    "key": "__tsnp__github_scope",
+    "key": "@tsnp_github_scope",
     "description": "Mostly this is your username. Github scope without @",
+    "default": null
+  },
+  "githubRepoNmae": {
+    "name": "GitHub repository name",
+    "key": "@tsnp_github_repo",
+    "description": "The github repository name",
     "default": null
   },
   "packageName": {
     "name": "Package name",
-    "key": "__tsnp__package_name",
+    "key": "tsnp_package_name",
     "description": "Mostly this is your username. Github scope without @",
+    "default": null
+  },
+  "packageDescription": {
+    "name": "Package description",
+    "key": "@tsnp_package_description",
+    "description": "Mostly this is your username. Github scope without @",
+    "default": null
+  },
+  "packageEngines": {
+    "name": "Package engines",
+    "key": "@tsnp_package_engines",
+    "description": "The compatible node version spec.",
+    "default": ">=8"
+  },
+  "authorFullName": {
+    "name": "Author full name",
+    "key": "@tsnp_author_full_name",
+    "description": "This is for setting up README and package.json fields.",
+    "default": null
+  },
+  "authorEmail": {
+    "name": "Author email",
+    "key": "@tsnp_author_email",
+    "description": "This is for setting up package.json fields.",
+    "default": null
+  },
+  "licenceYear": {
+    "name": "Licence year",
+    "key": "@tsnp_year",
+    "description": "MIT <year>",
+    "default": null
+  },
+  "twitterUsername": {
+    "name": "Twitter username",
+    "key": "@tsnp_twitter_username",
+    "description": "Helps to scaffold the README",
     "default": null
   }
 }
