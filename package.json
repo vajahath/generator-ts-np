@@ -1,15 +1,18 @@
 {
   "scripts": {
     "ci-test": "npm run lint && npm test",
-    "ci-i": "npm i && npm run base-i && npm run hk-i",
-    "test": "npm run base-test && npm run hk-test",
-    "lint": "npm run base-lint && npm run hk-lint",
+    "ci-i": "npm i && npm run base-i && npm run hk-i && npm run gen-i",
+    "test": "npm run base-test && npm run hk-test && npm run gen-test",
+    "lint": "npm run base-lint && npm run hk-lint && npm run gen-lint",
     "base-test": "cd base-structure && npm test",
     "hk-test": "cd house-keeping && npm test",
+    "gen-test": "cd generator && npm test",
     "base-lint": "cd base-structure && npm run lint",
     "hk-lint": "cd house-keeping && npm run lint",
+    "gen-lint": "cd generator && npm run lint",
     "base-i": "cd base-structure && npm i",
-    "hk-i": "cd house-keeping && npm i"
+    "hk-i": "cd house-keeping && npm i",
+    "gen-i": "cd generator && npm i"
   },
   "author": "",
   "license": "ISC",

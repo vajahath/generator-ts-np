@@ -24,6 +24,27 @@ jobs:
       - run: npm test
         working-directory: ./base-structure
 
+  Build-Generator:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        node: ['8', '10', '12', '13']
+    runs-on: ${{ matrix.os }}
+    name: Gen (${{ matrix.os }}|node-${{ matrix.node }})
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1.2.0
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+      - run: npm ci
+        working-directory: ./generator
+      - run: npm run lint
+        working-directory: ./generator
+      - run: npm test
+        working-directory: ./generator
+
   Build-HK:
     strategy:
       matrix:
