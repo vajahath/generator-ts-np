@@ -11,7 +11,7 @@ Requires Node @tsnp_package_engines.
 From npm,
 
 ```sh
-npm i -g @tsnp_npm_scope/tsnp_package_name
+npm i -g tsnp__scoped_npm_package_name
 ```
 
 From [Github Package Registry](https://github.com/@tsnp_github_scope/@tsnp_github_repo/packages). ([Guide](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages)).
@@ -34,4 +34,4 @@ API doc
 
 ## Licence
 
-MIT &copy; [@tsnp_author_full_name](https://twitter.com/@tsnp_twitter_username)
+MIT &copy; [tsnp_owner_full_name](https://twitter.com/tsnp_twitter_username)

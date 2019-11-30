@@ -1,5 +1,5 @@
 {
-  "name": "@tsnp_npm_scope/tsnp_package_name",
+  "name": "tsnp__scoped_npm_package_name",
   "version": "1.0.0",
   "description": "@tsnp_package_description",
   "main": "dist/index.js",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
+    "@types/yeoman-generator": "^3.1.4",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
     "del": "^5.1.0",
@@ -44,7 +45,8 @@
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
-    "typescript": "^3.7.2"
+    "typescript": "^3.7.2",
+    "yeoman-generator": "^4.2.0"
   },
   "dependencies": {}
 }
