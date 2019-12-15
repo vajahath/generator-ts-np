@@ -23,13 +23,9 @@ function excludePaths() {
 }
 
 export function gBuild() {
-  let gulpChain = gulp.src([
-    BASE_STRUCTURE_ROOT + '/**/*',
-    BASE_STRUCTURE_ROOT + '/**/.*',
-    BASE_STRUCTURE_ROOT + '/**/.*/**/*',
-    BASE_STRUCTURE_ROOT + '/**/.*/**/.*',
-    ...excludePaths()
-  ]);
+  let gulpChain = gulp.src([BASE_STRUCTURE_ROOT + '/**/*', ...excludePaths()], {
+    dot: true
+  });
 
   for (const item of queries) {
     if (!item._key) {
@@ -53,10 +49,17 @@ export function gClearDest() {
 
 export function copyMeta() {
   return gulp
-    .src([
-      BASE_STRUCTURE_ROOT + '/_meta/**/*',
-      '../src/mappings/get-full-prompts.ts'
-    ])
+    .src(
+      [
+        BASE_STRUCTURE_ROOT + '/_meta/**/*',
+
+        // moving a directory backward to account build process
+        // the build will make the js file in dist folder
+        // so we need to move a step back to get this file.
+        '../src/mappings/get-full-prompts.ts'
+      ],
+      { dot: true }
+    )
     .pipe(gulp.dest(GENERATOR_META_CODE_LOC));
 }
 export default (function() {
