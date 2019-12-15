@@ -2,5 +2,6 @@
     "cSpell.words": [
         "tsnp",
         "yosay"
-    ]
+    ],
+    "editor.formatOnSave": true
 }
