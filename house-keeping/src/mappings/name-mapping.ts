@@ -1,3 +1,8 @@
+/**
+ * This file is copied from house-keeping/src/mappings/get-full-prompts.ts.
+ * So edit this file directly from there.
+ */
+
 import {
   Generator,
   TSNPQueries,

@@ -1,3 +1,8 @@
+/**
+ * This file is copied from house-keeping/src/mappings/get-full-prompts.ts.
+ * So edit this file directly from there.
+ */
+
 import {
   Generator,
   GetRenderPromptVariablesResult,
@@ -29,7 +34,7 @@ export function getFullTSNPPrompts(
   ];
 
   return {
-    queries: [...queries, userInputIndependentQueries],
+    queries: [...queries, ...userInputIndependentQueries],
     scopedPackageNameKey
   };
 }

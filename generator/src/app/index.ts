@@ -1,3 +1,4 @@
+import { join as pathJoin } from 'path';
 import Generator = require('yeoman-generator');
 import camelCase = require('camel-case');
 
@@ -10,22 +11,42 @@ class Tsnp extends Generator {
 
   constructor(args: any, opts: any) {
     super(args, opts);
+
+    // set root
+    this.sourceRoot(pathJoin(__dirname, '..', '..', 'template'));
   }
 
   public async prompting() {
-    this.promptMetaOpt = getFullTSNPPrompts.apply(this).queries;
-    this.answers = await this.prompt(this.promptMetaOpt);
+    try {
+      this.promptMetaOpt = getFullTSNPPrompts.apply(this).queries;
+      console.log(this.promptMetaOpt);
+      this.answers = await this.prompt(this.promptMetaOpt);
+      console.log('ans', this.answers);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
-  public writing() {
-    this.log('src root:' + this.sourceRoot());
-    this.log('dset path:' + this.destinationPath());
-
-    this.fs.copyTpl(
-      this.templatePath('**/*'),
-      this.destinationRoot(),
-      renderEJSMapping(this.answers, this.promptMetaOpt)
-    );
+  public async writing() {
+    try {
+      this.fs.copyTpl(
+        this.templatePath('**/*'),
+        this.destinationRoot(),
+        {
+          ...renderEJSMapping(this.answers, this.promptMetaOpt),
+          ...{
+            scopedPackageName: getScopedPackageName(
+              this.answers.npmScope,
+              this.answers.packageName
+            )
+          }
+        },
+        {},
+        { globOptions: { dot: true } }
+      );
+    } catch (err) {
+      this.log(err);
+    }
   }
 }
 
@@ -48,7 +69,13 @@ function renderEJSMapping(
       );
     }
 
-    EJSMapping[camelCase(item._key)] = ans[item.name];
+    EJSMapping[camelCase(item.name)] = ans[item.name];
   }
+
+  console.log('EJSMapping', EJSMapping);
   return EJSMapping;
+}
+
+function getScopedPackageName(scope: string, packageName: string) {
+  return `${scope ? `${scope}/` : ''}${packageName}`;
 }
