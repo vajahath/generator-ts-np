@@ -1,12 +1,12 @@
 # <%= packageName %>
 
-![](https://github.com/@tsnp_github_scope/@tsnp_github_repo/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/@tsnp_github_scope/@tsnp_github_repo.svg)](https://greenkeeper.io/)
+![](https://github.com/<%= githubUsername %>/<%= githubRepositoryName %>/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/<%= githubUsername %>/<%= githubRepositoryName %>.svg)](https://greenkeeper.io/)
 
-@tsnp_package_description
+<%= packageDescription %>
 
 ## Install
 
-Requires Node @tsnp_package_engines.
+Requires Node <%= enginesNode %>.
 
 From npm,
 
@@ -14,7 +14,7 @@ From npm,
 npm i -g <%= scopedPackageName %>
 ```
 
-From [Github Package Registry](https://github.com/@tsnp_github_scope/@tsnp_github_repo/packages). ([Guide](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages)).
+From [Github Package Registry](https://github.com/<%= githubUsername %>/<%= githubRepositoryName %>/packages). ([Guide](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages)).
 
 [![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
@@ -34,4 +34,4 @@ API doc
 
 ## Licence
 
-MIT &copy; [tsnp_owner_full_name](https://twitter.com/tsnp_twitter_username)
+MIT &copy; [<%= ownerFullName %>](https://twitter.com/<%= twitterUsername %>)

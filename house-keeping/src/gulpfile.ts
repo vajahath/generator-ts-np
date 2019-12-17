@@ -17,7 +17,8 @@ function excludePaths() {
     '/_meta/**',
     '/coverage/**',
     '/dist/**',
-    '/tests-dist/**'
+    '/tests-dist/**',
+    '/package-lock.json'
   ];
   return exp.map(val => '!' + BASE_STRUCTURE_ROOT + val);
 }
