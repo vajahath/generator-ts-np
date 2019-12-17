@@ -38,10 +38,10 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
       - run: node --version
-      - run: npm ci
-        working-directory: ./generator
+      - run: npm run ci-i
       - run: npm run lint
         working-directory: ./generator
+      - run: npm run make-generator
       - run: npm test
         working-directory: ./generator
 

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "ci-test": "npm run lint && npm test",
-    "ci-i": "npm i && npm run base-i && npm run hk-i && npm run gen-i",
+    "ci-i": "npm ci && npm run base-i && npm run hk-i && npm run gen-i",
     "test": "npm run base-test && npm run hk-test && npm run gen-test",
     "lint": "npm run base-lint && npm run hk-lint && npm run gen-lint",
     "build": "npm run base-build && npm run hk-build && npm run gen-build",
@@ -14,9 +14,9 @@
     "base-lint": "cd base-structure && npm run lint",
     "hk-lint": "cd house-keeping && npm run lint",
     "gen-lint": "cd generator && npm run lint",
-    "base-i": "cd base-structure && npm i",
-    "hk-i": "cd house-keeping && npm i",
-    "gen-i": "cd generator && npm i",
+    "base-i": "cd base-structure && npm ci",
+    "hk-i": "cd house-keeping && npm ci",
+    "gen-i": "cd generator && npm ci",
     "make-generator": "npm run build && cd house-keeping && npm start"
   },
   "author": "",
