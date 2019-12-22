@@ -1,13 +1,13 @@
-import { join as pathJoin } from 'path';
+import { join } from 'upath';
 
-export const BASE_STRUCTURE_ROOT = pathJoin(
+export const BASE_STRUCTURE_ROOT = join(
   __dirname,
   '..',
   '..',
   'base-structure'
 );
 
-export const GENERATOR_META_CODE_LOC = pathJoin(
+export const GENERATOR_META_CODE_LOC = join(
   __dirname,
   '..',
   '..',
@@ -16,7 +16,7 @@ export const GENERATOR_META_CODE_LOC = pathJoin(
   'app'
 );
 
-export const HK_OUTPUT_DEST = pathJoin(
+export const HK_OUTPUT_DEST = join(
   __dirname,
   '..',
   '..',

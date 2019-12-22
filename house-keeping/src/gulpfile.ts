@@ -45,7 +45,9 @@ export function gBuild() {
 }
 
 export function gClearDest() {
-  return del(HK_OUTPUT_DEST + '/**', { force: true });
+  const templatePath = HK_OUTPUT_DEST + '/**/*';
+  console.log({ templatePath });
+  return del(templatePath, { force: true, dot: true });
 }
 
 export function copyMeta() {

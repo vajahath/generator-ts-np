@@ -6,7 +6,7 @@
     "lib": "dist"
   },
   "scripts": {
-    "test": "jest --coverage --config jest.config.json",
+    "test": "jest --coverage --config jest.config.json --runInBand",
     "build": "npm run copy-meta-assets && npm run clean-builds && npm run src-build && npm run tests-build && npm run copy-assets",
     "src-build": "tsc -p tsconfig.json",
     "tests-build": "tsc -p tsconfig.spec.json",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@types/gulp": "^4.0.6",
     "@types/gulp-replace": "0.0.31",
+    "@types/is-windows": "^1.0.0",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
     "@types/yeoman-generator": "^3.1.4",
@@ -37,6 +38,8 @@
     "@typescript-eslint/parser": "^2.8.0",
     "eslint": "^6.7.0",
     "eslint-config-prettier": "^6.7.0",
+    "globby": "^10.0.1",
+    "is-windows": "^1.0.2",
     "jest": "^24.9.0",
     "prettier": "^1.19.1",
     "ts-node": "^8.5.2",
