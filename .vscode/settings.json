@@ -1,7 +1,8 @@
 {
     "cSpell.words": [
+        "globby",
+        "rescope",
         "tsnp",
         "yosay"
-    ],
-    "editor.formatOnSave": true
+    ]
 }
