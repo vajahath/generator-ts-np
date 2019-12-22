@@ -4,8 +4,6 @@ import { spawnSync } from 'child_process';
 import isWindows = require('is-windows');
 import globby = require('globby');
 
-const globbySync = globby.sync;
-
 const GEN_TEMPLATE = join(__dirname, '..', '..', 'generator', 'template');
 
 const GULP = join(
