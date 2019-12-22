@@ -1,20 +1,20 @@
-# <%= packageName %>
+# <%- packageName %>
 
-![](https://github.com/<%= githubUsername %>/<%= githubRepositoryName %>/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/<%= githubUsername %>/<%= githubRepositoryName %>.svg)](https://greenkeeper.io/)
+![](https://github.com/<%- githubUsername %>/<%- githubRepositoryName %>/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/<%- githubUsername %>/<%- githubRepositoryName %>.svg)](https://greenkeeper.io/)
 
-<%= packageDescription %>
+<%- packageDescription %>
 
 ## Install
 
-Requires Node <%= enginesNode %>.
+Requires Node <%- enginesNode %>.
 
 From npm,
 
 ```sh
-npm i -g <%= scopedPackageName %>
+npm i -g <%- scopedPackageName %>
 ```
 
-From [Github Package Registry](https://github.com/<%= githubUsername %>/<%= githubRepositoryName %>/packages). ([Guide](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages)).
+From [Github Package Registry](https://github.com/<%- githubUsername %>/<%- githubRepositoryName %>/packages). ([Guide](https://help.github.com/en/github/managing-packages-with-github-packages/configuring-npm-for-use-with-github-packages)).
 
 [![](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)
 
@@ -34,4 +34,4 @@ API doc
 
 ## Licence
 
-MIT &copy; [<%= ownerFullName %>](https://twitter.com/<%= twitterUsername %>)
+MIT &copy; [<%- ownerFullName %>](https://twitter.com/<%- twitterUsername %>)

@@ -33,12 +33,12 @@ export function gBuild() {
       continue;
     }
 
-    gulpChain = gulpChain.pipe(replace(item._key, `<%= ${item.name} %>`));
+    gulpChain = gulpChain.pipe(replace(item._key, `<%- ${item.name} %>`));
   }
 
   // scoped package name
   gulpChain = gulpChain.pipe(
-    replace(scopedPackageNameKey, `<%= scopedPackageName %>`)
+    replace(scopedPackageNameKey, `<%- scopedPackageName %>`)
   );
 
   return gulpChain.pipe(gulp.dest(HK_OUTPUT_DEST));
@@ -46,7 +46,6 @@ export function gBuild() {
 
 export function gClearDest() {
   const templatePath = HK_OUTPUT_DEST + '/**/*';
-  console.log({ templatePath });
   return del(templatePath, { force: true, dot: true });
 }
 

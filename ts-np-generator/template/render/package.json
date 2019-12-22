@@ -1,9 +1,9 @@
 {
-  "name": "<%= packageName %>",
+  "name": "<%- packageName %>",
   "version": "1.0.0",
-  "description": "<%= packageDescription %>",
-  "homepage": "https://github.com/<%= githubUsername %>/<%= githubRepository %>#readme",
-  "author": "<%= fullName %> <<%= email%>> (https://twitter.com/<%= twitterUsername %>)",
+  "description": "<%- packageDescription %>",
+  "homepage": "https://github.com/<%- githubUsername %>/<%- githubRepository %>#readme",
+  "author": "<%- fullName %> <<%- email%>> (https://twitter.com/<%- twitterUsername %>)",
   "main": "dist/src/index.js",
   "typings": "dist/src/index.d.ts",
   "files": [
@@ -27,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/<%= githubUsername %>/<%= githubRepository %>.git"
+    "url": "git+https://github.com/<%- githubUsername %>/<%- githubRepository %>.git"
   },
   "bugs": {
-    "url": "https://github.com/<%= githubUsername %>/<%= githubRepository %>/issues"
+    "url": "https://github.com/<%- githubUsername %>/<%- githubRepository %>/issues"
   },
   "dependencies": {},
   "devDependencies": {
