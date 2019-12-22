@@ -79,7 +79,8 @@ describe('testing gulp file', () => {
           '!../../base-structure/coverage',
           '!../../base-structure/_meta',
           '!../../base-structure/dist',
-          '!../../base-structure/tests-dist'
+          '!../../base-structure/tests-dist',
+          '!../../base-structure/package-lock.json'
         ],
         { dot: true, cwd: __dirname }
       )
