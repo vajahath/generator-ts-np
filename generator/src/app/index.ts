@@ -23,7 +23,8 @@ class Tsnp extends Generator {
       this.answers = await this.prompt(this.promptMetaOpt);
       console.log('ans', this.answers);
     } catch (err) {
-      console.log(err);
+      this.log(err);
+      throw err;
     }
   }
 

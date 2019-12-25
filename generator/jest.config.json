@@ -1,3 +1,6 @@
 {
-  "testMatch": ["**/tests-dist/**/*.spec.js"]
+  "testMatch": ["**/tests-dist/**/*.spec.js"],
+  "transform": {
+    "^.+\\.(ts|tsx)$": "ts-jest"
+  }
 }
