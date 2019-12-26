@@ -28,6 +28,22 @@ export function getRenderPromptVariables(
       default: this.appname
     },
     {
+      _key: '__tsnp_npm_scope',
+      type: 'input',
+      name: 'npmScope',
+      message:
+        'What is your npm scope? ' +
+        chalk.yellow(' (without @) ') +
+        chalk.gray(
+          "(If you want to publish at global scope, leave this field empty(or empty string '')."
+        ) +
+        chalk.gray(' It is always nice to publish packages under a scope. ') +
+        chalk.gray(
+          'Learn more about scopes here: https://docs.npmjs.com/misc/scope)'
+        ),
+      store: true
+    },
+    {
       _key: '__tsnp_github_scope',
 
       type: 'input',

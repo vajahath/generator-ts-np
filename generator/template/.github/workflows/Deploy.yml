@@ -19,7 +19,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - run: npm run rescope @tsnp_npm_scope
+      - run: npm run rescope <%- npmScope %>
       - run: ls && npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -37,7 +37,7 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - run: npm run rescope @tsnp_github_scope
+      - run: npm run rescope <%- githubUsername %>
       - run: ls && npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
