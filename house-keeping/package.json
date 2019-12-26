@@ -13,8 +13,6 @@
     "lint": "eslint \"src/**/*\" \"tests/**/*\" && prettier \"src/**/*\" \"tests/**/*\" -l",
     "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
     "clean-builds": "gulp clean-builds",
-    "compile-type-to-schema": "ts-json-schema-generator --path src\\utils\\base-structure-name-mapping\\base-structure-mapping.interface.ts",
-    "compile-type-to-help": "ts-json-schema-generator --help",
     "start": "gulp --gulpfile \"dist/gulpfile.js\"",
     "copy-meta-assets": "gulp copy-meta-assets"
   },
