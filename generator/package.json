@@ -32,6 +32,7 @@
   "license": "MIT",
   "homepage": "https://github.com/vajahath/generator-ts-np#readme",
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/ejs": "^3.0.0",
     "@types/jest": "^24.0.23",
     "@types/node": "^12.12.12",
@@ -58,6 +59,7 @@
   },
   "dependencies": {
     "camel-case": "^3.0.0",
+    "chalk": "^3.0.0",
     "shelljs": "^0.8.3",
     "yeoman-generator": "^4.2.0"
   },

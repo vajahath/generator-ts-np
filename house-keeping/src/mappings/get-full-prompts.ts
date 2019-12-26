@@ -10,6 +10,7 @@ import {
 } from './Types';
 
 import { getRenderPromptVariables } from './name-mapping';
+import chalk = require('chalk');
 
 export function getFullTSNPPrompts(
   this: Generator
@@ -22,13 +23,15 @@ export function getFullTSNPPrompts(
     {
       type: 'input',
       name: 'npmScope',
-      prefix: '@',
-      suffix: '/',
       message:
         'What is your npm scope? ' +
-        'If you want to publish at global scope, leave this field empty.' +
-        ' It is always nice to publish packages under a scope. ' +
-        'Learn more about scopes here: https://docs.npmjs.com/misc/scope',
+        chalk.gray(
+          "(If you want to publish at global scope, leave this field empty(or empty string '')."
+        ) +
+        chalk.gray(' It is always nice to publish packages under a scope. ') +
+        chalk.gray(
+          'Learn more about scopes here: https://docs.npmjs.com/misc/scope)'
+        ),
       store: true
     }
   ];

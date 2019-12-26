@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/vajahath/npm-scope-prefixer#readme",
   "devDependencies": {
+    "@types/chalk": "^2.2.0",
     "@types/gulp": "^4.0.6",
     "@types/gulp-replace": "0.0.31",
     "@types/is-windows": "^1.0.0",
@@ -47,6 +48,7 @@
     "typescript": "^3.7.2"
   },
   "dependencies": {
+    "chalk": "^3.0.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
