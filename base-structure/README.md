@@ -32,6 +32,8 @@ Few examples
 
 API doc
 
+[![](https://img.shields.io/badge/built%20with-ts--np%20tsnp__version-lightgrey?style=flat-square)](https://github.com/vajahath/generator-ts-np)
+
 ## Licence
 
 MIT &copy; [__tsnp_owner_full_name](https://twitter.com/__tsnp_twitter_username)

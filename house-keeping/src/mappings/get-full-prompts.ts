@@ -14,14 +14,17 @@ import { getRenderPromptVariables } from './name-mapping';
 export function getFullTSNPPrompts(
   this: Generator
 ): GetRenderPromptVariablesResult {
-  const { scopedPackageNameKey, queries } = getRenderPromptVariables.apply(
-    this
-  );
+  const {
+    scopedPackageNameKey,
+    queries,
+    versionKey
+  } = getRenderPromptVariables.apply(this);
 
   const userInputIndependentQueries: TSNPQueries = [];
 
   return {
     queries: [...queries, ...userInputIndependentQueries],
-    scopedPackageNameKey
+    scopedPackageNameKey,
+    versionKey
   };
 }

@@ -6,7 +6,8 @@ describe('testing get for full tsnp prompts', () => {
   test('testing with mocked yeoman generator context', () => {
     let result: GetRenderPromptVariablesResult = {
       queries: [],
-      scopedPackageNameKey: 'x'
+      scopedPackageNameKey: 'x',
+      versionKey: 'y'
     };
 
     {

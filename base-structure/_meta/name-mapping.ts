@@ -128,5 +128,9 @@ export function getRenderPromptVariables(
     }
   ];
 
-  return { queries, scopedPackageNameKey: 'tsnp__scoped_npm_package_name' };
+  return {
+    queries,
+    scopedPackageNameKey: 'tsnp__scoped_npm_package_name',
+    versionKey: 'tsnp__version'
+  };
 }

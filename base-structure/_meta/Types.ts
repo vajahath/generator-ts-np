@@ -13,6 +13,7 @@ export type TSNPQuery = Question & {
 export interface GetRenderPromptVariablesResult {
   queries: TSNPQueries;
   scopedPackageNameKey: string;
+  versionKey: string;
 }
 
 export { Generator };

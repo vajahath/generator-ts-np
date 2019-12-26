@@ -32,6 +32,8 @@ Few examples
 
 API doc
 
+[![](https://img.shields.io/badge/built%20with-ts--np%20<%- tsnpVersion %>-lightgrey?style=flat-square)](https://github.com/vajahath/generator-ts-np)
+
 ## Licence
 
 MIT &copy; [<%- ownerFullName %>](https://twitter.com/<%- twitterUsername %>)

@@ -5,7 +5,8 @@ describe('testing base name mapping', () => {
   test('testing with mocked yeoman generator context', () => {
     let result: GetRenderPromptVariablesResult = {
       queries: [],
-      scopedPackageNameKey: 'x'
+      scopedPackageNameKey: 'x',
+      versionKey: 'y'
     };
 
     {

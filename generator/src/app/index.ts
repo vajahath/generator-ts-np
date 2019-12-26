@@ -5,6 +5,8 @@ import camelCase = require('camel-case');
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
 
+const pkg = require('../../package.json');
+
 class Tsnp extends Generator {
   public answers: Generator.Answers = {};
   public promptMetaOpt: TSNPQueries = [];
@@ -40,7 +42,8 @@ class Tsnp extends Generator {
               this.answers.npmScope,
               this.answers.packageName
             )
-          }
+          },
+          ...{ tsnpVersion: pkg.version }
         },
         {},
         { globOptions: { dot: true } }

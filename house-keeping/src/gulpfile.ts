@@ -9,7 +9,7 @@ import {
 } from './config';
 import { getEjsMapping } from './mappings';
 
-const { scopedPackageNameKey, queries } = getEjsMapping();
+const { scopedPackageNameKey, queries, versionKey } = getEjsMapping();
 
 function excludePaths() {
   const exp: string[] = [
@@ -40,6 +40,9 @@ export function gBuild() {
   gulpChain = gulpChain.pipe(
     replace(scopedPackageNameKey, `<%- scopedPackageName %>`)
   );
+
+  // version
+  gulpChain = gulpChain.pipe(replace(versionKey, `<%- tsnpVersion %>`));
 
   return gulpChain.pipe(gulp.dest(HK_OUTPUT_DEST));
 }

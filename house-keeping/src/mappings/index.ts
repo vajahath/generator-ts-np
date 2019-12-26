@@ -4,7 +4,8 @@ import { getFullTSNPPrompts } from './get-full-prompts';
 export function getEjsMapping(): GetRenderPromptVariablesResult {
   let result: GetRenderPromptVariablesResult = {
     queries: [],
-    scopedPackageNameKey: 'will-be-populated-by-new K()'
+    scopedPackageNameKey: 'will-be-populated-by-new K()',
+    versionKey: 'version'
   };
 
   class Mock {
