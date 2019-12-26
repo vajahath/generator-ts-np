@@ -1,6 +1,9 @@
 /**
  * This file is copied from base-structure/_meta
  * So edit this file directly from there.
+ *
+ * The npm modules required here are for the
+ * /generator directory.
  */
 
 import {
@@ -8,6 +11,7 @@ import {
   TSNPQueries,
   GetRenderPromptVariablesResult
 } from './Types';
+import * as shell from 'shelljs';
 
 export function getRenderPromptVariables(
   this: Generator
@@ -29,7 +33,15 @@ export function getRenderPromptVariables(
         'What is your Github username? ' +
         '(This will be your GitHub scope, if you want to publish this package' +
         ' to GitHub Package Registry)',
-      default: this.user.github.username
+      ...(shell.which('git') &&
+      shell
+        .exec('git config --get user.email', {
+          silent: true,
+          cwd: this.destinationRoot()
+        })
+        .stdout.trim()
+        ? { default: this.user.github.username }
+        : { default: '' })
     },
     {
       _key: '__tsnp_github_repo',

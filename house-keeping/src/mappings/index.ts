@@ -13,6 +13,9 @@ export function getEjsMapping(): GetRenderPromptVariablesResult {
       github: { username: 'github-username' },
       git: { name: 'git-name', email: 'git-email' }
     };
+    public destinationRoot() {
+      return __dirname;
+    }
     constructor() {
       result = getFullTSNPPrompts.call(this as any);
     }
