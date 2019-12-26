@@ -19,9 +19,9 @@ class Tsnp extends Generator {
   public async prompting() {
     try {
       this.promptMetaOpt = getFullTSNPPrompts.apply(this).queries;
-      console.log(this.promptMetaOpt);
+      // console.log(this.promptMetaOpt);
       this.answers = await this.prompt(this.promptMetaOpt);
-      console.log('ans', this.answers);
+      // console.log('ans', this.answers);
     } catch (err) {
       this.log(err);
       throw err;
@@ -73,10 +73,10 @@ function renderEJSMapping(
     EJSMapping[camelCase(item.name)] = ans[item.name];
   }
 
-  console.log('EJSMapping', EJSMapping);
+  // console.log('EJSMapping', EJSMapping);
   return EJSMapping;
 }
 
 function getScopedPackageName(scope: string, packageName: string) {
-  return `${scope ? `${scope}/` : ''}${packageName}`;
+  return `${scope ? `@${scope}/` : ''}${packageName}`;
 }

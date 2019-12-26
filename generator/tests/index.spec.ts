@@ -1,29 +1,57 @@
 import * as helpers from 'yeoman-test';
 import * as path from 'path';
 import * as yoAss from 'yeoman-assert';
+import globby = require('globby');
+import { renderFile as rf } from 'ejs';
+
+function renderFile(filePath: string, data: object): Promise<string> {
+  return new Promise((resolve, reject) => {
+    rf(filePath, data, (err, str) => {
+      if (err) {
+        return reject(err);
+      }
+      return resolve(str);
+    });
+  });
+}
+
+const testData = {
+  npmScope: 'npmScope',
+  packageName: 'packageName',
+  githubUsername: 'githubUsername',
+  githubRepositoryName: 'githubRepositoryName',
+  packageDescription: 'packageDescription',
+  enginesNode: 'enginesNode',
+  ownerFullName: 'ownerFullName',
+  ownerEmail: 'ownerEmail@test.com',
+  licenceYear: 'licenceYear',
+  twitterUsername: 'twitterUsername'
+};
 
 describe('generate a project', () => {
-  test.only('generate', () => {
-    return helpers
+  test('generate', () =>
+    helpers
       .run(path.join(__dirname, '..', 'dist', 'app'))
-      .inTmpDir(dir => console.log(`> tepDir: ${dir}`))
-      .withPrompts({
-        npmScope: 'npmScope',
-        packageName: 'packageName',
-        githubUsername: 'githubUsername',
-        githubRepositoryName: 'githubRepositoryName',
-        packageDescription: 'packageDescription',
-        enginesNode: 'enginesNode',
-        ownerFullName: 'ownerFullName',
-        ownerEmail: 'ownerEmail',
-        licenceYear: 'licenceYear',
-        twitterUsername: 'twitterUsername'
-      })
-      .then(dir => {
-        console.log('complete', dir);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  });
+      .inTmpDir(dir => console.log(`> tempDir: ${dir}`))
+      .withPrompts(testData)
+      .then(async dir => {
+        const BASE_FILES = (
+          await globby(['../template/**/*'], { dot: true, cwd: __dirname })
+        ).map(item => item.split('/template/')[1]);
+
+        for (const file of BASE_FILES) {
+          const tmpFile = path.join(dir, file);
+          yoAss.file(tmpFile);
+
+          const renderedContent = await renderFile(
+            path.join(__dirname, '..', 'template', file),
+            {
+              ...testData,
+              scopedPackageName: `@${testData.npmScope}/${testData.packageName}`
+            }
+          );
+
+          yoAss.fileContent(tmpFile, renderedContent);
+        }
+      }));
 });
