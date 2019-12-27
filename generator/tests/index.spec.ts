@@ -4,6 +4,8 @@ import * as yoAss from 'yeoman-assert';
 import globby = require('globby');
 import { renderFile as rf } from 'ejs';
 
+const pkg = require('../package.json');
+
 function renderFile(filePath: string, data: object): Promise<string> {
   return new Promise((resolve, reject) => {
     rf(filePath, data, (err, str) => {
@@ -47,7 +49,8 @@ describe('generate a project', () => {
             path.join(__dirname, '..', 'template', file),
             {
               ...testData,
-              scopedPackageName: `@${testData.npmScope}/${testData.packageName}`
+              scopedPackageName: `@${testData.npmScope}/${testData.packageName}`,
+              tsnpVersion: pkg.version
             }
           );
 

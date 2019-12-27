@@ -34,19 +34,21 @@ class Tsnp extends Generator {
 
   public async writing() {
     try {
+      const data = {
+        ...renderEJSMapping(this.answers, this.promptMetaOpt),
+        ...{
+          scopedPackageName: getScopedPackageName(
+            this.answers.npmScope,
+            this.answers.packageName
+          )
+        },
+        tsnpVersion: pkg.version
+      };
+
       this.fs.copyTpl(
         this.templatePath('**/*'),
         this.destinationRoot(),
-        {
-          ...renderEJSMapping(this.answers, this.promptMetaOpt),
-          ...{
-            scopedPackageName: getScopedPackageName(
-              this.answers.npmScope,
-              this.answers.packageName
-            )
-          },
-          ...{ tsnpVersion: pkg.version }
-        },
+        data,
         {},
         { globOptions: { dot: true } }
       );
