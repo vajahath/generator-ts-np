@@ -1,4 +1,5 @@
 {
+  "private": true,
   "scripts": {
     "ci-test": "npm run lint && npm test",
     "ci-i": "npm ci && npm run base-ci && npm run hk-ci && npm run gen-ci",
