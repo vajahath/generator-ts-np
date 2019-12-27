@@ -11,6 +11,7 @@
   "scripts": {
     "test": "jest --coverage --config jest.config.json --detectOpenHandles",
     "build": "npm run clean-builds && npm run src-build && npm run tests-build && npm run copy-assets",
+    "prepublishOnly": "npm run test",
     "src-build": "tsc -p tsconfig.json",
     "tests-build": "tsc -p tsconfig.spec.json",
     "rescope": "node ./dist/bin/npm-scope-prefixer -s",

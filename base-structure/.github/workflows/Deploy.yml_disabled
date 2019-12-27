@@ -18,7 +18,6 @@ jobs:
       - run: node --version
       - run: npm ci
       - run: npm run lint
-      - run: npm run build
       - run: npm run rescope __tsnp_npm_scope
       - run: ls && npm publish --access=public
         env:
@@ -36,7 +35,6 @@ jobs:
       - run: node --version
       - run: npm ci
       - run: npm run lint
-      - run: npm run build
       - run: npm run rescope __tsnp_github_scope
       - run: ls && npm publish
         env:
