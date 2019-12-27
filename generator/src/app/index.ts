@@ -7,7 +7,6 @@ import chalk = require('chalk');
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
 
-
 const pkg = require('../../package.json');
 updateNotifier({ pkg }).notify();
 
