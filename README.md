@@ -1,5 +1,5 @@
 
-# generator-ts-np (Preview 🧪)
+# generator-ts-np (v3 Preview 🧪)
 
 Yet another yeoman generator for building npm modules with typescript.
 
