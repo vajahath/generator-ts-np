@@ -1,8 +1,10 @@
 # generator-ts-np
 
-Yet another [yeoman](https://yeoman.io/) generator for building npm packages with TypeScript. 
+Yet another [yeoman](https://yeoman.io/) generator for building npm packages with TypeScript.
 
-![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/vajahath/generator-ts-np.svg)](https://greenkeeper.io/)
+![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg)
+
+![](../media/logo-old.png)
 
 ## Install
 
@@ -34,11 +36,11 @@ $ yo ts-np # use yeoman
 
 - No global dependencies.
 - Written in TypeScript and when publishing, definition(`.d.ts`) will also ship with this package.
-- Prettier, Eslint
+- Prettier and Eslint.
 - Support for [Github Package Registry](https://github.com/features/packages) and [NPM](https://npmjs.com)
 - Tests uses [Jest](https://jestjs.io) (tests are also written in TypeScript)
 - Pre-publish hook for build (so you never miss it)
-- Automated build and deployments (using Github Actions) (eg: [this package]())
+- Automated build and deployments (using Github Actions) (eg: [scope-prefixer package](https://github.com/vajahath/npm-scope-prefixer/commit/6294ca949db444de45e6668fb15a859c987dbbfd/checks?check_suite_id=327889691))
 - Lint rules adopted from Google Repo (which means higher coding standard)
 - Publishes only the required files (less bundle size)
 
@@ -80,7 +82,7 @@ The generator produces following files.
 ## Handy npm scripts
 
 - `npm test`: [🌟](https://github.com/vajahath/generator-ts-np/wiki/ts-np-3#some-npm-scripts-and-their-uses) compiles typescript (`npm run build`) and run tests.
-- `npm run build`: compiles src and tests files. 
+- `npm run build`: compiles src and tests files.
 - `npm run lint`: runs eslint and prettier checks.
 
 [See other scripts and their uses](https://github.com/vajahath/generator-ts-np/wiki/ts-np-3#some-npm-scripts-and-their-uses)
