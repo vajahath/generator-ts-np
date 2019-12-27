@@ -1,16 +1,16 @@
 const gulp = require('gulp');
 const del = require('del');
 
-gulp.task('copy-src-assets', () => {
+exports['copy-src-assets'] = () => {
   return gulp.src(['./src/**/*', '!./src/**/*.ts']).pipe(gulp.dest('dist/'));
-});
+};
 
-gulp.task('copy-tests-assets', () => {
+exports['copy-tests-assets'] = () => {
   return gulp
     .src(['./tests/**/*', '!./tests/**/*.ts'])
     .pipe(gulp.dest('tests-dist/'));
-});
+};
 
-gulp.task('clean-builds', () => {
+exports['clean-builds'] = () => {
   return del(['dist/**/*', 'tests-dist/**/*']);
-});
+};
