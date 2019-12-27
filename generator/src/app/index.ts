@@ -2,9 +2,11 @@ import { join as pathJoin } from 'path';
 import Generator = require('yeoman-generator');
 import camelCase = require('camel-case');
 import updateNotifier = require('update-notifier');
+import chalk = require('chalk');
 
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
+
 
 const pkg = require('../../package.json');
 updateNotifier({ pkg }).notify();
@@ -20,6 +22,13 @@ class Tsnp extends Generator {
     this.sourceRoot(pathJoin(__dirname, '..', '..', 'template'));
   }
 
+  public initializing() {
+    this.log(
+      chalk.gray(`\n Asking a few questions for generating the base structure.
+If you have any doubts,
+see https://tinyurl.com/szponxx\n`)
+    );
+  }
   public async prompting() {
     try {
       this.promptMetaOpt = getFullTSNPPrompts.apply(this).queries;
