@@ -1,8 +1,8 @@
 # <%- packageName %>
 
-![](https://github.com/<%- githubUsername %>/<%- githubRepositoryName %>/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/<%- githubUsername %>/<%- githubRepositoryName %>.svg)](https://greenkeeper.io/)
-
 <%- packageDescription %>
+
+![](https://github.com/<%- githubUsername %>/<%- githubRepositoryName %>/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/<%- githubUsername %>/<%- githubRepositoryName %>.svg)](https://greenkeeper.io/)
 
 ## Install
 
