@@ -1,0 +1,70 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  Build-Base:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        node: ['10', '12', '13']
+    runs-on: ${{ matrix.os }}
+    name: Base (${{ matrix.os }}|node-${{ matrix.node }})
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1.2.0
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+      - run: npm ci
+        working-directory: ./base-structure
+      - run: npm run lint
+        working-directory: ./base-structure
+      - run: npm test
+        working-directory: ./base-structure
+
+  Build-Generator:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        node: ['10', '12', '13']
+    runs-on: ${{ matrix.os }}
+    name: Gen (${{ matrix.os }}|node-${{ matrix.node }})
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1.2.0
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+      - run: npm run ci-i
+      - run: npm run lint
+        working-directory: ./generator
+      - run: npm run build
+      - run: npm test
+        working-directory: ./generator
+
+  Build-HK:
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
+        node: ['13']
+    runs-on: ${{ matrix.os }}
+    name: HK (${{ matrix.os }}|node-${{ matrix.node }})
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: actions/setup-node@v1.2.0
+        with:
+          node-version: ${{ matrix.node }}
+      - run: node --version
+      - run: npm ci
+        working-directory: ./house-keeping
+      - run: npm run lint
+        working-directory: ./house-keeping
+      - run: npm run build
+        working-directory: ./house-keeping
+      - run: npm test
+        working-directory: ./house-keeping
+

@@ -5,28 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "TS FILE",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/ts-node",
-      "args": ["${relativeFile}"],
-      "cwd": "${workspaceRoot}",
-      "console": "integratedTerminal",
-      "protocol": "inspector",
-      "env": {},
-      "runtimeArgs": ["--nolazy"]
-    },
-    {
-      "name": "TS SPEC FILE",
-      "type": "node",
-      "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/jest",
-      "args": ["${relativeFile}", "--detectOpenHandles"],
-      "cwd": "${workspaceRoot}",
-      "console": "integratedTerminal",
-      "protocol": "inspector",
-      "env": {},
-      "runtimeArgs": ["--nolazy"]
+      "name": "Launch Program",
+      "skipFiles": ["<node_internals>/**"],
+      //   "program": "${file}",
+      "args": ["${file}"],
+      "runtimeArgs": ["-r", "ts-node/register"]
     }
   ]
 }

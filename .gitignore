@@ -1,19 +1,16 @@
+generator/src/app/name-mapping.ts
+generator/src/app/get-full-prompts.ts
+generator/src/app/Types.ts
+house-keeping/src/mappings/name-mapping.ts
+house-keeping/src/mappings/Types.ts
+
+dest-static
+dest-render
 mocha-insights/
 # credentials/
 test-dist
 dist
 generators
-schema-dist
-src/config/private
-schema-doc.md
-schema-doc.html
-src/jobs/company-uploads/temp/**
-!src/jobs/company-uploads/temp/**/
-!.gitkeep
-
-src/jobs/user-uploads/temp/**
-!src/jobs/user-uploads/temp/**/
-!.gitkeep
 
 # Logs
 logs

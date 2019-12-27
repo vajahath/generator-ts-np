@@ -1,65 +1,40 @@
 {
-  "name": "generator-ts-np",
-  "version": "2.1.2",
-  "description": "Yeoman Generator For Building Node Packages With Typescript",
-  "homepage": "https://github.com/vajahath/generator-ts-np#readme",
-  "author": "Vajahath Ahmed <vajuoff.1@gmail.com> (https://twitter.com/vajahath7)",
-  "files": [
-    "generators",
-    "template"
-  ],
-  "engines": {"node": "8"},
-  "license": "MIT",
-  "keywords": [
-    "yeoman-generator",
-    "typescript",
-    "yeoman-generator"
-  ],
+  "private": true,
   "scripts": {
-    "build": "gulp build",
-    "lint-noFix": "gulp lint-noFix",
-    "lint": "npm run prettier && npm run tslint",
-    "test": "npm run build && npm run test-core",
-    "test-core": "jest --config=./ci-jest.config.json --forceExit",
-    "compile": "tsc",
-    "prettier": "prettier \"{src/**/*.*,typings/**/*.*,tests/**/*.*}\" --write",
-    "tslint": "tslint -c tslint.json -p tsconfig.json -t stylish --fix \"{src,tests}/**/*.ts\"",
-    "prepublishOnly": "npm test",
-    "link-me": "npm run build && npm link"
+    "ci-test": "npm run lint && npm test",
+    "ci-i": "npm ci && npm run base-ci && npm run hk-ci && npm run gen-ci",
+    "ia": "npm i && npm run base-i && npm run hk-i && npm run gen-i",
+    "test": "npm run base-test && npm run hk-test && npm run gen-test",
+    "lint": "npm run base-lint && npm run hk-lint && npm run gen-lint",
+    "build": "npm run base-build && npm run hk-build && npm run make-generator && npm run gen-build",
+    "base-test": "cd base-structure && npm test",
+    "hk-test": "cd house-keeping && npm test",
+    "gen-test": "cd generator && npm test",
+    "base-build": "cd base-structure && npm run build",
+    "hk-build": "cd house-keeping && npm run build",
+    "gen-build": "cd generator && npm run build",
+    "base-lint": "cd base-structure && npm run lint",
+    "hk-lint": "cd house-keeping && npm run lint",
+    "gen-lint": "cd generator && npm run lint",
+    "base-ci": "cd base-structure && npm ci",
+    "hk-ci": "cd house-keeping && npm ci",
+    "gen-ci": "cd generator && npm ci",
+    "base-i": "cd base-structure && npm i",
+    "hk-i": "cd house-keeping && npm i",
+    "gen-i": "cd generator && npm i",
+    "make-generator": "cd house-keeping && npm start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/vajahath/generator-ts-np.git"
-  },
+  "author": "",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/vajahath/generator-ts-np/issues"
   },
-  "dependencies": {
-    "chalk": "^2.4.1",
-    "update-notifier": "^2.5.0",
-    "yeoman-generator": "^3.1.1",
-    "yosay": "^2.0.2"
-  },
+  "homepage": "https://github.com/vajahath/generator-ts-np#readme",
   "devDependencies": {
-    "@types/chalk": "^2.2.0",
-    "@types/jest": "^23.3.1",
-    "@types/update-notifier": "^2.2.0",
-    "@types/yeoman-generator": "^2.0.3",
-    "@types/yeoman-test": "^1.7.4",
-    "@types/yosay": "^0.0.29",
-    "del": "^3.0.0",
-    "fancy-log": "^1.3.2",
-    "gulp": "^3.9.1",
-    "gulp-cli": "^2.0.1",
-    "gulp-prettier-plugin": "^1.3.0",
-    "gulp-tslint": "^8.1.3",
-    "gulp-typescript": "^5.0.0-alpha.2",
-    "jest": "^23.2.0",
-    "prettier": "^1.13.7",
-    "run-sequence": "^2.2.1",
-    "tslint": "^5.10.0",
-    "typescript": "^3.0.0",
-    "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^1.9.1"
-  }
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.21",
+    "ts-node": "^8.5.4",
+    "typescript": "^3.7.4"
+  },
+  "dependencies": {}
 }

@@ -1,0 +1,55 @@
+{
+  "main": "dist/gulpfile.js",
+  "private": true,
+  "typings": "dist/gulpfile.d.ts",
+  "directories": {
+    "test": "tests",
+    "lib": "dist"
+  },
+  "scripts": {
+    "start": "gulp --gulpfile \"dist/gulpfile.js\"",
+    "test": "jest --coverage --config jest.config.json --runInBand",
+    "build": "npm run copy-meta-assets && npm run clean-builds && npm run src-build && npm run tests-build && npm run copy-assets",
+    "src-build": "tsc -p tsconfig.json",
+    "tests-build": "tsc -p tsconfig.spec.json",
+    "lint": "eslint \"src/**/*\" \"tests/**/*\" && prettier \"src/**/*\" \"tests/**/*\" -l",
+    "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
+    "clean-builds": "gulp clean-builds",
+    "copy-meta-assets": "gulp copy-meta-assets"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "author": "Vajahath Ahmed <vajuoff.1@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/vajahath/generator-ts-np#readme",
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/gulp": "^4.0.6",
+    "@types/gulp-replace": "0.0.31",
+    "@types/is-windows": "^1.0.0",
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.12",
+    "@types/shelljs": "^0.8.6",
+    "@types/yeoman-generator": "^3.1.4",
+    "@typescript-eslint/eslint-plugin": "^2.8.0",
+    "@typescript-eslint/parser": "^2.8.0",
+    "eslint": "^6.7.0",
+    "eslint-config-prettier": "^6.7.0",
+    "globby": "^10.0.1",
+    "is-windows": "^1.0.2",
+    "jest": "^24.9.0",
+    "prettier": "^1.19.1",
+    "ts-node": "^8.5.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.2.0",
+    "gulp-replace": "^1.0.0",
+    "shelljs": "^0.8.3",
+    "yeoman-generator": "^4.2.0"
+  }
+}
