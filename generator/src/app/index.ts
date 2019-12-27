@@ -1,11 +1,13 @@
 import { join as pathJoin } from 'path';
 import Generator = require('yeoman-generator');
 import camelCase = require('camel-case');
+import updateNotifier = require('update-notifier');
 
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
 
 const pkg = require('../../package.json');
+updateNotifier({ pkg }).notify();
 
 class Tsnp extends Generator {
   public answers: Generator.Answers = {};
