@@ -2,7 +2,7 @@
 
 __tsnp_package_description
 
-![](https://github.com/__tsnp_github_scope/__tsnp_github_repo/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/__tsnp_github_scope/__tsnp_github_repo.svg)](https://greenkeeper.io/)
+![](https://github.com/__tsnp_github_scope/__tsnp_github_repo/workflows/Build/badge.svg)
 
 ## Install
 

@@ -46,7 +46,7 @@ $ yo ts-np # use yeoman
 
 ## Directory Structure
 
-`$ yo ts-np` command will [ask you a few questions](https://github.com/vajahath/generator-ts-np/wiki/ts-np-3#some-questions-generator-will-ask) and generate the below structure.
+`$ yo ts-np` command will [ask you a few questions](https://github.com/vajahath/generator-ts-np/wiki/ts-np-v3.x-help#some-questions-generator-will-ask) and generate the below structure.
 
 - You write your typescript files in `/src`.
 - Write their tests in `/tests`
@@ -85,7 +85,7 @@ The generator produces following files.
 - `npm run build`: compiles src and tests files.
 - `npm run lint`: runs eslint and prettier checks.
 
-[See other scripts and their uses](https://github.com/vajahath/generator-ts-np/wiki/ts-np-3#some-npm-scripts-and-their-uses)
+[See other scripts and their uses](https://github.com/vajahath/generator-ts-np/wiki/ts-np-v3.x-help#some-npm-scripts-and-their-uses)
 
 ## Automated Build 🧪 and Deployments ✅
 
