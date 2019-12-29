@@ -50,6 +50,7 @@
     "gulp-cli": "^2.2.0",
     "gulp-replace": "^1.0.0",
     "shelljs": "^0.8.3",
+    "word-wrap": "^1.2.3",
     "yeoman-generator": "^4.2.0"
   }
 }
