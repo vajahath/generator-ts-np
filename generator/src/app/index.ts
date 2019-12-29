@@ -3,9 +3,11 @@ import Generator = require('yeoman-generator');
 import { camelCase } from 'camel-case';
 import updateNotifier = require('update-notifier');
 import chalk = require('chalk');
+import rename = require('gulp-rename');
 
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
+import { convertToOriginalName } from './name-conversion';
 
 const pkg = require('../../package.json');
 updateNotifier({ pkg }).notify();
@@ -19,6 +21,28 @@ class Tsnp extends Generator {
 
     // set root
     this.sourceRoot(pathJoin(__dirname, '..', '..', 'template'));
+    this.registerTransformStream(
+      rename(filePath => {
+        if(filePath.basename?.includes('yo-rc')){
+          return;
+        }
+        
+        if (filePath.basename || filePath.extname) {
+          filePath.basename = convertToOriginalName(
+            (filePath.basename || '') + (filePath.extname || '')
+          );
+        }
+
+        if (filePath.dirname && filePath.dirname !== '.') {
+          filePath.dirname = filePath.dirname
+            .split('/')
+            .map(val => convertToOriginalName(val))
+            .join('/');
+        }
+
+        filePath.extname = '';
+      })
+    );
   }
 
   public initializing() {

@@ -16,6 +16,8 @@ export const GENERATOR_META_CODE_LOC = join(
   'app'
 );
 
+export const RAW_TEMPLATE_LOC = join(__dirname, '..', 'raw-template');
+
 export const HK_OUTPUT_DEST = join(
   __dirname,
   '..',

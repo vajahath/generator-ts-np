@@ -1,11 +1,14 @@
 import * as gulp from 'gulp';
 import replace = require('gulp-replace');
 import del = require('del');
+import rename = require('gulp-rename');
+import { convertToTemplateName } from './name-conversion';
 
 import {
   BASE_STRUCTURE_ROOT,
   HK_OUTPUT_DEST,
-  GENERATOR_META_CODE_LOC
+  GENERATOR_META_CODE_LOC,
+  RAW_TEMPLATE_LOC
 } from './config';
 import { getEjsMapping } from './mappings';
 
@@ -44,12 +47,14 @@ export function gBuild() {
   // version
   gulpChain = gulpChain.pipe(replace(versionKey, `<%- tsnpVersion %>`));
 
-  return gulpChain.pipe(gulp.dest(HK_OUTPUT_DEST));
+  return gulpChain.pipe(gulp.dest(RAW_TEMPLATE_LOC));
 }
 
 export function gClearDest() {
   const templatePath = HK_OUTPUT_DEST + '/**/*';
-  return del(templatePath, { force: true, dot: true });
+  const rawTemplatePath = RAW_TEMPLATE_LOC + '/**/*';
+
+  return del([templatePath, rawTemplatePath], { force: true, dot: true });
 }
 
 export function copyMeta() {
@@ -61,12 +66,42 @@ export function copyMeta() {
         // moving a directory backward to account build process
         // the build will make the js file in dist folder
         // so we need to move a step back to get this file.
-        '../src/mappings/get-full-prompts.ts'
+        '../src/mappings/get-full-prompts.ts',
+        '../src/name-conversion.ts'
       ],
       { dot: true }
     )
     .pipe(gulp.dest(GENERATOR_META_CODE_LOC));
 }
+
+export function convertName() {
+  return (
+    gulp
+      .src(RAW_TEMPLATE_LOC + '/**/*', { dot: true })
+      // rename
+      .pipe(
+        rename(filePath => {
+          if (filePath.basename || filePath.extname) {
+            filePath.basename = convertToTemplateName(
+              (filePath.basename || '') + (filePath.extname || '')
+            );
+          }
+
+          if (filePath.dirname && filePath.dirname !== '.') {
+            filePath.dirname = filePath.dirname
+              .split('/')
+              .map(val => convertToTemplateName(val))
+              .join('/');
+          }
+
+          filePath.extname = '';
+          console.log(filePath);
+        })
+      )
+      .pipe(gulp.dest(HK_OUTPUT_DEST))
+  );
+}
+
 export default (function() {
-  return gulp.series(gClearDest, gBuild, copyMeta);
+  return gulp.series(gClearDest, gBuild, copyMeta, convertName);
 })();
