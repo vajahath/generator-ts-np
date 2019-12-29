@@ -1,0 +1,13 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "base-structure/package.json",
+        "generator/package.json",
+        "generator/template/package.json",
+        "house-keeping/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
