@@ -23,9 +23,12 @@ class Tsnp extends Generator {
 
   public initializing() {
     this.log(
-      chalk.gray(`\n Asking a few questions for generating the base structure.
-If you have any doubts,
-see https://tinyurl.com/szponxx\n`)
+      chalk.gray(`
+ TS-NP-GENERATOR
+ ===============
+ Asking a few questions for generating the base structure.
+ If you have any doubts,
+ see https://tinyurl.com/szponxx\n`)
     );
   }
   public async prompting() {
@@ -63,6 +66,14 @@ see https://tinyurl.com/szponxx\n`)
     } catch (err) {
       this.log(err);
     }
+  }
+
+  public end() {
+    this.log(`\n 🎉 ${chalk.gray('Scaffolded! You can now run')} ${chalk.yellow(
+      'npm install'
+    )} or ${chalk.yellow('yarn')}.
+    ${chalk.gray(`Learn more https://www.npmjs.com/package/generator-ts-np`)}
+    Build great things! Happy coding 💖\n`);
   }
 }
 
