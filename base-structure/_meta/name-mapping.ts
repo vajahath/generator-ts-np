@@ -14,6 +14,7 @@ import {
 import * as shell from 'shelljs';
 
 import chalk = require('chalk');
+import wrap = require('word-wrap');
 
 export function getRenderPromptVariables(
   this: Generator
@@ -33,13 +34,18 @@ export function getRenderPromptVariables(
       name: 'npmScope',
       message:
         'What is your npm scope? ' +
-        chalk.yellow(' (without @) ') +
-        chalk.gray(
-          "(If you want to publish at global scope, leave this field empty(or empty string '')."
-        ) +
-        chalk.gray(' It is always nice to publish packages under a scope. ') +
-        chalk.gray(
-          'Learn more about scopes here: https://docs.npmjs.com/misc/scope)'
+        chalk.yellow(' (without @) \n') +
+        wrap(
+          chalk.gray(
+            "(If you want to publish at global scope, leave this field empty(or empty string '')."
+          ) +
+            chalk.gray(
+              ' It is always nice to publish packages under a scope. '
+            ) +
+            chalk.gray(
+              'Learn more about scopes here: https://docs.npmjs.com/misc/scope)'
+            ),
+          { width: 63 }
         ),
       store: true
     },
@@ -49,11 +55,12 @@ export function getRenderPromptVariables(
       type: 'input',
       name: 'githubUsername',
       message:
-        'What is your Github username? ' +
-        chalk.gray(
-          '(This will be your GitHub scope, if you want to publish this package'
-        ) +
-        chalk.gray(' to GitHub Package Registry)'),
+        'What is your Github username? \n' +
+        wrap(
+          chalk.gray(
+            '(This will be your GitHub scope, if you want to publish this package'
+          ) + chalk.gray(' to GitHub Package Registry)')
+        ),
       ...(shell.which('git') &&
       shell
         .exec('git config --get user.email', {
