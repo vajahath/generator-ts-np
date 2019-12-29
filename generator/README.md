@@ -4,8 +4,7 @@ Yet another [yeoman](https://yeoman.io/) generator for building npm packages wit
 
 ![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/vajahath/generator-ts-np.svg)](https://greenkeeper.io/)
 
-
-![](../media/logo-old.png)
+![](https://raw.githubusercontent.com/vajahath/generator-ts-np/master/media/logo-old.png)
 
 ## Install
 
