@@ -7,6 +7,7 @@
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
+    "google",
     "prettier"
   ],
   "globals": {
@@ -20,6 +21,7 @@
   },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "@typescript-eslint/no-unused-vars": [2, { "args": "none" }]
+    "@typescript-eslint/no-unused-vars": [2, { "args": "none" }],
+    "linebreak-style": 0
   }
 }
