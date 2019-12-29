@@ -1,6 +1,6 @@
 {
   "name": "generator-ts-np",
-  "version": "3.0.0-beta.1",
+  "version": "3.0.0-beta.2",
   "description": "Yeoman Generator For Building Node Packages With Typescript",
   "main": "dist/app/index.js",
   "typings": "dist/app/index.d.ts",
@@ -57,7 +57,8 @@
     "ts-node": "^8.5.2",
     "typescript": "^3.7.2",
     "yeoman-assert": "^3.1.1",
-    "yeoman-test": "^2.0.0"
+    "yeoman-test": "^2.0.0",
+    "@vaju/npm-scope-prefixer": "^1.1.0"
   },
   "dependencies": {
     "camel-case": "^4.1.1",
