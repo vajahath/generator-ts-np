@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "<%- packageDescription %>",
   "main": "dist/index.js",
+  "files": ["dist/**/*", "!dist/**/*.map"],
   "typings": "dist/index.d.ts",
   "directories": {
     "test": "tests",
