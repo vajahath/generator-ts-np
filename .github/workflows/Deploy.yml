@@ -19,8 +19,11 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - run: npm run rescope @tsnp_npm_scope
-      - run: ls && npm publish --access=public
+      - run: npm test
+      - run: npm run rescope vaju
+        working-directory: ./generator
+      - run: ls && npm publish --tag=next --access=public
+        working-directory: ./generator
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
@@ -37,7 +40,10 @@ jobs:
       - run: npm ci
       - run: npm run lint
       - run: npm run build
-      - run: npm run rescope @tsnp_github_scope
-      - run: ls && npm publish
+      - run: npm test
+      - run: npm run rescope vajahath
+        working-directory: ./generator
+      - run: ls && npm publish --tag=next
+        working-directory: ./generator
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
