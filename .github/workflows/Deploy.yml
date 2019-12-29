@@ -16,10 +16,10 @@ jobs:
           node-version: '12'
           registry-url: 'https://registry.npmjs.org'
       - run: node --version
-      - run: npm ci
+      - run: npm run ci-i
       - run: npm run lint
       - run: npm run build
-      - run: npm test
+      - run: npm run test
       - run: npm run rescope vaju
         working-directory: ./generator
       - run: ls && npm publish --tag=next --access=public
@@ -37,10 +37,10 @@ jobs:
           node-version: '12'
           registry-url: 'https://npm.pkg.github.com'
       - run: node --version
-      - run: npm ci
+      - run: npm run ci-i
       - run: npm run lint
       - run: npm run build
-      - run: npm test
+      - run: npm run test
       - run: npm run rescope vajahath
         working-directory: ./generator
       - run: ls && npm publish --tag=next
