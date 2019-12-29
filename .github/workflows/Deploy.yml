@@ -22,7 +22,7 @@ jobs:
       - run: npm run test
       - run: npm run rescope vaju
         working-directory: ./generator
-      - run: ls && npm publish --tag=next --access=public
+      - run: ls && npm publish --tag=beta --access=public
         working-directory: ./generator
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -43,7 +43,7 @@ jobs:
       - run: npm run test
       - run: npm run rescope vajahath
         working-directory: ./generator
-      - run: ls && npm publish --tag=next
+      - run: ls && npm publish --tag=beta
         working-directory: ./generator
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
