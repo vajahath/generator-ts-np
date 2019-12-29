@@ -3,7 +3,8 @@
 
 Yet another yeoman generator for building npm modules with typescript.
 
-![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg)
+![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/vajahath/generator-ts-np.svg)](https://greenkeeper.io/)
+
 
 > This package is currently in beta.
 

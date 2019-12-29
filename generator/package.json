@@ -36,7 +36,7 @@
     "@types/chalk": "^2.2.0",
     "@types/ejs": "^3.0.0",
     "@types/jest": "^24.0.23",
-    "@types/node": "^12.12.12",
+    "@types/node": "^13.1.1",
     "@types/shelljs": "^0.8.6",
     "@types/update-notifier": "^2.5.0",
     "@types/yeoman-assert": "^3.1.1",
@@ -60,7 +60,7 @@
     "yeoman-test": "^2.0.0"
   },
   "dependencies": {
-    "camel-case": "^3.0.0",
+    "camel-case": "^4.1.1",
     "chalk": "^3.0.0",
     "shelljs": "^0.8.3",
     "update-notifier": "^4.0.0",

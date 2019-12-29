@@ -2,7 +2,8 @@
 
 <%- packageDescription %>
 
-![](https://github.com/<%- githubUsername %>/<%- githubRepositoryName %>/workflows/Build/badge.svg)
+![](https://github.com/<%- githubUsername %>/<%- githubRepositoryName %>/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/vajahath/generator-ts-np.svg)](https://greenkeeper.io/)
+
 
 ## Install
 

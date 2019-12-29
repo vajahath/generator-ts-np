@@ -1,6 +1,6 @@
 import { join as pathJoin } from 'path';
 import Generator = require('yeoman-generator');
-import camelCase = require('camel-case');
+import { camelCase } from 'camel-case';
 import updateNotifier = require('update-notifier');
 import chalk = require('chalk');
 
