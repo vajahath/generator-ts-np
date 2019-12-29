@@ -21,7 +21,8 @@
     "base-i": "cd base-structure && npm i",
     "hk-i": "cd house-keeping && npm i",
     "gen-i": "cd generator && npm i",
-    "make-generator": "cd house-keeping && npm start"
+    "make-generator": "cd house-keeping && npm start",
+    "new-version": "cd generator && npm version"
   },
   "author": "",
   "license": "ISC",
