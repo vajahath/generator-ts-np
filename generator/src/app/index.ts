@@ -23,10 +23,10 @@ class Tsnp extends Generator {
     this.sourceRoot(pathJoin(__dirname, '..', '..', 'template'));
     this.registerTransformStream(
       rename(filePath => {
-        if(filePath.basename?.includes('yo-rc')){
+        if (filePath.basename?.includes('yo-rc')) {
           return;
         }
-        
+
         if (filePath.basename || filePath.extname) {
           filePath.basename = convertToOriginalName(
             (filePath.basename || '') + (filePath.extname || '')
