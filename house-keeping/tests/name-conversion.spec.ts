@@ -5,8 +5,8 @@ import {
 
 describe('testing for err throwing', () => {
   test('/ throw err', () => {
-    expect(()=>convertToOriginalName('testfadf/test')).toThrowError();
-    expect(()=>convertToTemplateName('dsfdtest/test')).toThrowError();
+    expect(() => convertToOriginalName('testfadf/test')).toThrowError();
+    expect(() => convertToTemplateName('dsfdtest/test')).toThrowError();
   });
 });
 
