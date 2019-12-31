@@ -1,5 +1,5 @@
 import { promises as fs } from 'fs';
-import { join, sep } from 'path';
+import { join } from 'path';
 import { spawnSync } from 'child_process';
 import isWindows = require('is-windows');
 import globby = require('globby');
@@ -148,9 +148,9 @@ describe('testing gulp file', () => {
       .map(v => v.split('/template/')[1])
       .map(v =>
         v
-          .split(sep)
+          .split('/')
           .map(w => convertToOriginalName(w))
-          .join(sep)
+          .join('/')
       );
 
     expect(files.every(f => baseFiles.includes(f))).toBeTruthy();
