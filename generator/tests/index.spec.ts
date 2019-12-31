@@ -1,5 +1,5 @@
 import * as helpers from 'yeoman-test';
-import * as path from 'path';
+import * as path from 'upath';
 import { sep } from 'path';
 import * as yoAss from 'yeoman-assert';
 import globby = require('globby');
@@ -48,9 +48,9 @@ describe('generate a project', () => {
           .map(item => item.split('/template/')[1])
           .map(v =>
             v
-              .split(sep)
+              .split('/')
               .map(w => convertToOriginalName(w))
-              .join(sep)
+              .join('/')
           );
 
         for (const file of BASE_FILES) {

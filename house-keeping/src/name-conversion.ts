@@ -10,7 +10,6 @@ export function convertToTemplateName(fileName: string) {
 }
 
 export function convertToOriginalName(fileName: string) {
-  console.trace({ fileName });
   if (fileName.includes('/') || fileName.includes('\\')) {
     throw new Error('Only fileName no / or \\');
   }
