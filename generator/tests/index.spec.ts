@@ -1,6 +1,5 @@
 import * as helpers from 'yeoman-test';
 import * as path from 'upath';
-import { sep } from 'path';
 import * as yoAss from 'yeoman-assert';
 import globby = require('globby');
 import { renderFile as rf } from 'ejs';
