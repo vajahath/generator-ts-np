@@ -1,13 +1,13 @@
 import { join } from 'upath';
 
-export const BASE_STRUCTURE_ROOT = join(
+export const BASE_STRUCTURE_ROOT_GLOB = join(
   __dirname,
   '..',
   '..',
   'base-structure'
 );
 
-export const GENERATOR_META_CODE_LOC = join(
+export const GENERATOR_META_CODE_LOC_GLOB = join(
   __dirname,
   '..',
   '..',
@@ -16,9 +16,9 @@ export const GENERATOR_META_CODE_LOC = join(
   'app'
 );
 
-export const RAW_TEMPLATE_LOC = join(__dirname, '..', 'raw-template');
+export const RAW_TEMPLATE_LOC_GLOB = join(__dirname, '..', 'raw-template');
 
-export const HK_OUTPUT_DEST = join(
+export const HK_OUTPUT_DEST_GLOB = join(
   __dirname,
   '..',
   '..',

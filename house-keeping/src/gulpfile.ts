@@ -6,10 +6,10 @@ import { convertToTemplateName } from './name-conversion';
 import { sep } from 'path';
 
 import {
-  BASE_STRUCTURE_ROOT,
-  HK_OUTPUT_DEST,
-  GENERATOR_META_CODE_LOC,
-  RAW_TEMPLATE_LOC
+  BASE_STRUCTURE_ROOT_GLOB,
+  HK_OUTPUT_DEST_GLOB,
+  GENERATOR_META_CODE_LOC_GLOB,
+  RAW_TEMPLATE_LOC_GLOB
 } from './config';
 import { getEjsMapping } from './mappings';
 
@@ -24,13 +24,16 @@ function excludePaths() {
     '/tests-dist/**',
     '/package-lock.json'
   ];
-  return exp.map(val => '!' + BASE_STRUCTURE_ROOT + val);
+  return exp.map(val => '!' + BASE_STRUCTURE_ROOT_GLOB + val);
 }
 
 export function gBuild() {
-  let gulpChain = gulp.src([BASE_STRUCTURE_ROOT + '/**/*', ...excludePaths()], {
-    dot: true
-  });
+  let gulpChain = gulp.src(
+    [BASE_STRUCTURE_ROOT_GLOB + '/**/*', ...excludePaths()],
+    {
+      dot: true
+    }
+  );
 
   for (const item of queries) {
     if (!item._key) {
@@ -48,12 +51,12 @@ export function gBuild() {
   // version
   gulpChain = gulpChain.pipe(replace(versionKey, `<%- tsnpVersion %>`));
 
-  return gulpChain.pipe(gulp.dest(RAW_TEMPLATE_LOC));
+  return gulpChain.pipe(gulp.dest(RAW_TEMPLATE_LOC_GLOB));
 }
 
 export function gClearDest() {
-  const templatePath = HK_OUTPUT_DEST + '/**/*';
-  const rawTemplatePath = RAW_TEMPLATE_LOC + '/**/*';
+  const templatePath = HK_OUTPUT_DEST_GLOB + '/**/*';
+  const rawTemplatePath = RAW_TEMPLATE_LOC_GLOB + '/**/*';
 
   return del([templatePath, rawTemplatePath], { force: true, dot: true });
 }
@@ -62,7 +65,7 @@ export function copyMeta() {
   return gulp
     .src(
       [
-        BASE_STRUCTURE_ROOT + '/_meta/**/*',
+        BASE_STRUCTURE_ROOT_GLOB + '/_meta/**/*',
 
         // moving a directory backward to account build process
         // the build will make the js file in dist folder
@@ -72,13 +75,13 @@ export function copyMeta() {
       ],
       { dot: true }
     )
-    .pipe(gulp.dest(GENERATOR_META_CODE_LOC));
+    .pipe(gulp.dest(GENERATOR_META_CODE_LOC_GLOB));
 }
 
 export function convertName() {
   return (
     gulp
-      .src(RAW_TEMPLATE_LOC + '/**/*', { dot: true })
+      .src(RAW_TEMPLATE_LOC_GLOB + '/**/*', { dot: true })
       // rename
       .pipe(
         rename(filePath => {
@@ -98,7 +101,7 @@ export function convertName() {
           filePath.extname = '';
         })
       )
-      .pipe(gulp.dest(HK_OUTPUT_DEST))
+      .pipe(gulp.dest(HK_OUTPUT_DEST_GLOB))
   );
 }
 
