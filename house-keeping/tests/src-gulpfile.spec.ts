@@ -3,6 +3,7 @@ import { join } from 'path';
 import { spawnSync } from 'child_process';
 import isWindows = require('is-windows');
 import globby = require('globby');
+import { convertToOriginalName } from '../dist/name-conversion';
 
 const GEN_TEMPLATE = join(__dirname, '..', '..', 'generator', 'template');
 
@@ -65,11 +66,11 @@ describe('testing gulp file', () => {
       throw r.error;
     }
     const files = (
-      await globby('../../generator/template/**/*', {
+      await globby('../raw-template/**/*', {
         dot: true,
         cwd: __dirname
       })
-    ).map(v => v.split('template/')[1]);
+    ).map(v => v.split('raw-template/')[1]);
 
     const BASE_FILES = (
       await globby(
@@ -117,5 +118,42 @@ describe('testing gulp file', () => {
 
     expect(files.every(f => target.includes(f))).toBeTruthy();
     expect(target.indexOf('get-full-prompts.ts') > -1).toBeTruthy();
+  });
+
+  test('testing convert name', async () => {
+    const r = spawnSync(
+      GULP,
+      ['convertName', '--gulpfile', join('dist', 'gulpfile.js')],
+      {
+        cwd: join(__dirname, '..')
+      }
+    );
+    if (r.error) {
+      throw r.error;
+    }
+
+    const baseFiles = (
+      await globby('../raw-template/**/*', {
+        dot: true,
+        cwd: __dirname
+      })
+    ).map(v => v.split('raw-template/')[1]);
+
+    const files = (
+      await globby('../../generator/template/**/*', {
+        dot: true,
+        cwd: __dirname
+      })
+    )
+      .map(v => v.split('/template/')[1])
+      .map(v =>
+        v
+          .split('/')
+          .map(w => convertToOriginalName(w))
+          .join('/')
+      );
+
+    expect(files.every(f => baseFiles.includes(f))).toBeTruthy();
+    expect(baseFiles.every(f => files.includes(f))).toBeTruthy();
   });
 });

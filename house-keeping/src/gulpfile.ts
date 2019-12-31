@@ -95,7 +95,6 @@ export function convertName() {
           }
 
           filePath.extname = '';
-          console.log(filePath);
         })
       )
       .pipe(gulp.dest(HK_OUTPUT_DEST))
