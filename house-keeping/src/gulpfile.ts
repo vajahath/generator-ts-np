@@ -3,6 +3,7 @@ import replace = require('gulp-replace');
 import del = require('del');
 import rename = require('gulp-rename');
 import { convertToTemplateName } from './name-conversion';
+import { sep } from 'path';
 
 import {
   BASE_STRUCTURE_ROOT,
@@ -89,9 +90,9 @@ export function convertName() {
 
           if (filePath.dirname && filePath.dirname !== '.') {
             filePath.dirname = filePath.dirname
-              .split('/')
+              .split(sep)
               .map(val => convertToTemplateName(val))
-              .join('/');
+              .join(sep);
           }
 
           filePath.extname = '';

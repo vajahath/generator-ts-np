@@ -1,4 +1,4 @@
-import { join as pathJoin } from 'path';
+import { join as pathJoin, sep } from 'path';
 import Generator = require('yeoman-generator');
 import { camelCase } from 'camel-case';
 import updateNotifier = require('update-notifier');
@@ -35,9 +35,9 @@ class Tsnp extends Generator {
 
         if (filePath.dirname && filePath.dirname !== '.') {
           filePath.dirname = filePath.dirname
-            .split('/')
+            .split(sep)
             .map(val => convertToOriginalName(val))
-            .join('/');
+            .join(sep);
         }
 
         filePath.extname = '';

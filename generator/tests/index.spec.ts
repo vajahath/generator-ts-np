@@ -1,5 +1,6 @@
 import * as helpers from 'yeoman-test';
 import * as path from 'path';
+import { sep } from 'path';
 import * as yoAss from 'yeoman-assert';
 import globby = require('globby');
 import { renderFile as rf } from 'ejs';
@@ -47,9 +48,9 @@ describe('generate a project', () => {
           .map(item => item.split('/template/')[1])
           .map(v =>
             v
-              .split('/')
+              .split(sep)
               .map(w => convertToOriginalName(w))
-              .join('/')
+              .join(sep)
           );
 
         for (const file of BASE_FILES) {
@@ -62,9 +63,9 @@ describe('generate a project', () => {
               '..',
               'template',
               file
-                .split('/')
+                .split(sep)
                 .map(v => convertToTemplateName(v))
-                .join('/')
+                .join(sep)
             ),
             {
               ...testData,
