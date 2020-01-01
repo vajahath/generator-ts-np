@@ -24,7 +24,8 @@ class Tsnp extends Generator {
     this.registerTransformStream(
       rename(filePath => {
         if (filePath.basename?.includes('yo-rc')) {
-          return;
+          console.log(filePath);
+          return filePath;
         }
 
         if (filePath.basename || filePath.extname) {

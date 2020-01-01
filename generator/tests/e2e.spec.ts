@@ -92,6 +92,8 @@ test('verify there are all files', async () => {
   baseFiles = baseFiles.map(val => val.split('/base-structure/')[1]);
   files = files.map(val => val.split(upath.toUnix(tmpFolder) + '/')[1]);
 
-  // expect(files.includes('.yo-rc.json')).toBeTruthy();
+  expect(files.includes('.yo-rc.json')).toBeTruthy();
   expect(baseFiles.every(f => files.includes(f))).toBeTruthy();
+
+  console.log({ files });
 });
