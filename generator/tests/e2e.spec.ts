@@ -21,7 +21,7 @@ function runGenerator() {
         '.bin',
         `${isWin() ? 'yo.cmd' : 'yo'}`
       ),
-      [join(__dirname, '..', 'dist', 'app', 'index.js')],
+      [join(__dirname, '..', 'generators', 'app', 'index.js')],
       {
         cwd: tmpFolder
       }

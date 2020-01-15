@@ -6,7 +6,7 @@ import { renderFile as rf } from 'ejs';
 import {
   convertToOriginalName,
   convertToTemplateName
-} from '../dist/app/name-conversion';
+} from '../generators/app/name-conversion';
 
 const pkg = require('../package.json');
 
@@ -39,7 +39,7 @@ describe('generate a project', () => {
     'generate',
     () =>
       helpers
-        .run(path.join(__dirname, '..', 'dist', 'app'))
+        .run(path.join(__dirname, '..', 'generators', 'app'))
         .inTmpDir(dir => console.log(`> tempDir: ${dir}`))
         .withPrompts(testData)
         .then(async dir => {
