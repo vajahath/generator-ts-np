@@ -24,7 +24,6 @@ class Tsnp extends Generator {
     this.registerTransformStream(
       rename(filePath => {
         if (filePath.basename?.includes('yo-rc')) {
-          console.log(filePath);
           return filePath;
         }
 
@@ -48,9 +47,14 @@ class Tsnp extends Generator {
 
   public initializing() {
     this.log(
-      chalk.gray(`
- TS-NP-GENERATOR
- ===============
+      chalk.yellow.bold(`
+ 📦 TS-NP-GENERATOR 💫`) +
+        chalk.gray(`
+ =====================`) +
+        chalk.white(`
+ For generating Node.js packages with TypeScript.`) +
+        chalk.gray(`
+
  Asking a few questions for generating the base structure.
  If you have any doubts,
  see https://tinyurl.com/szponxx\n`)
@@ -97,7 +101,7 @@ class Tsnp extends Generator {
     this.log(`\n 🎉 ${chalk.gray('Scaffolded! You can now run')} ${chalk.yellow(
       'npm install'
     )} or ${chalk.yellow('yarn')}.
-    ${chalk.gray(`Learn more https://www.npmjs.com/package/generator-ts-np`)}
+    ${chalk.gray(`Learn more at https://www.npmjs.com/package/generator-ts-np`)}
     Build great things! Happy coding 💖\n`);
   }
 }
