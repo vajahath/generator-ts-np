@@ -4,10 +4,10 @@ import { camelCase } from 'camel-case';
 import updateNotifier = require('update-notifier');
 import chalk = require('chalk');
 import rename = require('gulp-rename');
-
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
 import { convertToOriginalName } from './name-conversion';
+const isWindows = require('is-windows')();
 
 const pkg = require('../../package.json');
 updateNotifier({ pkg }).notify();
@@ -23,10 +23,6 @@ class Tsnp extends Generator {
     this.sourceRoot(pathJoin(__dirname, '..', '..', 'template'));
     this.registerTransformStream(
       rename(filePath => {
-        if (filePath.basename?.includes('yo-rc')) {
-          return filePath;
-        }
-
         if (filePath.basename || filePath.extname) {
           filePath.basename = convertToOriginalName(
             (filePath.basename || '') + (filePath.extname || '')
@@ -47,10 +43,15 @@ class Tsnp extends Generator {
 
   public initializing() {
     this.log(
-      chalk.yellow.bold(`
+      (isWindows
+        ? chalk.yellow.bold(`
+ TS-NP-GENERATOR`) +
+          chalk.gray(`
+ ===============`)
+        : chalk.yellow.bold(`
  📦 TS-NP-GENERATOR 💫`) +
-        chalk.gray(`
- =====================`) +
+          chalk.gray(`
+ =====================`)) +
         chalk.white(`
  For generating Node.js packages with TypeScript.`) +
         chalk.gray(`
@@ -60,6 +61,7 @@ class Tsnp extends Generator {
  see https://tinyurl.com/szponxx\n`)
     );
   }
+
   public async prompting() {
     try {
       this.promptMetaOpt = getFullTSNPPrompts.apply(this).queries;
