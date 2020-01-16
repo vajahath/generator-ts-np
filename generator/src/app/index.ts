@@ -7,6 +7,17 @@ import rename = require('gulp-rename');
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
 import { convertToOriginalName } from './name-conversion';
+import gulpif = require('gulp-if');
+import { Transform } from 'stream';
+
+const pass = new Transform({
+  objectMode: true,
+  transform(chunk, end, cb) {
+    this.push(chunk);
+    return cb();
+  }
+});
+
 const isWindows = require('is-windows')();
 
 const pkg = require('../../package.json');
@@ -22,22 +33,32 @@ class Tsnp extends Generator {
     // set root
     this.sourceRoot(pathJoin(__dirname, '..', '..', 'template'));
     this.registerTransformStream(
-      rename(filePath => {
-        if (filePath.basename || filePath.extname) {
-          filePath.basename = convertToOriginalName(
-            (filePath.basename || '') + (filePath.extname || '')
-          );
-        }
+      gulpif(
+        (file: any) => {
+          // console.log(`> ${file.basename}, ${file.dirname}`);
+          if (file.basename.includes('yo-rc')) {
+            return false;
+          }
+          return true;
+        },
+        rename(filePath => {
+          if (filePath.basename || filePath.extname) {
+            filePath.basename = convertToOriginalName(
+              (filePath.basename || '') + (filePath.extname || '')
+            );
+          }
 
-        if (filePath.dirname && filePath.dirname !== '.') {
-          filePath.dirname = filePath.dirname
-            .split(sep)
-            .map(val => convertToOriginalName(val))
-            .join(sep);
-        }
+          if (filePath.dirname && filePath.dirname !== '.') {
+            filePath.dirname = filePath.dirname
+              .split(sep)
+              .map(val => convertToOriginalName(val))
+              .join(sep);
+          }
 
-        filePath.extname = '';
-      })
+          filePath.extname = '';
+        }),
+        pass
+      )
     );
   }
 

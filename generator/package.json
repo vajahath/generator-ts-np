@@ -35,6 +35,7 @@
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "@types/ejs": "^3.0.0",
+    "@types/gulp-if": "0.0.33",
     "@types/gulp-rename": "0.0.33",
     "@types/is-windows": "^1.0.0",
     "@types/jest": "^24.0.23",
@@ -69,6 +70,7 @@
   "dependencies": {
     "camel-case": "^4.1.1",
     "chalk": "^3.0.0",
+    "gulp-if": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "is-windows": "^1.0.2",
     "shelljs": "^0.8.3",
