@@ -35,7 +35,7 @@
   "homepage": "https://github.com/__tsnp_github_scope/__tsnp_github_repo#readme",
   "devDependencies": {
     "@types/jest": "^24.0.23",
-    "@types/node": "^13.1.1",
+    "@types/node": "^13.1.7",
     "@types/yeoman-generator": "^3.1.4",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
     "@typescript-eslint/parser": "^2.8.0",
