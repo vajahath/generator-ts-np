@@ -4,5 +4,7 @@
         "rescope",
         "tsnp",
         "yosay"
-    ]
+    ],
+    "editor.formatOnSave": true,
+    "git.enableCommitSigning": true
 }
