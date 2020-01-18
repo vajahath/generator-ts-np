@@ -2,6 +2,8 @@
 
 Yet another [yeoman](https://yeoman.io/) generator for building npm packages with TypeScript.
 
+_TSNP stands for TypeScript Node Package 📦._
+
 ![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/vajahath/generator-ts-np.svg)](https://greenkeeper.io/)
 
 ![](https://raw.githubusercontent.com/vajahath/generator-ts-np/master/media/logo-old.png)

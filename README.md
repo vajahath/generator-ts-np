@@ -1,10 +1,10 @@
-
 # generator-ts-np (v3 Preview 🧪)
 
 Yet another yeoman generator for building npm modules with typescript.
 
-![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg) ![](https://github.com/vajahath/generator-ts-np/workflows/Deploy/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/vajahath/generator-ts-np.svg)](https://greenkeeper.io/)
+_TSNP stands for TypeScript Node Package 📦._
 
+![](https://github.com/vajahath/generator-ts-np/workflows/Build/badge.svg) ![](https://github.com/vajahath/generator-ts-np/workflows/Deploy/badge.svg) [![Greenkeeper badge](https://badges.greenkeeper.io/vajahath/generator-ts-np.svg)](https://greenkeeper.io/)
 
 > This package is currently in beta. [See release plan](https://github.com/vajahath/generator-ts-np/issues/35).
 
@@ -27,5 +27,3 @@ Please feel free to raise an issue.
 ## Licence
 
 MIT &copy; [Vajahath Ahmed](https://twitter.com/vajahath7)
-
-
