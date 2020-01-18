@@ -1,8 +1,10 @@
 generator/src/app/name-mapping.ts
 generator/src/app/get-full-prompts.ts
 generator/src/app/Types.ts
+generator/src/app/name-conversion.ts
 house-keeping/src/mappings/name-mapping.ts
 house-keeping/src/mappings/Types.ts
+house-keeping/raw-template
 
 dest-static
 dest-render

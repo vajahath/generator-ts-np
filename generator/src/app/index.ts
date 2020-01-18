@@ -1,11 +1,24 @@
-import { join as pathJoin } from 'path';
+import { join as pathJoin, sep } from 'path';
 import Generator = require('yeoman-generator');
 import { camelCase } from 'camel-case';
 import updateNotifier = require('update-notifier');
 import chalk = require('chalk');
-
+import rename = require('gulp-rename');
 import { getFullTSNPPrompts } from './get-full-prompts';
 import { TSNPQueries } from './Types';
+import { convertToOriginalName } from './name-conversion';
+import gulpif = require('gulp-if');
+import { Transform } from 'stream';
+
+const pass = new Transform({
+  objectMode: true,
+  transform(chunk, end, cb) {
+    this.push(chunk);
+    return cb();
+  }
+});
+
+const isWindows = require('is-windows')();
 
 const pkg = require('../../package.json');
 updateNotifier({ pkg }).notify();
@@ -19,18 +32,57 @@ class Tsnp extends Generator {
 
     // set root
     this.sourceRoot(pathJoin(__dirname, '..', '..', 'template'));
+    this.registerTransformStream(
+      gulpif(
+        (file: any) => {
+          // console.log(`> ${file.basename}, ${file.dirname}`);
+          if (file.basename.includes('yo-rc')) {
+            return false;
+          }
+          return true;
+        },
+        rename(filePath => {
+          if (filePath.basename || filePath.extname) {
+            filePath.basename = convertToOriginalName(
+              (filePath.basename || '') + (filePath.extname || '')
+            );
+          }
+
+          if (filePath.dirname && filePath.dirname !== '.') {
+            filePath.dirname = filePath.dirname
+              .split(sep)
+              .map(val => convertToOriginalName(val))
+              .join(sep);
+          }
+
+          filePath.extname = '';
+        }),
+        pass
+      )
+    );
   }
 
   public initializing() {
     this.log(
-      chalk.gray(`
- TS-NP-GENERATOR
- ===============
+      (isWindows
+        ? chalk.yellow.bold(`
+ TS-NP-GENERATOR`) +
+          chalk.gray(`
+ ===============`)
+        : chalk.yellow.bold(`
+ 📦 TS-NP-GENERATOR 💫`) +
+          chalk.gray(`
+ =====================`)) +
+        chalk.white(`
+ For generating Node.js packages with TypeScript.`) +
+        chalk.gray(`
+
  Asking a few questions for generating the base structure.
  If you have any doubts,
  see https://tinyurl.com/szponxx\n`)
     );
   }
+
   public async prompting() {
     try {
       this.promptMetaOpt = getFullTSNPPrompts.apply(this).queries;
@@ -72,7 +124,7 @@ class Tsnp extends Generator {
     this.log(`\n 🎉 ${chalk.gray('Scaffolded! You can now run')} ${chalk.yellow(
       'npm install'
     )} or ${chalk.yellow('yarn')}.
-    ${chalk.gray(`Learn more https://www.npmjs.com/package/generator-ts-np`)}
+    ${chalk.gray(`Learn more at https://www.npmjs.com/package/generator-ts-np`)}
     Build great things! Happy coding 💖\n`);
   }
 }

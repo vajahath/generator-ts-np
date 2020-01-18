@@ -16,7 +16,10 @@
         "jest.config.json",
         "--runInBand"
       ],
-      "outFiles": ["${workspaceFolder}/dist", "${workspaceFolder}/tests-dist"],
+      "outFiles": [
+        "${workspaceFolder}/generators",
+        "${workspaceFolder}/tests-dist"
+      ],
       "windows": {
         "program": "${workspaceFolder}/node_modules/jest/bin/jest"
       }
