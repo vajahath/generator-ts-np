@@ -6,7 +6,7 @@ jobs:
   Build-Base:
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [windows-latest, ubuntu-latest]
         node: ['10', '12', '13']
     runs-on: ${{ matrix.os }}
     name: Base (${{ matrix.os }}|node-${{ matrix.node }})
@@ -48,7 +48,7 @@ jobs:
   Build-HK:
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
+        os: [windows-latest, ubuntu-latest]
         node: ['13']
     runs-on: ${{ matrix.os }}
     name: HK (${{ matrix.os }}|node-${{ matrix.node }})
