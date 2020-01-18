@@ -1,8 +1,12 @@
 import * as helpers from 'yeoman-test';
-import * as path from 'path';
+import * as path from 'upath';
 import * as yoAss from 'yeoman-assert';
 import globby = require('globby');
 import { renderFile as rf } from 'ejs';
+import {
+  convertToOriginalName,
+  convertToTemplateName
+} from '../generators/app/name-conversion';
 
 const pkg = require('../package.json');
 
@@ -31,30 +35,49 @@ const testData = {
 };
 
 describe('generate a project', () => {
-  test('generate', () =>
-    helpers
-      .run(path.join(__dirname, '..', 'dist', 'app'))
-      .inTmpDir(dir => console.log(`> tempDir: ${dir}`))
-      .withPrompts(testData)
-      .then(async dir => {
-        const BASE_FILES = (
-          await globby(['../template/**/*'], { dot: true, cwd: __dirname })
-        ).map(item => item.split('/template/')[1]);
+  test(
+    'generate',
+    () =>
+      helpers
+        .run(path.join(__dirname, '..', 'generators', 'app'))
+        .inTmpDir(dir => console.log(`> tempDir: ${dir}`))
+        .withPrompts(testData)
+        .then(async dir => {
+          const BASE_FILES = (
+            await globby(['../template/**/*'], { dot: true, cwd: __dirname })
+          )
+            .map(item => item.split('/template/')[1])
+            .map(v =>
+              v
+                .split('/')
+                .map(w => convertToOriginalName(w))
+                .join('/')
+            );
 
-        for (const file of BASE_FILES) {
-          const tmpFile = path.join(dir, file);
-          yoAss.file(tmpFile);
+          for (const file of BASE_FILES) {
+            const tmpFile = path.join(dir, file);
+            yoAss.file(tmpFile);
 
-          const renderedContent = await renderFile(
-            path.join(__dirname, '..', 'template', file),
-            {
-              ...testData,
-              scopedPackageName: `@${testData.npmScope}/${testData.packageName}`,
-              tsnpVersion: pkg.version
-            }
-          );
+            const renderedContent = await renderFile(
+              path.join(
+                __dirname,
+                '..',
+                'template',
+                file
+                  .split('/')
+                  .map(v => convertToTemplateName(v))
+                  .join('/')
+              ),
+              {
+                ...testData,
+                scopedPackageName: `@${testData.npmScope}/${testData.packageName}`,
+                tsnpVersion: pkg.version
+              }
+            );
 
-          yoAss.fileContent(tmpFile, renderedContent);
-        }
-      }));
+            yoAss.fileContent(tmpFile, renderedContent);
+          }
+        }),
+    10000
+  );
 });

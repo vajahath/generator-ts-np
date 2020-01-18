@@ -2,7 +2,9 @@ const gulp = require('gulp');
 const del = require('del');
 
 exports['copy-src-assets'] = () => {
-  return gulp.src(['./src/**/*', '!./src/**/*.ts']).pipe(gulp.dest('dist/'));
+  return gulp
+    .src(['./src/**/*', '!./src/**/*.ts'])
+    .pipe(gulp.dest('generators/'));
 };
 
 exports['copy-tests-assets'] = () => {
@@ -12,5 +14,5 @@ exports['copy-tests-assets'] = () => {
 };
 
 exports['clean-builds'] = () => {
-  return del(['dist/**/*', 'tests-dist/**/*']);
+  return del(['generators/**/*', 'tests-dist/**/*']);
 };
