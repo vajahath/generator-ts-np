@@ -23,7 +23,7 @@ jobs:
       # no need of re-scoping because this is at global scope
       # - run: npm run rescope vaju 
         working-directory: ./generator
-      - run: ls && npm publish --tag=next --access=public
+      - run: ls && npm publish --tag=latest --access=public
         working-directory: ./generator
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
@@ -44,7 +44,7 @@ jobs:
       - run: npm run test
       - run: npm run rescope vajahath
         working-directory: ./generator
-      - run: ls && npm publish --tag=next
+      - run: ls && npm publish --tag=latest
         working-directory: ./generator
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GH_TOKEN }}
