@@ -10,7 +10,7 @@ _TSNP stands for TypeScript Node Package 📦._
 
 ## Install
 
-Requires Node >= 8.
+Requires Node `>=8`.
 
 Install [yeoman](https://yeoman.io/) first
 
@@ -43,7 +43,7 @@ $ yo ts-np # use yeoman
 - Tests uses [Jest](https://jestjs.io) (tests are also written in TypeScript)
 - Pre-publish hook for build (so you never miss it)
 - Automated build and deployments (using Github Actions) (eg: [scope-prefixer package](https://github.com/vajahath/npm-scope-prefixer/commit/6294ca949db444de45e6668fb15a859c987dbbfd/checks?check_suite_id=327889691))
-- Lint rules adopted from Google Repo (which means higher coding standard)
+- Lint rules adopted from Google (which means higher coding standard)
 - Publishes only the required files (less bundle size)
 
 ## Directory Structure

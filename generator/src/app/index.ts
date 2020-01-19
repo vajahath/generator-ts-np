@@ -121,9 +121,9 @@ class Tsnp extends Generator {
   }
 
   public end() {
-    this.log(`\n 🎉 ${chalk.gray('Scaffolded! You can now run')} ${chalk.yellow(
-      'npm install'
-    )} or ${chalk.yellow('yarn')}.
+    this.log(`\n${isWindows ? '   ' : ' 🎉 '}${chalk.gray(
+      'Scaffolded! You can now run'
+    )} ${chalk.yellow('npm install')} or ${chalk.yellow('yarn')}.
     ${chalk.gray(`Learn more at https://www.npmjs.com/package/generator-ts-np`)}
     Build great things! Happy coding 💖\n`);
   }
