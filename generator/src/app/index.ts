@@ -79,7 +79,9 @@ class Tsnp extends Generator {
 
  Asking a few questions for generating the base structure.
  If you have any doubts,
- see https://tinyurl.com/szponxx\n`)
+ see https://tinyurl.com/szponxx
+ 
+ [version: ${pkg.version}]\n`)
     );
   }
 
@@ -124,8 +126,13 @@ class Tsnp extends Generator {
     this.log(`\n${isWindows ? '   ' : ' 🎉 '}${chalk.gray(
       'Scaffolded! You can now run'
     )} ${chalk.yellow('npm install')} or ${chalk.yellow('yarn')}.
+
+    Please note: 
+    * These files are generated for an ideal GitHub/NPM environment.
+    * Please hand check every files before publishing.
+
     ${chalk.gray(`Learn more at https://www.npmjs.com/package/generator-ts-np`)}
-    Build great things! Happy coding 💖\n`);
+    Build great things! Happy coding ${isWindows ? '' : '💖'}\n`);
   }
 }
 
