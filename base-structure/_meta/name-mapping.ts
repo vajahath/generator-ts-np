@@ -11,7 +11,6 @@ import {
   TSNPQueries,
   GetRenderPromptVariablesResult
 } from './Types';
-import * as shell from 'shelljs';
 
 import chalk = require('chalk');
 import wrap = require('word-wrap');
@@ -37,7 +36,7 @@ export function getRenderPromptVariables(
         chalk.yellow(' (without @) \n') +
         wrap(
           chalk.gray(
-            "(If you want to publish at global scope, leave this field empty(or empty string '')."
+            '(If you want to publish at global scope, leave this field empty(or empty string).'
           ) +
             chalk.gray(
               ' It is always nice to publish packages under a scope. '
@@ -59,24 +58,25 @@ export function getRenderPromptVariables(
         wrap(
           chalk.gray(
             '(This will be your GitHub scope, if you want to publish this package'
-          ) + chalk.gray(' to GitHub Package Registry)')
+          ) +
+            chalk.gray(
+              ' to GitHub Package Registry. You can leave this field empty)'
+            )
         ),
-      ...(shell.which('git') &&
-      shell
-        .exec('git config --get user.email', {
-          silent: true,
-          cwd: this.destinationRoot()
-        })
-        .stdout.trim()
-        ? { default: this.user.github.username }
-        : { default: '' })
+      store: true
     },
     {
       _key: '__tsnp_github_repo',
 
       type: 'input',
       name: 'githubRepositoryName',
-      message: 'The Github repository name?',
+      message:
+        'The repository name?\n' +
+        wrap(
+          chalk.gray(
+            '(If not applicable, you can leave this field as such and edit later directly in the package.json and README.md)'
+          )
+        ),
       default: this.appname
     },
 
@@ -94,7 +94,7 @@ export function getRenderPromptVariables(
       type: 'input',
       name: 'enginesNode',
       message:
-        'The compatible node versions spec' +
+        'The compatible node versions' +
         chalk.gray(' (defaults to every versions >= 8)'),
       default: '>=8'
     },
