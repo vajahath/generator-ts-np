@@ -41,7 +41,7 @@
     "@types/node": "^13.1.7",
     "@types/yeoman-generator": "^3.1.4",
     "@typescript-eslint/eslint-plugin": "^2.8.0",
-    "@typescript-eslint/parser": "^2.18.0",
+    "@typescript-eslint/parser": "^2.19.2",
     "@vaju/npm-scope-prefixer": "^1.1.0",
     "del": "^5.1.0",
     "eslint": "^6.7.0",
