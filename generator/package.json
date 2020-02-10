@@ -40,7 +40,7 @@
     "@types/is-windows": "^1.0.0",
     "@types/jest": "^25.1.0",
     "@types/node": "^13.1.7",
-    "@types/mkdirp": "^0.5.2",
+    "@types/mkdirp": "^1.0.0",
     "@types/update-notifier": "^2.5.0",
     "@types/yeoman-assert": "^3.1.1",
     "@types/yeoman-generator": "^3.1.4",
