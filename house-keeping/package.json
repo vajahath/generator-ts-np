@@ -39,7 +39,7 @@
     "globby": "^10.0.1",
     "is-windows": "^1.0.2",
     "jest": "^24.9.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.2"
   },
