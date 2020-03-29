@@ -15,7 +15,7 @@ const pass = new Transform({
   transform(chunk, end, cb) {
     this.push(chunk);
     return cb();
-  }
+  },
 });
 
 const isWindows = require('is-windows')();
@@ -41,7 +41,7 @@ class Tsnp extends Generator {
           }
           return true;
         },
-        rename(filePath => {
+        rename((filePath) => {
           if (filePath.basename || filePath.extname) {
             filePath.basename = convertToOriginalName(
               (filePath.basename || '') + (filePath.extname || '')
@@ -51,7 +51,7 @@ class Tsnp extends Generator {
           if (filePath.dirname && filePath.dirname !== '.') {
             filePath.dirname = filePath.dirname
               .split(sep)
-              .map(val => convertToOriginalName(val))
+              .map((val) => convertToOriginalName(val))
               .join(sep);
           }
 
@@ -105,9 +105,9 @@ class Tsnp extends Generator {
           scopedPackageName: getScopedPackageName(
             this.answers.npmScope,
             this.answers.packageName
-          )
+          ),
         },
-        tsnpVersion: pkg.version
+        tsnpVersion: pkg.version,
       };
 
       this.fs.copyTpl(

@@ -23,7 +23,7 @@ function runGenerator() {
       ),
       [join(__dirname, '..', 'generators', 'app', 'index.js')],
       {
-        cwd: tmpFolder
+        cwd: tmpFolder,
       }
     );
 
@@ -44,14 +44,14 @@ function runGenerator() {
       );
     }, TIMEOUT);
 
-    genProcess.on('error', e => {
+    genProcess.on('error', (e) => {
       clearInterval(ipAgent);
       err = true;
       console.log('>>> genProcess.on(err)');
       console.error(e);
     });
 
-    genProcess.on('exit', code => {
+    genProcess.on('exit', (code) => {
       console.log('>>>>>>> exit code', code);
       clearTimeout(killSwitch);
       clearInterval(ipAgent);
@@ -73,7 +73,7 @@ test('verify there are all files', async () => {
     '!../../base-structure/_meta',
     '!../../base-structure/dist',
     '!../../base-structure/tests-dist',
-    '!../../base-structure/package-lock.json'
+    '!../../base-structure/package-lock.json',
   ];
 
   const filesGlob = upath.toUnix(upath.normalize(tmpFolder) + '/**/*');
@@ -81,19 +81,19 @@ test('verify there are all files', async () => {
   let [baseFiles, files] = await Promise.all([
     globby(baseFilesGlob, {
       dot: true,
-      cwd: __dirname
+      cwd: __dirname,
     }),
     globby(filesGlob, {
-      dot: true
-    })
+      dot: true,
+    }),
   ]);
 
   // trim
-  baseFiles = baseFiles.map(val => val.split('/base-structure/')[1]);
-  files = files.map(val => val.split(upath.toUnix(tmpFolder) + '/')[1]);
+  baseFiles = baseFiles.map((val) => val.split('/base-structure/')[1]);
+  files = files.map((val) => val.split(upath.toUnix(tmpFolder) + '/')[1]);
 
   expect(files.includes('.yo-rc.json')).toBeTruthy();
-  expect(baseFiles.every(f => files.includes(f))).toBeTruthy();
+  expect(baseFiles.every((f) => files.includes(f))).toBeTruthy();
 
   console.log({ files });
 });

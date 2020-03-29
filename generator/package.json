@@ -15,7 +15,7 @@
     "src-build": "tsc -p tsconfig.json",
     "tests-build": "tsc -p tsconfig.spec.json",
     "rescope": "npm-scope-prefixer -s",
-    "lint": "eslint \"src/**/*\" \"tests/**/*\" && prettier \"src/**/*\" \"tests/**/*\" -l",
+    "lint": "eslint \"src/**/*\" \"tests/**/*\" && prettier \"src/**/*\" \"tests/**/*\" -l --write",
     "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
     "clean-builds": "gulp clean-builds"
   },
