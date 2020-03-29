@@ -29,19 +29,19 @@
     "@types/gulp-rename": "0.0.33",
     "@types/gulp-replace": "0.0.31",
     "@types/is-windows": "^1.0.0",
-    "@types/jest": "^25.1.0",
-    "@types/node": "^13.7.1",
+    "@types/jest": "^25.1.4",
+    "@types/node": "^13.9.5",
     "@types/yeoman-generator": "^3.1.4",
-    "@typescript-eslint/eslint-plugin": "^2.19.2",
-    "@typescript-eslint/parser": "^2.19.2",
-    "eslint": "^6.7.0",
-    "eslint-config-prettier": "^6.7.0",
-    "globby": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "globby": "^10.0.2",
     "is-windows": "^1.0.2",
     "jest": "^25.2.3",
     "prettier": "^2.0.2",
-    "ts-node": "^8.6.2",
-    "typescript": "^3.7.2"
+    "ts-node": "^8.8.1",
+    "typescript": "^3.8.3"
   },
   "dependencies": {
     "chalk": "^3.0.0",
@@ -52,6 +52,6 @@
     "gulp-replace": "^1.0.0",
     "shelljs": "^0.8.3",
     "word-wrap": "^1.2.3",
-    "yeoman-generator": "^4.2.0"
+    "yeoman-generator": "^4.7.2"
   }
 }
