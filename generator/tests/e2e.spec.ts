@@ -36,7 +36,7 @@ function runGenerator() {
       () => (console.log('>>> genProcess.stderr'), (err = true))
     );
 
-    const ipAgent = setInterval(() => genProcess.stdin.write('\n'), 1000);
+    const ipAgent = setInterval(() => genProcess.stdin.write('\n'), 600);
     const killSwitch = setTimeout(() => {
       genProcess.kill();
       return reject(
