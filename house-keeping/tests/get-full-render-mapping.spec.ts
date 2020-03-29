@@ -7,7 +7,7 @@ describe('testing get for full tsnp prompts', () => {
     let result: GetRenderPromptVariablesResult = {
       queries: [],
       scopedPackageNameKey: 'x',
-      versionKey: 'y'
+      versionKey: 'y',
     };
 
     {
@@ -15,7 +15,7 @@ describe('testing get for full tsnp prompts', () => {
         public appname = 'appname';
         public user = {
           github: { username: 'github-username' },
-          git: { name: 'git-name', email: 'git-email' }
+          git: { name: 'git-name', email: 'git-email' },
         };
         public destinationRoot() {
           return __dirname;

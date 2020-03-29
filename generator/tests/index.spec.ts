@@ -5,7 +5,7 @@ import globby = require('globby');
 import { renderFile as rf } from 'ejs';
 import {
   convertToOriginalName,
-  convertToTemplateName
+  convertToTemplateName,
 } from '../generators/app/name-conversion';
 
 const pkg = require('../package.json');
@@ -31,7 +31,7 @@ const testData = {
   ownerFullName: 'ownerFullName',
   ownerEmail: 'ownerEmail@test.com',
   licenceYear: 'licenceYear',
-  twitterUsername: 'twitterUsername'
+  twitterUsername: 'twitterUsername',
 };
 
 describe('generate a project', () => {
@@ -40,17 +40,17 @@ describe('generate a project', () => {
     () =>
       helpers
         .run(path.join(__dirname, '..', 'generators', 'app'))
-        .inTmpDir(dir => console.log(`> tempDir: ${dir}`))
+        .inTmpDir((dir) => console.log(`> tempDir: ${dir}`))
         .withPrompts(testData)
-        .then(async dir => {
+        .then(async (dir) => {
           const BASE_FILES = (
             await globby(['../template/**/*'], { dot: true, cwd: __dirname })
           )
-            .map(item => item.split('/template/')[1])
-            .map(v =>
+            .map((item) => item.split('/template/')[1])
+            .map((v) =>
               v
                 .split('/')
-                .map(w => convertToOriginalName(w))
+                .map((w) => convertToOriginalName(w))
                 .join('/')
             );
 
@@ -65,13 +65,13 @@ describe('generate a project', () => {
                 'template',
                 file
                   .split('/')
-                  .map(v => convertToTemplateName(v))
+                  .map((v) => convertToTemplateName(v))
                   .join('/')
               ),
               {
                 ...testData,
                 scopedPackageName: `@${testData.npmScope}/${testData.packageName}`,
-                tsnpVersion: pkg.version
+                tsnpVersion: pkg.version,
               }
             );
 

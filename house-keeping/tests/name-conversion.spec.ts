@@ -1,6 +1,6 @@
 import {
   convertToOriginalName,
-  convertToTemplateName
+  convertToTemplateName,
 } from '../dist/name-conversion';
 
 describe('testing for err throwing', () => {

@@ -9,7 +9,7 @@ import {
   BASE_STRUCTURE_ROOT_GLOB,
   HK_OUTPUT_DEST_GLOB,
   GENERATOR_META_CODE_LOC_GLOB,
-  RAW_TEMPLATE_LOC_GLOB
+  RAW_TEMPLATE_LOC_GLOB,
 } from './config';
 import { getEjsMapping } from './mappings';
 
@@ -22,16 +22,16 @@ function excludePaths() {
     '/coverage/**',
     '/dist/**',
     '/tests-dist/**',
-    '/package-lock.json'
+    '/package-lock.json',
   ];
-  return exp.map(val => '!' + BASE_STRUCTURE_ROOT_GLOB + val);
+  return exp.map((val) => '!' + BASE_STRUCTURE_ROOT_GLOB + val);
 }
 
 export function gBuild() {
   let gulpChain = gulp.src(
     [BASE_STRUCTURE_ROOT_GLOB + '/**/*', ...excludePaths()],
     {
-      dot: true
+      dot: true,
     }
   );
 
@@ -71,7 +71,7 @@ export function copyMeta() {
         // the build will make the js file in dist folder
         // so we need to move a step back to get this file.
         '../src/mappings/get-full-prompts.ts',
-        '../src/name-conversion.ts'
+        '../src/name-conversion.ts',
       ],
       { dot: true }
     )
@@ -84,7 +84,7 @@ export function convertName() {
       .src(RAW_TEMPLATE_LOC_GLOB + '/**/*', { dot: true })
       // rename
       .pipe(
-        rename(filePath => {
+        rename((filePath) => {
           if (filePath.basename || filePath.extname) {
             filePath.basename = convertToTemplateName(
               (filePath.basename || '') + (filePath.extname || '')
@@ -94,7 +94,7 @@ export function convertName() {
           if (filePath.dirname && filePath.dirname !== '.') {
             filePath.dirname = filePath.dirname
               .split(sep)
-              .map(val => convertToTemplateName(val))
+              .map((val) => convertToTemplateName(val))
               .join(sep);
           }
 
@@ -105,6 +105,6 @@ export function convertName() {
   );
 }
 
-export default (function() {
+export default (function () {
   return gulp.series(gClearDest, gBuild, copyMeta, convertName);
 })();
