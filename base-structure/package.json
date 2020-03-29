@@ -19,7 +19,7 @@
     "src-build": "tsc -p tsconfig.json",
     "tests-build": "tsc -p tsconfig.spec.json",
     "rescope": "npm-scope-prefixer -s",
-    "lint": "prettier \"src/**/*\" \"tests/**/*\" -l && eslint \"src/**/*\" \"tests/**/*\"",
+    "lint": "prettier \"src/**/*\" \"tests/**/*\" -l --write && eslint \"src/**/*\" \"tests/**/*\"",
     "copy-assets": "gulp copy-src-assets && gulp copy-tests-assets",
     "clean-builds": "gulp clean-builds"
   },
@@ -50,7 +50,7 @@
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
     "jest": "^24.9.0",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.2",
     "typescript": "^3.7.2"
   },
   "dependencies": {}

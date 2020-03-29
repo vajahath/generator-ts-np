@@ -6,7 +6,7 @@
 import {
   Generator,
   GetRenderPromptVariablesResult,
-  TSNPQueries
+  TSNPQueries,
 } from './Types';
 
 import { getRenderPromptVariables } from './name-mapping';
@@ -17,7 +17,7 @@ export function getFullTSNPPrompts(
   const {
     scopedPackageNameKey,
     queries,
-    versionKey
+    versionKey,
   } = getRenderPromptVariables.apply(this);
 
   const userInputIndependentQueries: TSNPQueries = [];
@@ -25,6 +25,6 @@ export function getFullTSNPPrompts(
   return {
     queries: [...queries, ...userInputIndependentQueries],
     scopedPackageNameKey,
-    versionKey
+    versionKey,
   };
 }

@@ -22,7 +22,7 @@ beforeAll(() => {
         Promise.all([
           fs.writeFile(join(GEN_TEMPLATE, 'dir', '1.txt'), ''),
           fs.writeFile(join(GEN_TEMPLATE, 'dir', '.1.json'), ''),
-          fs.writeFile(join(GEN_TEMPLATE, 'dir', 'we'), '')
+          fs.writeFile(join(GEN_TEMPLATE, 'dir', 'we'), ''),
         ])
       ),
     fs
@@ -31,9 +31,9 @@ beforeAll(() => {
         Promise.all([
           fs.writeFile(join(GEN_TEMPLATE, 'dir', '1.txt'), ''),
           fs.writeFile(join(GEN_TEMPLATE, 'dir', '.1.json'), ''),
-          fs.writeFile(join(GEN_TEMPLATE, 'dir', 'we'), '')
+          fs.writeFile(join(GEN_TEMPLATE, 'dir', 'we'), ''),
         ])
-      )
+      ),
   ]);
 });
 
@@ -43,7 +43,7 @@ describe('testing gulp file', () => {
       GULP,
       ['gClearDest', '--gulpfile', join('dist', 'gulpfile.js')],
       {
-        cwd: join(__dirname, '..')
+        cwd: join(__dirname, '..'),
       }
     );
     if (r.error) {
@@ -59,7 +59,7 @@ describe('testing gulp file', () => {
       GULP,
       ['gBuild', '--gulpfile', join('dist', 'gulpfile.js')],
       {
-        cwd: join(__dirname, '..')
+        cwd: join(__dirname, '..'),
       }
     );
     if (r.error) {
@@ -68,9 +68,9 @@ describe('testing gulp file', () => {
     const files = (
       await globby('../raw-template/**/*', {
         dot: true,
-        cwd: __dirname
+        cwd: __dirname,
       })
-    ).map(v => v.split('raw-template/')[1]);
+    ).map((v) => v.split('raw-template/')[1]);
 
     const BASE_FILES = (
       await globby(
@@ -81,14 +81,14 @@ describe('testing gulp file', () => {
           '!../../base-structure/_meta',
           '!../../base-structure/dist',
           '!../../base-structure/tests-dist',
-          '!../../base-structure/package-lock.json'
+          '!../../base-structure/package-lock.json',
         ],
         { dot: true, cwd: __dirname }
       )
-    ).map(item => item.split('/base-structure/')[1]);
+    ).map((item) => item.split('/base-structure/')[1]);
 
-    expect(files.every(f => BASE_FILES.includes(f))).toBeTruthy();
-    expect(BASE_FILES.every(f => files.includes(f))).toBeTruthy();
+    expect(files.every((f) => BASE_FILES.includes(f))).toBeTruthy();
+    expect(BASE_FILES.every((f) => files.includes(f))).toBeTruthy();
   });
 
   test('gulp.copyMeta', async () => {
@@ -96,7 +96,7 @@ describe('testing gulp file', () => {
       GULP,
       ['copyMeta', '--gulpfile', join('dist', 'gulpfile.js')],
       {
-        cwd: join(__dirname, '..')
+        cwd: join(__dirname, '..'),
       }
     );
     if (r.error) {
@@ -105,18 +105,18 @@ describe('testing gulp file', () => {
     const files = (
       await globby(['../../base-structure/_meta/**/*'], {
         dot: true,
-        cwd: __dirname
+        cwd: __dirname,
       })
-    ).map(v => v.split('_meta/')[1]);
+    ).map((v) => v.split('_meta/')[1]);
 
     const target = (
       await globby('../../generator/src/app/**/*', {
         cwd: __dirname,
-        dot: true
+        dot: true,
       })
-    ).map(v => v.split('src/app/')[1]);
+    ).map((v) => v.split('src/app/')[1]);
 
-    expect(files.every(f => target.includes(f))).toBeTruthy();
+    expect(files.every((f) => target.includes(f))).toBeTruthy();
     expect(target.indexOf('get-full-prompts.ts') > -1).toBeTruthy();
   });
 
@@ -125,7 +125,7 @@ describe('testing gulp file', () => {
       GULP,
       ['convertName', '--gulpfile', join('dist', 'gulpfile.js')],
       {
-        cwd: join(__dirname, '..')
+        cwd: join(__dirname, '..'),
       }
     );
     if (r.error) {
@@ -135,25 +135,25 @@ describe('testing gulp file', () => {
     const baseFiles = (
       await globby('../raw-template/**/*', {
         dot: true,
-        cwd: __dirname
+        cwd: __dirname,
       })
-    ).map(v => v.split('raw-template/')[1]);
+    ).map((v) => v.split('raw-template/')[1]);
 
     const files = (
       await globby('../../generator/template/**/*', {
         dot: true,
-        cwd: __dirname
+        cwd: __dirname,
       })
     )
-      .map(v => v.split('/template/')[1])
-      .map(v =>
+      .map((v) => v.split('/template/')[1])
+      .map((v) =>
         v
           .split('/')
-          .map(w => convertToOriginalName(w))
+          .map((w) => convertToOriginalName(w))
           .join('/')
       );
 
-    expect(files.every(f => baseFiles.includes(f))).toBeTruthy();
-    expect(baseFiles.every(f => files.includes(f))).toBeTruthy();
+    expect(files.every((f) => baseFiles.includes(f))).toBeTruthy();
+    expect(baseFiles.every((f) => files.includes(f))).toBeTruthy();
   });
 });
