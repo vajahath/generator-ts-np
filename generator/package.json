@@ -1,6 +1,6 @@
 {
   "name": "generator-ts-np",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Yeoman Generator For Building Node Packages With Typescript",
   "main": "generators/app/index.js",
   "typings": "generators/app/index.d.ts",
