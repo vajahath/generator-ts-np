@@ -44,7 +44,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "del": "^5.1.0",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
