@@ -68,7 +68,7 @@
   },
   "dependencies": {
     "camel-case": "^4.1.1",
-    "chalk": "^3.0.0",
+    "chalk": "^4.0.0",
     "gulp-if": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "is-windows": "^1.0.2",
